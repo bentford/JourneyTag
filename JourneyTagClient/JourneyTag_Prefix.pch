@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'JourneyTag' target in the 'JourneyTag' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
