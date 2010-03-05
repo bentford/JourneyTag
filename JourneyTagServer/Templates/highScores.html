@@ -1,0 +1,17 @@
+{% extends "base2.html" %}
+
+{% block title %} High Scores {% endblock %}
+
+{% block content %}
+
+Top {{ count }} players overall:
+<br/>
+<em>updated every {{duration}} {{timeName}}</em>
+<ol>
+{% for account in accounts %}
+	<li><a href="/view/user/{{account.username}}">{{account.username}}</a> - {{account.totalScore}} points</li>
+{% endfor %}
+</ol>
+
+{% endblock %}
+

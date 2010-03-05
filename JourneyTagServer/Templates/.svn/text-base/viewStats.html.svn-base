@@ -1,0 +1,29 @@
+{% extends "base2.html" %}
+
+{% block title %} Game Stats {% endblock %}
+
+{% block content %}
+
+<h3>Game Stats</h3>
+<em>updated every {{duration}} {{timeName}}</em>
+<br/><br/>
+Total User Count: {{stat.accountTotal}}
+<br/>
+Total Active Tags: {{stat.activeTagCount}} 
+<br/>
+Total Finished Tags:  {{stat.finishedTagCount}} 
+<br/>
+Photos Taken: {{stat.photoCount}}
+<br/><br/><br/>
+<h3>Daily Changes</h3>
+
+<img src="http://chart.apis.google.com/chart?cht=lc&amp;chd=t:{{accountData}}&amp;chds={{accountScaling}}&amp;chs=250x100&amp;chl=Accounts" alt="Account History"/>
+
+<img style="position:relative;top:20px;" src="http://chart.apis.google.com/chart?cht=lc&amp;chd=t:{{tagData}}&amp;chds={{tagScaling}}&amp;chs=250x120&amp;chl=Tags&amp;chco=9F3F86,8C481F&amp;chdl=Active|Finished&amp;chdlp=b" alt="Tag History"/>
+
+<img src="http://chart.apis.google.com/chart?cht=lc&amp;chd=t:{{photoData}}&amp;chds={{photoScaling}}&amp;chs=250x100&amp;chco=13C5F5&amp;chl=Photos" alt="Photo History"/>
+
+
+<br/><br/>
+<em>Due to a bug, stats were not archived from Sept 29th to Oct 6th.</em>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base2.html" %}
+
+{% block title %}About Tags {% endblock %}
+
+{% block content %}
+
+<div style="float:left;width:450px;margin-left:50px;">
+	<img src="Static/images/Screenshot-Tags.png" alt="iPhone App Screenshot" />
+</div>
+<div style="float:left;width:400px; ">
+	<h3>About Tags</h3>
+	
+	The game of JourneyTag is all about traveling to a place you've never been.  You do this by creating a "tag" and choosing a destination.
+	<br/><br/>
+	The tag is like a baton in a relay race.  It gets passed from player to player until it reaches its destination.  With each step, you get a photo and a mark on the map.
+	<br/><br/>
+	Always  drop your tag in well populated areas, but they can be picked up within five miles of your current location, so don't be too picky.
+	<br/><br/>
+	<div>
+		<img src="Static/images/TagRed.png" alt="Red Tag" />
+		<img src="Static/images/TagGreen.png" alt="Green Tag" />
+		<img src="Static/images/TagOutline.png" alt="Outline Tag" />
+	</div>
+	<br/><br/>
+	<img src="/Static/images/World2.png" alt="World with Path" />
+</div>
+
+
+{% endblock %}

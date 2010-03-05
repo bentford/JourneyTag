@@ -1,0 +1,34 @@
+application: journeytag
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+    
+- url: /Static
+  static_dir: Static
+  
+- url: /data/(.*?)/.*
+  script: data/\1.py
+  secure: optional
+
+- url: /preview/.*
+  script: view.py
+
+- url: /view/.*
+  script: view.py
+
+- url: /maint/(.*?)/.*
+  script: maint/\1.py
+  login: admin
+
+- url: /cron/.*
+  script: cron.py
+  login: admin
+
+- url: /test/(.*?)
+  script: test/\1.py
+  login: admin
+
+- url: .*
+  script: main.py

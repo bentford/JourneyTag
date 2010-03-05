@@ -1,0 +1,6 @@
+queue:
+- name: default
+  rate: 1/s
+
+- name: count
+  rate: 1/s

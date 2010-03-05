@@ -1,0 +1,25 @@
+{% extends "base2.html" %}
+
+{% block title %} User {{account.username}} {% endblock %}
+
+{% block content %}
+
+<h3>{{account.username}}</h3>
+<br/>
+Total Score: {{account.totalScore}} points
+<br/>
+Carry Score: {{account.carryScore}} points
+<br/>
+Photo Score: {{computedPhotoScore}} points
+<br/>
+Drop Count: {{account.totalDrops}}
+<br/>
+Total Distance Traveled: {{account.totalDistanceTraveled}}
+<br/>
+Total Distance Carried: {{account.totalDistanceCarried}}
+<br/>
+
+<br/><br/>
+<em>under construction, more coming soon...</em>
+
+{% endblock %}

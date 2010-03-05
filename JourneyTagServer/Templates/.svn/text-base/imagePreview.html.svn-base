@@ -1,0 +1,17 @@
+{% extends "base2.html" %}
+
+{% block title %} Photos {% endblock %}
+
+{% block content %}
+
+Last {{ count }} photos:
+<br/>
+<em>updated every {{duration}} {{timeName}}</em>
+<div>
+{% for photoKey in photos %}
+	<img src="/data/photo/getData?photoKey={{photoKey}}" alt="" /> 
+{% endfor %}
+</div>
+
+{% endblock %}
+

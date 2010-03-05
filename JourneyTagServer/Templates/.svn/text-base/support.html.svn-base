@@ -1,0 +1,47 @@
+{% extends "base2.html" %}
+
+{% block title %}Support{% endblock %}
+
+{% block content %}
+
+<h3>Have Questions? </h3>
+
+
+{% if messageSent %}
+	<span style="color:green;font-weight:bold;">Message Sent.  I usually respond within 24 hours.</span>
+{% else %}
+<form method="post" action="/send">
+	Your Email:
+	<input type="text" name="fromEmail" />
+	<br/><br/>
+	Message:
+	<textarea name="message" rows="8" cols="40"></textarea>
+	<br/><br/>
+	<input type="submit" name="Send" value="Send" />
+</form>
+{% endif %}
+<br/><br/><br/><br/>  
+Other ways to contact me:
+<br/><br/>
+Follow on <a href="http://twitter.com/journeytag">Twitter</a>
+<br/><br/>
+OR
+<br/><br/>
+You can also visit the <a href="http://groups.google.com/group/journeytag">JourneyTag google group</a> to discuss anything regarding the app (bugs, features, likes and dislikes etc..)
+<br/><br/>
+<table style="background-color: #fff; padding: 5px;" cellspacing=0>
+  <tr><td>
+  <img src="http://groups.google.com/intl/en/images/logos/groups_logo_sm.gif"
+         height=30 width=140 alt="Google Groups">
+  </td></tr>
+  <tr><td style="padding-left: 5px;font-size: 125%">
+  <b>JourneyTag</b>
+  </td></tr>
+  <tr><td style="padding-left: 5px">
+  <a href="http://groups.google.com/group/journeytag">Visit this group</a>
+  </td></tr>
+</table>
+
+<br/><br/>
+{% endblock %}
+

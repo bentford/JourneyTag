@@ -1,0 +1,8 @@
+cron:
+- description: tag auto-drop check
+  url: /cron/tag_timeout
+  schedule: every 24 hours
+
+- description: account total count
+  url: /cron/account_total_count
+  schedule: every 24 hours

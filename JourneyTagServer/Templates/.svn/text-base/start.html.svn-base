@@ -1,0 +1,20 @@
+{% extends "base2.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+
+	Hello new players!!
+	<br/><br/>
+	<ul>
+		<li>If you don't see any tags, please create a few and drop them around where you live.</li>
+		<li>Tags may sit for a while until enough people start playing.  Be patient, the game will pick soon enough.</li>
+		<li>It's going to take some teamwork to get the things moving.  Please tell your friends.</li>
+		<li>I'm adding features to the website to show where all tags are.  (Eventually, this will be available on the app too.)</li>
+	</ul>
+	Feel free to visit the <a href="http://groups.google.com/group/journeytag">google group</a> if you have questions, comments, or complaints.
+	<br/><br/>
+	
+	-Ben 
+{% endblock content %}

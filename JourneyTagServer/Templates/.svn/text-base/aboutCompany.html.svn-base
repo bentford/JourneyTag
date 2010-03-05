@@ -1,0 +1,14 @@
+{% extends "base2.html" %}
+
+{% block title %}About Company{% endblock %}
+
+{% block content %}
+
+<h3>About Ben Ford</h3>
+
+<em>It is harder than I thought to write about myself.  <br/><br/>More coming soon...</em>
+
+You can also visit <a href="http://www.benford.name">my personal website</a>.
+
+{% endblock %}
+

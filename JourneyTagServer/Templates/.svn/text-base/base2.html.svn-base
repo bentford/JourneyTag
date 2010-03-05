@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<title>JourneyTag: {% block title %}coming to the app store soon{% endblock %}</title>
+	<link rel="stylesheet" href="/Static/css/style.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	<link REL="SHORTCUT ICON" HREF="/Static/images/favicon.ico" type="image/x-icon" />
+	<meta name="verify-v1" content="/EDw3nPmv33sPrk/1+7+dxs7dd/t1iz6kfuas7ugjZY=" />
+</head>
+<body style="background-color:#414042; ">
+	<div style="display:none;background-color:#FFF450; text-align:center; font-size:1.2em;">
+		Excuse my dust, site is under construction
+	</div>
+	<div style="height:241px;text-align:center;background:url('/Static/images/Header3.png') no-repeat;">
+		<div style="width:1030px;padding-top:15px;">
+			
+			<img src="/Static/images/Logo2.png" alt="JourneyTag Logo" />
+			<br/>
+			<span style="font-size:1.7em; font-weight:bold;margin-left:30px;">Travel the world from the comfort of your iPhone.</span>
+			
+		</div>
+		<div style="text-align:left;margin-left:50px;margin-top:15px;padding-left:0px;">
+			<a href="/" >Home</a> 
+			| <a href="/support">Support</a>
+			| <a href="/view/photos">Latest Photos</a>
+			| <a href="/view/highscores">High Scores</a>
+			| <a href="/view/stats">Game Stats</a>
+		</div>
+	</div>
+	<div style="clear:both;" ></div>
+	<div style="width:1058px; min-height:800px;padding:10px;padding-left:40px;background:url('/Static/images/ContentBackground2.png') repeat-y top left;">
+		{% block content %}{% endblock %}
+	</div>
+	<div style="clear:both;padding:10px 10px 10px 50px;background:url('/Static/images/ContentBackground2.png') repeat-y top left;">
+		<br/><br/><br/>
+		&copy;2009 Ben Ford  
+		| <a href="/about_company">About</a> 
+		| <a href="/sitemap">Sitemap</a>
+	</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10358605-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
