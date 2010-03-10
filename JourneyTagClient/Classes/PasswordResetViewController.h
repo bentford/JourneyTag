@@ -12,7 +12,6 @@
 @interface PasswordResetViewController : UIViewController 
 <UITextFieldDelegate> {
     
-    IBOutlet UIScrollView *myScrollView;
     IBOutlet UITextField *username;
     IBOutlet UITextField *email;
     IBOutlet UIButton *button;
@@ -22,5 +21,4 @@
 }
 
 - (IBAction)resetPassword:(id)sender;
-- (void)adjustViewSizeBack;
 @end

@@ -19,12 +19,6 @@
     return self;
 }
 
-- (void)viewDidLoad
-{    
-    myScrollView.contentSize = CGSizeMake(320, 600);
-    [super viewDidLoad];
-}
-
 - (IBAction)resetPassword:(id)sender
 {
     [accountService resetPassword:[[UIDevice currentDevice] uniqueIdentifier] username:username.text email:email.text delegate:self didFinish:@selector(didResetPassword:) didFail:@selector(didFail:)];
@@ -45,36 +39,16 @@
     }
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    myScrollView.frame = CGRectMake(0, 0, 320, 190);   
-    myScrollView.contentSize = CGSizeMake(320, 300);
-    logo.frame = CGRectMake(0, 7, 320, 85);
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [username resignFirstResponder];
+    [email resignFirstResponder];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if( textField == username )
-    {
-        [email becomeFirstResponder];
-        [myScrollView scrollRectToVisible:button.frame animated:YES];
-        return NO;
-    }
-    if( textField == email )
-    {
-        [self resetPassword:textField];
-        [textField resignFirstResponder];
-        [self adjustViewSizeBack];
-        return YES;
-    }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [username resignFirstResponder];
+    [email resignFirstResponder]; 
+    
     return YES;
-}
-
-- (void)adjustViewSizeBack
-{
-    myScrollView.frame = CGRectMake(0, 0, 320, 417);   
-    myScrollView.contentSize = CGSizeMake(320, 500);
-    logo.frame = CGRectMake(0, 7, 320, 85);
 }
 
 - (void)dealloc {
@@ -82,6 +56,5 @@
     [accountService release];
     [super dealloc];
 }
-
 
 @end

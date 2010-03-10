@@ -41,8 +41,6 @@
 			B55AA5781060BB0A00ED84AE /* DepotImageViewController.m:39 */,
 			B5A5916B1065186100562A2F /* DropTableViewController.m:564 */,
 			B5A5918510651A0100562A2F /* DepotTableViewController.m:177 */,
-			B541848F109BC43100655B87 /* TransferAccountViewController.m:37 */,
-			B5418491109BC43300655B87 /* TransferAccountViewController.m:43 */,
 		);
 		codeSenseManager = B575403A0FD4EE1C004762E6 /* Code sense */;
 		executables = (
@@ -140,7 +138,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					773,
+					810,
 					60,
 					20,
 					48,
@@ -399,6 +397,33 @@
 			B5BDE88B1147A023008F0504 /* PBXTextBookmark */ = B5BDE88B1147A023008F0504 /* PBXTextBookmark */;
 			B5BDE88C1147A023008F0504 /* PBXTextBookmark */ = B5BDE88C1147A023008F0504 /* PBXTextBookmark */;
 			B5BDE88D1147A023008F0504 /* PBXTextBookmark */ = B5BDE88D1147A023008F0504 /* PBXTextBookmark */;
+			B5BDE8901147A143008F0504 /* PBXTextBookmark */ = B5BDE8901147A143008F0504 /* PBXTextBookmark */;
+			B5BDE8A41147A2F3008F0504 /* PBXTextBookmark */ = B5BDE8A41147A2F3008F0504 /* PBXTextBookmark */;
+			B5BDE8A51147A2F3008F0504 /* PBXTextBookmark */ = B5BDE8A51147A2F3008F0504 /* PBXTextBookmark */;
+			B5BDE8A61147A2F3008F0504 /* PBXTextBookmark */ = B5BDE8A61147A2F3008F0504 /* PBXTextBookmark */;
+			B5BDE8A71147A2F3008F0504 /* PBXTextBookmark */ = B5BDE8A71147A2F3008F0504 /* PBXTextBookmark */;
+			B5BDE8A81147A2F3008F0504 /* PBXTextBookmark */ = B5BDE8A81147A2F3008F0504 /* PBXTextBookmark */;
+			B5BDE8AA1147A31C008F0504 /* PBXTextBookmark */ = B5BDE8AA1147A31C008F0504 /* PBXTextBookmark */;
+			B5BDE8AE1147A34C008F0504 /* PBXTextBookmark */ = B5BDE8AE1147A34C008F0504 /* PBXTextBookmark */;
+			B5BDE8B01147A373008F0504 /* PBXTextBookmark */ = B5BDE8B01147A373008F0504 /* PBXTextBookmark */;
+			B5BDE8B31147A3E3008F0504 /* PBXTextBookmark */ = B5BDE8B31147A3E3008F0504 /* PBXTextBookmark */;
+			B5BDE8B41147A3E3008F0504 /* PBXTextBookmark */ = B5BDE8B41147A3E3008F0504 /* PBXTextBookmark */;
+			B5BDE8B51147A3E3008F0504 /* PBXTextBookmark */ = B5BDE8B51147A3E3008F0504 /* PBXTextBookmark */;
+			B5BDE8B61147A3E3008F0504 /* PBXTextBookmark */ = B5BDE8B61147A3E3008F0504 /* PBXTextBookmark */;
+			B5BDE8B71147A3E3008F0504 /* PBXTextBookmark */ = B5BDE8B71147A3E3008F0504 /* PBXTextBookmark */;
+			B5BDE8BC1147A407008F0504 /* PBXTextBookmark */ = B5BDE8BC1147A407008F0504 /* PBXTextBookmark */;
+			B5BDE8BD1147A407008F0504 /* PBXTextBookmark */ = B5BDE8BD1147A407008F0504 /* PBXTextBookmark */;
+			B5BDE8C01147A423008F0504 /* PBXTextBookmark */ = B5BDE8C01147A423008F0504 /* PBXTextBookmark */;
+			B5BDE8D01147A4C7008F0504 /* PBXTextBookmark */ = B5BDE8D01147A4C7008F0504 /* PBXTextBookmark */;
+			B5BDE8D11147A4C7008F0504 /* PBXTextBookmark */ = B5BDE8D11147A4C7008F0504 /* PBXTextBookmark */;
+			B5BDE8D21147A4C7008F0504 /* PBXTextBookmark */ = B5BDE8D21147A4C7008F0504 /* PBXTextBookmark */;
+			B5BDE8D61147A52D008F0504 /* PBXTextBookmark */ = B5BDE8D61147A52D008F0504 /* PBXTextBookmark */;
+			B5BDE8D71147A52D008F0504 /* PBXTextBookmark */ = B5BDE8D71147A52D008F0504 /* PBXTextBookmark */;
+			B5BDE8D81147A52D008F0504 /* PBXTextBookmark */ = B5BDE8D81147A52D008F0504 /* PBXTextBookmark */;
+			B5BDE8D91147A52D008F0504 /* PBXTextBookmark */ = B5BDE8D91147A52D008F0504 /* PBXTextBookmark */;
+			B5BDE8E01147A5A0008F0504 /* PBXTextBookmark */ = B5BDE8E01147A5A0008F0504 /* PBXTextBookmark */;
+			B5BDE8E11147A5A0008F0504 /* PBXTextBookmark */ = B5BDE8E11147A5A0008F0504 /* PBXTextBookmark */;
+			B5BDE8E21147A5A0008F0504 /* PBXTextBookmark */ = B5BDE8E21147A5A0008F0504 /* PBXTextBookmark */;
 			B5C0176010F0654900FD436D = B5C0176010F0654900FD436D /* PBXTextBookmark */;
 			B5C0193310F0B89600FD436D = B5C0193310F0B89600FD436D /* PBXTextBookmark */;
 			B5C0193510F0B89600FD436D = B5C0193510F0B89600FD436D /* PBXTextBookmark */;
@@ -567,7 +592,7 @@
 		fRef = B595DFF710194BDC004A8055 /* PasswordResetViewController.h */;
 		name = "PasswordResetViewController.h: 25";
 		rLen = 0;
-		rLoc = 564;
+		rLoc = 514;
 		rType = 0;
 		vrLen = 589;
 		vrLoc = 0;
@@ -1063,40 +1088,6 @@
 		vrLen = 1117;
 		vrLoc = 2633;
 	};
-	B541848F109BC43100655B87 /* TransferAccountViewController.m:37 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = B595F3E610252D4D004A8055 /* TransferAccountViewController.m */;
-		functionName = "-textFieldDidBeginEditing:";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 37;
-		modificationTime = 284212735.44864;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
-	B5418491109BC43300655B87 /* TransferAccountViewController.m:43 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = B595F3E610252D4D004A8055 /* TransferAccountViewController.m */;
-		functionName = "-textFieldShouldReturn:";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 43;
-		modificationTime = 284212735.448613;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
 	B54184D3109C30B900655B87 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = B595F3E510252D4D004A8055 /* TransferAccountViewController.h */;
@@ -1112,7 +1103,7 @@
 		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
 		name = "SignInViewController.m: 23";
 		rLen = 19;
-		rLoc = 436;
+		rLoc = 453;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 258;
@@ -1937,9 +1928,9 @@
 	};
 	B57541810FD4F0D3004762E6 /* NewAccountViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1796, 3192}}";
-			sepNavSelRange = "{937, 0}";
-			sepNavVisRange = "{2633, 1117}";
+			sepNavIntBoundsRect = "{{0, 0}, {2019, 3313}}";
+			sepNavSelRange = "{4114, 0}";
+			sepNavVisRange = "{3312, 1396}";
 			sepNavWindowFrame = "{{15, 76}, {1039, 952}}";
 		};
 	};
@@ -1969,15 +1960,15 @@
 	B57541880FD4F0D3004762E6 /* SignInViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1028, 867}}";
-			sepNavSelRange = "{233, 0}";
-			sepNavVisRange = "{0, 772}";
+			sepNavSelRange = "{430, 0}";
+			sepNavVisRange = "{0, 731}";
 		};
 	};
 	B57541890FD4F0D3004762E6 /* SignInViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {935, 2793}}";
-			sepNavSelRange = "{180, 0}";
-			sepNavVisRange = "{85, 235}";
+			sepNavIntBoundsRect = "{{0, 0}, {1560, 2793}}";
+			sepNavSelRange = "{504, 0}";
+			sepNavVisRange = "{3, 1090}";
 			sepNavWindowFrame = "{{15, 79}, {1039, 949}}";
 		};
 	};
@@ -2094,7 +2085,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1281, 10740}}";
 			sepNavSelRange = "{17851, 0}";
-			sepNavVisRange = "{17010, 1020}";
+			sepNavVisRange = "{17010, 1014}";
 			sepNavWindowFrame = "{{15, 86}, {1039, 942}}";
 		};
 	};
@@ -2163,7 +2154,7 @@
 		fRef = B595DFF810194BDC004A8055 /* PasswordResetViewController.m */;
 		name = "PasswordResetViewController.m: 30";
 		rLen = 10;
-		rLoc = 604;
+		rLoc = 497;
 		rType = 0;
 		vrLen = 1463;
 		vrLoc = 0;
@@ -2719,16 +2710,16 @@
 	};
 	B595DFF710194BDC004A8055 /* PasswordResetViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {948, 725}}";
-			sepNavSelRange = "{564, 0}";
-			sepNavVisRange = "{0, 589}";
+			sepNavIntBoundsRect = "{{0, 0}, {1028, 890}}";
+			sepNavSelRange = "{514, 0}";
+			sepNavVisRange = "{0, 520}";
 		};
 	};
 	B595DFF810194BDC004A8055 /* PasswordResetViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1781, 1296}}";
-			sepNavSelRange = "{604, 10}";
-			sepNavVisRange = "{0, 1463}";
+			sepNavIntBoundsRect = "{{0, 0}, {2532, 1213}}";
+			sepNavSelRange = "{1780, 0}";
+			sepNavVisRange = "{373, 1413}";
 		};
 	};
 	B595E2FC101C2CB4004A8055 /* JTPayoutUtility.h */ = {
@@ -3073,9 +3064,9 @@
 	};
 	B595F1A21024302E004A8055 /* AccountSettingsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1317, 2032}}";
-			sepNavSelRange = "{3970, 0}";
-			sepNavVisRange = "{2642, 1364}";
+			sepNavIntBoundsRect = "{{0, 0}, {1884, 2393}}";
+			sepNavSelRange = "{2968, 0}";
+			sepNavVisRange = "{2001, 1625}";
 		};
 	};
 	B595F24E102443AB004A8055 /* GenericWebViewController.h */ = {
@@ -3167,9 +3158,9 @@
 	};
 	B595F3E610252D4D004A8055 /* TransferAccountViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {991, 2375}}";
-			sepNavSelRange = "{744, 0}";
-			sepNavVisRange = "{505, 820}";
+			sepNavIntBoundsRect = "{{0, 0}, {2280, 1813}}";
+			sepNavSelRange = "{1111, 0}";
+			sepNavVisRange = "{527, 1591}";
 			sepNavWindowFrame = "{{15, 76}, {1039, 952}}";
 		};
 	};
@@ -4321,7 +4312,7 @@
 		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
 		name = "SignInViewController.m: 23";
 		rLen = 19;
-		rLoc = 436;
+		rLoc = 453;
 		rType = 0;
 		vrLen = 1096;
 		vrLoc = 0;
@@ -4345,6 +4336,276 @@
 		rType = 0;
 		vrLen = 772;
 		vrLoc = 0;
+	};
+	B5BDE8901147A143008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541880FD4F0D3004762E6 /* SignInViewController.h */;
+		name = "SignInViewController.h: 11";
+		rLen = 0;
+		rLoc = 233;
+		rType = 0;
+		vrLen = 772;
+		vrLoc = 0;
+	};
+	B5BDE8A41147A2F3008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541880FD4F0D3004762E6 /* SignInViewController.h */;
+		name = "SignInViewController.h: 11";
+		rLen = 0;
+		rLoc = 233;
+		rType = 0;
+		vrLen = 772;
+		vrLoc = 0;
+	};
+	B5BDE8A51147A2F3008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541810FD4F0D3004762E6 /* NewAccountViewController.m */;
+		name = "NewAccountViewController.m: 127";
+		rLen = 0;
+		rLoc = 4114;
+		rType = 0;
+		vrLen = 1397;
+		vrLoc = 3311;
+	};
+	B5BDE8A61147A2F3008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B595DFF810194BDC004A8055 /* PasswordResetViewController.m */;
+		name = "PasswordResetViewController.m: 57";
+		rLen = 0;
+		rLoc = 1488;
+		rType = 0;
+		vrLen = 1632;
+		vrLoc = 544;
+	};
+	B5BDE8A71147A2F3008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
+		name = "SignInViewController.m: 48";
+		rLen = 142;
+		rLoc = 1096;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 546;
+	};
+	B5BDE8A81147A2F3008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
+		name = "SignInViewController.m: 69";
+		rLen = 8;
+		rLoc = 1726;
+		rType = 0;
+		vrLen = 1875;
+		vrLoc = 1548;
+	};
+	B5BDE8AA1147A31C008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
+		name = "SignInViewController.m: 69";
+		rLen = 8;
+		rLoc = 1726;
+		rType = 0;
+		vrLen = 1875;
+		vrLoc = 1548;
+	};
+	B5BDE8AE1147A34C008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
+		name = "SignInViewController.m: 69";
+		rLen = 8;
+		rLoc = 1726;
+		rType = 0;
+		vrLen = 1875;
+		vrLoc = 1548;
+	};
+	B5BDE8B01147A373008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
+		name = "SignInViewController.m: 69";
+		rLen = 8;
+		rLoc = 1726;
+		rType = 0;
+		vrLen = 1875;
+		vrLoc = 1548;
+	};
+	B5BDE8B31147A3E3008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
+		name = "SignInViewController.m: 42";
+		rLen = 54;
+		rLoc = 942;
+		rType = 0;
+		vrLen = 1184;
+		vrLoc = 433;
+	};
+	B5BDE8B41147A3E3008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541810FD4F0D3004762E6 /* NewAccountViewController.m */;
+		name = "NewAccountViewController.m: 127";
+		rLen = 0;
+		rLoc = 4114;
+		rType = 0;
+		vrLen = 1396;
+		vrLoc = 3312;
+	};
+	B5BDE8B51147A3E3008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B595F1A21024302E004A8055 /* AccountSettingsViewController.m */;
+		name = "AccountSettingsViewController.m: 92";
+		rLen = 0;
+		rLoc = 2968;
+		rType = 0;
+		vrLen = 1625;
+		vrLoc = 2001;
+	};
+	B5BDE8B61147A3E3008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B595F3E610252D4D004A8055 /* TransferAccountViewController.m */;
+		name = "TransferAccountViewController.m: 40";
+		rLen = 0;
+		rLoc = 744;
+		rType = 0;
+		vrLen = 1257;
+		vrLoc = 362;
+	};
+	B5BDE8B71147A3E3008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B595F3E610252D4D004A8055 /* TransferAccountViewController.m */;
+		name = "TransferAccountViewController.m: 48";
+		rLen = 0;
+		rLoc = 933;
+		rType = 0;
+		vrLen = 1669;
+		vrLoc = 527;
+	};
+	B5BDE8BC1147A407008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B595F3E610252D4D004A8055 /* TransferAccountViewController.m */;
+		name = "TransferAccountViewController.m: 51";
+		rLen = 0;
+		rLoc = 1111;
+		rType = 0;
+		vrLen = 1591;
+		vrLoc = 527;
+	};
+	B5BDE8BD1147A407008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B595DFF810194BDC004A8055 /* PasswordResetViewController.m */;
+		name = "PasswordResetViewController.m: 57";
+		rLen = 0;
+		rLoc = 1488;
+		rType = 0;
+		vrLen = 1449;
+		vrLoc = 745;
+	};
+	B5BDE8C01147A423008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B595DFF810194BDC004A8055 /* PasswordResetViewController.m */;
+		name = "PasswordResetViewController.m: 50";
+		rLen = 0;
+		rLoc = 1372;
+		rType = 0;
+		vrLen = 1387;
+		vrLoc = 747;
+	};
+	B5BDE8D01147A4C7008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B595DFF710194BDC004A8055 /* PasswordResetViewController.h */;
+		name = "PasswordResetViewController.h: 23";
+		rLen = 0;
+		rLoc = 514;
+		rType = 0;
+		vrLen = 520;
+		vrLoc = 0;
+	};
+	B5BDE8D11147A4C7008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B595DFF810194BDC004A8055 /* PasswordResetViewController.m */;
+		name = "PasswordResetViewController.m: 61";
+		rLen = 0;
+		rLoc = 1781;
+		rType = 0;
+		vrLen = 1414;
+		vrLoc = 373;
+	};
+	B5BDE8D21147A4C7008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B595DFF810194BDC004A8055 /* PasswordResetViewController.m */;
+		name = "PasswordResetViewController.m: 59";
+		rLen = 0;
+		rLoc = 1780;
+		rType = 0;
+		vrLen = 1413;
+		vrLoc = 373;
+	};
+	B5BDE8D61147A52D008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B595DFF810194BDC004A8055 /* PasswordResetViewController.m */;
+		name = "PasswordResetViewController.m: 59";
+		rLen = 0;
+		rLoc = 1780;
+		rType = 0;
+		vrLen = 1413;
+		vrLoc = 373;
+	};
+	B5BDE8D71147A52D008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541880FD4F0D3004762E6 /* SignInViewController.h */;
+		name = "SignInViewController.h: 11";
+		rLen = 0;
+		rLoc = 233;
+		rType = 0;
+		vrLen = 772;
+		vrLoc = 0;
+	};
+	B5BDE8D81147A52D008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
+		name = "SignInViewController.m: 47";
+		rLen = 0;
+		rLoc = 1095;
+		rType = 0;
+		vrLen = 1168;
+		vrLoc = 433;
+	};
+	B5BDE8D91147A52D008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
+		name = "SignInViewController.m: 19";
+		rLen = 0;
+		rLoc = 432;
+		rType = 0;
+		vrLen = 1093;
+		vrLoc = 0;
+	};
+	B5BDE8E01147A5A0008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541880FD4F0D3004762E6 /* SignInViewController.h */;
+		name = "SignInViewController.h: 20";
+		rLen = 0;
+		rLoc = 430;
+		rType = 0;
+		vrLen = 731;
+		vrLoc = 0;
+	};
+	B5BDE8E11147A5A0008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
+		name = "SignInViewController.m: 25";
+		rLen = 0;
+		rLoc = 504;
+		rType = 0;
+		vrLen = 1077;
+		vrLoc = 0;
+	};
+	B5BDE8E21147A5A0008F0504 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541890FD4F0D3004762E6 /* SignInViewController.m */;
+		name = "SignInViewController.m: 25";
+		rLen = 0;
+		rLoc = 504;
+		rType = 0;
+		vrLen = 1090;
+		vrLoc = 3;
 	};
 	B5C0176010F0654900FD436D /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

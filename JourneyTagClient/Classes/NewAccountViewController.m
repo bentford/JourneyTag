@@ -113,25 +113,18 @@
     [alertView release];    
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if( textField == username )
-    {
-        [password becomeFirstResponder];
-        return NO;
-    }
-    if( textField == password )
-    {
-        [email becomeFirstResponder];
-        return NO;
-    }
-
-    if( textField == email )
-    {
-        [self createAccount:textField];
-        return YES;    
-    }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [username resignFirstResponder];
+    [password resignFirstResponder];
+    [email resignFirstResponder];
+    
     return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [username resignFirstResponder];
+    [password resignFirstResponder];
+    [email resignFirstResponder];
 }
 
 - (void)trimAllLoginText

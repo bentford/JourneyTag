@@ -38,33 +38,17 @@
     logo.frame = CGRectMake(0, 20, 320, 85);
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if( textField == username )
-    {
-        [password becomeFirstResponder];
-        [myScrollView scrollRectToVisible:password.frame animated:YES];
-        return NO;
-    } else if( textField == password )
-    {
-        [email becomeFirstResponder];
-        [myScrollView scrollRectToVisible:email.frame animated:YES];
-        return NO;
-    } else if( textField == email )
-    {
-        [transferCode becomeFirstResponder];
-        [myScrollView scrollRectToVisible:transferCode.frame animated:YES];
-        return NO;
-    } else if ( textField == transferCode )
-    {
-        myScrollView.frame = CGRectMake(0, 0, 320, 453);    
-        [transferCode resignFirstResponder];
-        logo.frame = CGRectMake(0, 20, 320, 85);
-        [myScrollView scrollRectToVisible:logo.frame animated:YES];
-
-        return YES;
-    }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [username resignFirstResponder];
+    [email resignFirstResponder];
+    [transferCode resignFirstResponder];
     return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [username resignFirstResponder];
+    [email resignFirstResponder];
+    [transferCode resignFirstResponder];
 }
 
 - (IBAction) transferAccountPressed:(id) sender

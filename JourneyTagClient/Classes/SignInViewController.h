@@ -18,7 +18,6 @@
     
     JTAccountService *accountService;
     
-    IBOutlet UIScrollView *myScrollView;
     
     BOOL signingIn;
 }

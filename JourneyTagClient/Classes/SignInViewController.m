@@ -14,15 +14,15 @@
 @implementation SignInViewController
 - (id)init
 {
-    self = [super init];
-    accountService = [[JTAccountService alloc] init];    
+    if( self = [super init] ) {
+        accountService = [[JTAccountService alloc] init];    
+    }
     return self;
 }
 
 - (void)viewDidLoad 
 {
     self.title = @"Sign In";
-    myScrollView.contentSize = CGSizeMake(320, 600);
     
     UIBarButtonItem *newAccountButton = [[UIBarButtonItem alloc] initWithTitle:@"New Account" style:UIBarButtonItemStyleBordered target:self action:@selector(newAccount:)];
     self.navigationItem.rightBarButtonItem = newAccountButton;
@@ -39,24 +39,16 @@
     [super viewDidUnload];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{    
-    //deprecated
-    //need to hide keyboard
-    if( textField == username )
-    {
-        [password becomeFirstResponder];
-        [myScrollView scrollRectToVisible:password.frame animated:YES];
-        return NO;
-    }
-    if( textField == password )
-    {
-        [self signIn:textField];
-        return NO;
-    }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {    
+    [username resignFirstResponder];
+    [password resignFirstResponder];
     return YES;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [username resignFirstResponder];
+    [password resignFirstResponder];
+}
 #pragma mark Actions
 
 - (IBAction) forgotPassword:(id)sender

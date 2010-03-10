@@ -271,14 +271,18 @@
 								<string>B57541C70FD4F11B004762E6</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>B57541240FD4F00D004762E6</string>
+								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>B5BDE8A21147A2F3008F0504</string>
+								<string>B5BDE8A31147A2F3008F0504</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>11</integer>
 									<integer>5</integer>
 									<integer>2</integer>
 									<integer>1</integer>
@@ -286,7 +290,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {320, 1218}}</string>
+							<string>{{0, 72}, {320, 1218}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,14 +320,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SignInViewController.h</string>
+								<string>SignInViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SignInViewController.h</string>
+										<string>SignInViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5BDE88D1147A023008F0504</string>
+										<string>B5BDE8E21147A5A0008F0504</string>
 										<key>history</key>
 										<array>
 											<string>B57542200FD4FBBD004762E6</string>
@@ -397,7 +399,6 @@
 											<string>B58DC0C71047C91100D2C164</string>
 											<string>B58DC1481047D86900D2C164</string>
 											<string>B58DC1F61047E3FA00D2C164</string>
-											<string>B508A88810480854005E9177</string>
 											<string>B508A9321048C4B9005E9177</string>
 											<string>B508AA75104915F9005E9177</string>
 											<string>B5471376104A4B370025059A</string>
@@ -436,10 +437,8 @@
 											<string>B5776B291058EA0400DA87A3</string>
 											<string>B5776B2A1058EA0400DA87A3</string>
 											<string>B5776B2C1058EA0400DA87A3</string>
-											<string>B5776B831058EF9600DA87A3</string>
 											<string>B5776B841058EF9600DA87A3</string>
 											<string>B5776B861058EF9600DA87A3</string>
-											<string>B5776B871058EF9600DA87A3</string>
 											<string>B5776CC51059F89F00DA87A3</string>
 											<string>B5776D8B105AF93A00DA87A3</string>
 											<string>B5776E25105B332700DA87A3</string>
@@ -521,9 +520,7 @@
 											<string>B5B18EF7109550D900ACA776</string>
 											<string>B5417B461098597200655B87</string>
 											<string>B5417D5F1099A7A100655B87</string>
-											<string>B541848A109BC41900655B87</string>
 											<string>B54184D3109C30B900655B87</string>
-											<string>B57E6318109DD0D2005F55A0</string>
 											<string>B541927B10B0A6A300C29D15</string>
 											<string>B57CAC6B10D047AE00A6FC2B</string>
 											<string>B5D0DD5E10D4640A00268591</string>
@@ -550,8 +547,13 @@
 											<string>B5BDE8881147A023008F0504</string>
 											<string>B5BDE8891147A023008F0504</string>
 											<string>B5BDE88A1147A023008F0504</string>
-											<string>B5BDE88B1147A023008F0504</string>
-											<string>B5BDE88C1147A023008F0504</string>
+											<string>B5BDE8B41147A3E3008F0504</string>
+											<string>B5BDE8B51147A3E3008F0504</string>
+											<string>B5BDE8BC1147A407008F0504</string>
+											<string>B5BDE8D01147A4C7008F0504</string>
+											<string>B5BDE8D61147A52D008F0504</string>
+											<string>B5BDE8E01147A5A0008F0504</string>
+											<string>B5BDE8E11147A5A0008F0504</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -777,8 +779,8 @@
 		<string>B5BDE7C511478975008F0504</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>B57540CC0FD4EED4004762E6</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>B57540CC0FD4EED4004762E6</string>
 		<string>/Users/Ben/Devel/JourneyTag/JourneyTagClient/JourneyTag.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -798,14 +800,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SignInViewController.m</string>
+								<string>PasswordResetViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -822,6 +822,8 @@
 							<string>206pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -872,7 +874,7 @@
 			<key>WindowToolGUID</key>
 			<string>B57540CC0FD4EED4004762E6</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

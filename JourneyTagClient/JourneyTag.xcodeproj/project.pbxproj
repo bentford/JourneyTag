@@ -350,7 +350,7 @@
 		B595DE441018E22E004A8055 /* ActivityHelpTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityHelpTableViewController.m; sourceTree = "<group>"; };
 		B595DFF710194BDC004A8055 /* PasswordResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordResetViewController.h; sourceTree = "<group>"; };
 		B595DFF810194BDC004A8055 /* PasswordResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordResetViewController.m; sourceTree = "<group>"; };
-		B595DFF910194BDC004A8055 /* PasswordResetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PasswordResetViewController.xib; path = Classes/PasswordResetViewController.xib; sourceTree = "<group>"; };
+		B595DFF910194BDC004A8055 /* PasswordResetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordResetViewController.xib; sourceTree = "<group>"; };
 		B595E1C0101A7255004A8055 /* FlaggedPhoto3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FlaggedPhoto3.png; sourceTree = "<group>"; };
 		B595E2FC101C2CB4004A8055 /* JTPayoutUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTPayoutUtility.h; sourceTree = "<group>"; };
 		B595E2FD101C2CB4004A8055 /* JTPayoutUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTPayoutUtility.m; sourceTree = "<group>"; };
@@ -387,16 +387,16 @@
 		B595F0841023C959004A8055 /* PointHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointHistoryTableViewController.m; sourceTree = "<group>"; };
 		B595F1A11024302E004A8055 /* AccountSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSettingsViewController.h; sourceTree = "<group>"; };
 		B595F1A21024302E004A8055 /* AccountSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSettingsViewController.m; sourceTree = "<group>"; };
-		B595F1A31024302E004A8055 /* AccountSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AccountSettingsViewController.xib; path = Classes/AccountSettingsViewController.xib; sourceTree = "<group>"; };
+		B595F1A31024302E004A8055 /* AccountSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSettingsViewController.xib; sourceTree = "<group>"; };
 		B595F24E102443AB004A8055 /* GenericWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericWebViewController.h; sourceTree = "<group>"; };
 		B595F24F102443AB004A8055 /* GenericWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericWebViewController.m; sourceTree = "<group>"; };
-		B595F250102443AB004A8055 /* GenericWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GenericWebView.xib; path = Classes/GenericWebView.xib; sourceTree = "<group>"; };
+		B595F250102443AB004A8055 /* GenericWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericWebView.xib; sourceTree = "<group>"; };
 		B595F2CF1024E68C004A8055 /* JTEmailUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTEmailUtil.h; sourceTree = "<group>"; };
 		B595F2D01024E68C004A8055 /* JTEmailUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTEmailUtil.m; sourceTree = "<group>"; };
 		B595F37910251174004A8055 /* MapDepotIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapDepotIcon2.png; sourceTree = "<group>"; };
 		B595F3E510252D4D004A8055 /* TransferAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferAccountViewController.h; sourceTree = "<group>"; };
 		B595F3E610252D4D004A8055 /* TransferAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferAccountViewController.m; sourceTree = "<group>"; };
-		B595F3E710252D4D004A8055 /* TransferAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TransferAccountViewController.xib; path = Classes/TransferAccountViewController.xib; sourceTree = "<group>"; };
+		B595F3E710252D4D004A8055 /* TransferAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransferAccountViewController.xib; sourceTree = "<group>"; };
 		B5A922CB10449B0800744C64 /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
 		B5A922CC10449B0800744C64 /* AppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettings.m; sourceTree = "<group>"; };
 		B5AA9DD2102A77C20015A22C /* PlaceMarkFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceMarkFormatter.h; sourceTree = "<group>"; };
@@ -670,12 +670,6 @@
 		B57541240FD4F00D004762E6 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				B57541250FD4F00D004762E6 /* NewAccountView.xib */,
-				B57541260FD4F00D004762E6 /* SignInView.xib */,
-				B595F3E710252D4D004A8055 /* TransferAccountViewController.xib */,
-				B595F250102443AB004A8055 /* GenericWebView.xib */,
-				B595F1A31024302E004A8055 /* AccountSettingsViewController.xib */,
-				B595DFF910194BDC004A8055 /* PasswordResetViewController.xib */,
 			);
 			name = Activity;
 			sourceTree = SOURCE_ROOT;
@@ -750,24 +744,30 @@
 			children = (
 				B57541800FD4F0D3004762E6 /* NewAccountViewController.h */,
 				B57541810FD4F0D3004762E6 /* NewAccountViewController.m */,
+				B57541250FD4F00D004762E6 /* NewAccountView.xib */,
 				B57541880FD4F0D3004762E6 /* SignInViewController.h */,
 				B57541890FD4F0D3004762E6 /* SignInViewController.m */,
+				B57541260FD4F00D004762E6 /* SignInView.xib */,
 				B57C6723105CFE7B00116B81 /* ActivityViewController.h */,
 				B57C6724105CFE7B00116B81 /* ActivityViewController.m */,
 				B595DE431018E22E004A8055 /* ActivityHelpTableViewController.h */,
 				B595DE441018E22E004A8055 /* ActivityHelpTableViewController.m */,
 				B595DFF710194BDC004A8055 /* PasswordResetViewController.h */,
 				B595DFF810194BDC004A8055 /* PasswordResetViewController.m */,
+				B595DFF910194BDC004A8055 /* PasswordResetViewController.xib */,
 				B595EB4410225651004A8055 /* ScoreBreakdownTableViewController.h */,
 				B595EB4510225651004A8055 /* ScoreBreakdownTableViewController.m */,
 				B595F0831023C959004A8055 /* PointHistoryTableViewController.h */,
 				B595F0841023C959004A8055 /* PointHistoryTableViewController.m */,
 				B595F1A11024302E004A8055 /* AccountSettingsViewController.h */,
 				B595F1A21024302E004A8055 /* AccountSettingsViewController.m */,
+				B595F1A31024302E004A8055 /* AccountSettingsViewController.xib */,
 				B595F24E102443AB004A8055 /* GenericWebViewController.h */,
 				B595F24F102443AB004A8055 /* GenericWebViewController.m */,
+				B595F250102443AB004A8055 /* GenericWebView.xib */,
 				B595F3E510252D4D004A8055 /* TransferAccountViewController.h */,
 				B595F3E610252D4D004A8055 /* TransferAccountViewController.m */,
+				B595F3E710252D4D004A8055 /* TransferAccountViewController.xib */,
 			);
 			name = Activity;
 			sourceTree = "<group>";
