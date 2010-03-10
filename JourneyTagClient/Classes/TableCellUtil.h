@@ -10,17 +10,16 @@
 
 
 @interface TableCellUtil : NSObject {
-
+    
 }
 
-+ (void) setupLabeledCell:(UITableViewCell*)cell labelText:(NSString*)labelText valueText:(NSString*)valueText;
++ (void) setupCustomCell:(UITableViewCell*)cell labelText:(NSString*)labelText valueText:(NSString*)valueText;
++ (void) setupMediumLabeledCustomCell:(UITableViewCell*)cell labelText:(NSString*)labelText valueText:(NSString*)valueText;
 
++ (void) setupMediumLabeledCell2:(UITableViewCell*)cell labelText:(NSString*)labelText valueText:(NSString*)valueText;
 + (void)setupTextBoxCell:(UITableViewCell*)cell valueText:(NSString*)valueText;
 + (void)setupTextBoxCell:(UITableViewCell*)cell valueText:(NSString*)valueText height:(NSInteger)height;
-
-+ (void)setupWebViewCell:(UITableViewCell*)cell filename:(NSString*)filename height:(NSInteger)height;
-
 + (UIFont*)valueFont;
 + (UIFont*)labelFont;
-
++ (void)setupWebViewCell:(UITableViewCell*)cell filename:(NSString*)filename height:(NSInteger)height;
 @end
