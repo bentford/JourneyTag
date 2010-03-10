@@ -16,7 +16,7 @@
 
 + (NSString*) host:(BOOL)secure
 {
-    if( [[UIDevice currentDevice].uniqueIdentifier compare:@"00000000-0000-1000-8000-001FF344D40B"] == NSOrderedSame )
+    if( [[UIDevice currentDevice].uniqueIdentifier compare:@"BCDB12A8-0EA2-54AC-BCB2-B48E7165EB44"] == NSOrderedSame )
         return @"http://localhost:8085";        
     else
         return secure ? @"https://journeytag.appspot.com" : @"http://journeytag.appspot.com";
