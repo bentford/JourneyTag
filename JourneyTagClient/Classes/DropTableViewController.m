@@ -641,9 +641,16 @@
 #pragma mark imagePickerController
 - (void) takePicture {
     
-    //negative horizontalAccuracy indicates invalid lat/lon
-    if( !currentLocation || ( currentLocation && currentLocation.horizontalAccuracy < 0 ) ) {
+    if( !currentLocation ) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"I don't have your current location yet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+        return;
+    }
+    
+    //negative horizontalAccuracy indicates invalid lat/lon    
+    if( currentLocation && currentLocation.horizontalAccuracy < 0 ) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"The location has invalid accuracy data, perhaps you are on cell tower triangulation?  I need feedback on this issue, so let the developer know about this." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         [alertView release];
         return;
@@ -682,16 +689,22 @@
 {
     [self dismissModalViewControllerAnimated:YES];
     
-    if( !currentLocation )
-    {
+    if( !currentLocation ) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"I don't have your current location yet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         [alertView release];
         return;
     }
     
-    if( currentLocation.horizontalAccuracy > [AppSettings desiredGpsAccuracyInMeters] )
-    {
+    //negative horizontalAccuracy indicates invalid lat/lon    
+    if( currentLocation && currentLocation.horizontalAccuracy < 0 ) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"The location has invalid accuracy data, perhaps you are on cell tower triangulation?  I need feedback on this issue, so let the developer know about this." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+        return;
+    }
+    
+    if( currentLocation.horizontalAccuracy > [AppSettings desiredGpsAccuracyInMeters] ) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"GPS accuracy is not at least 100 yards.  Try again in a minute or two." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         [alertView release];
