@@ -144,7 +144,6 @@
 		B595F3E810252D4D004A8055 /* TransferAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B595F3E610252D4D004A8055 /* TransferAccountViewController.m */; };
 		B595F3E910252D4D004A8055 /* TransferAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595F3E710252D4D004A8055 /* TransferAccountViewController.xib */; };
 		B5A92158104386B500744C64 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = B57ABBC4104342F4001731E8 /* Entitlements.plist */; };
-		B5A9216C10438B1000744C64 /* JourneyTagIcon6.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A9216B10438B1000744C64 /* JourneyTagIcon6.png */; };
 		B5A922CD10449B0800744C64 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A922CC10449B0800744C64 /* AppSettings.m */; };
 		B5AA9DD4102A77C20015A22C /* PlaceMarkFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AA9DD3102A77C20015A22C /* PlaceMarkFormatter.m */; };
 		B5AA9EB0102ABC060015A22C /* points.html in Resources */ = {isa = PBXBuildFile; fileRef = B5AA9EAF102ABC060015A22C /* points.html */; };
@@ -401,7 +400,6 @@
 		B595F3E510252D4D004A8055 /* TransferAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferAccountViewController.h; sourceTree = "<group>"; };
 		B595F3E610252D4D004A8055 /* TransferAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferAccountViewController.m; sourceTree = "<group>"; };
 		B595F3E710252D4D004A8055 /* TransferAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TransferAccountViewController.xib; path = Classes/TransferAccountViewController.xib; sourceTree = "<group>"; };
-		B5A9216B10438B1000744C64 /* JourneyTagIcon6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = JourneyTagIcon6.png; path = ../../../../../Documents/Graphics/Illustrator/images/JourneyTagIcon6.png; sourceTree = SOURCE_ROOT; };
 		B5A922CB10449B0800744C64 /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
 		B5A922CC10449B0800744C64 /* AppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettings.m; sourceTree = "<group>"; };
 		B5AA9DD2102A77C20015A22C /* PlaceMarkFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceMarkFormatter.h; sourceTree = "<group>"; };
@@ -650,7 +648,6 @@
 				B542D36D1053931000B88A8E /* ExamplePhotoHorizontal.jpg */,
 				B5D54C66104BD902003EDF58 /* CircleCheckered.png */,
 				B547139F104A89F80025059A /* ExamplePhoto.jpg */,
-				B5A9216B10438B1000744C64 /* JourneyTagIcon6.png */,
 				B595F37910251174004A8055 /* MapDepotIcon2.png */,
 				B595EA6E1020FE24004A8055 /* MapTagIconGreen4.png */,
 				B595EA6F1020FE24004A8055 /* MapTagIconRed4.png */,
@@ -1083,7 +1080,6 @@
 				B57ABADF1042641B001731E8 /* PickupView.xib in Resources */,
 				B57ABAE91042650E001731E8 /* AlternateView.xib in Resources */,
 				B5A92158104386B500744C64 /* Entitlements.plist in Resources */,
-				B5A9216C10438B1000744C64 /* JourneyTagIcon6.png in Resources */,
 				B536A1D21044CD0A0050266E /* FakeImagePickerView.xib in Resources */,
 				B58DC1321047D72F00D2C164 /* JTFormListViewController.xib in Resources */,
 				B54713A0104A89F80025059A /* ExamplePhoto.jpg in Resources */,

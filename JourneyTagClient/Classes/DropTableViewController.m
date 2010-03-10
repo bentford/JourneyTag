@@ -641,6 +641,20 @@
 #pragma mark imagePickerController
 - (void) takePicture
 {
+    if( !currentLocation ) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"I don't have your current location yet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+        return;
+    }
+    
+    if( currentLocation.horizontalAccuracy > [AppSettings desiredGpsAccuracyInMeters] ) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"GPS accuracy is not at least 100 yards.  Try again in a minute or two." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+        return;        
+    }
+    
     if( [[UIDevice currentDevice].uniqueIdentifier compare:@"00000000-0000-1000-8000-001FF344D40B"] == NSOrderedSame )
     {
         FakeImagePickerViewController *fakePicker = [[FakeImagePickerViewController alloc] initWithDelegate:self selector:@selector(didPickFakeImage:)];
