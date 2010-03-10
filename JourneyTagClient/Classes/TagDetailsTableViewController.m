@@ -39,6 +39,7 @@
     locManager.desiredAccuracy = [AppSettings desiredAccuracy];
     locManager.delegate = self;
     
+    didLoadTag = NO;
     return self;
 }
 
@@ -192,8 +193,10 @@
 }
 
 #pragma mark JTService
-- (void) didLoadTag:(NSDictionary*)dict
-{   
+- (void) didLoadTag:(NSDictionary*)dict {   
+    
+    didLoadTag = YES;
+    
     NSString *statusValue = [dict objectForKey:@"status"];
     isNewTag = [statusValue caseInsensitiveCompare:@"new"] == NSOrderedSame;
     

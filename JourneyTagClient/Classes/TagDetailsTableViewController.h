@@ -64,6 +64,8 @@
     int currentAccuracy;
     
     UITableView *myTableView;
+    
+    BOOL didLoadTag;
 }
 @property (nonatomic, retain) NSString *tagKey;
 @property (nonatomic) BOOL withinPickupRange;

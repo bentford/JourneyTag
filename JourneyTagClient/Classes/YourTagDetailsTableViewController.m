@@ -44,8 +44,12 @@
     [super viewDidUnload];
 }
 
-- (void)editThisTag:(id)sender
-{
+- (void)editThisTag:(id)sender {
+    
+    //ignore this button until the tag has been loaded
+    if( didLoadTag == NO )
+        return;
+    
     NSString *name = [infoSectionValues objectAtIndex:0];
     
     NewTagViewController2 *childController = [[NewTagViewController2 alloc] initWithTagKey:tagKey name:name destinationCoordinate:destinationCoordinate accuracyInMeters:currentAccuracy delegate:self didFinish:@selector(didFinishEditing:)];
