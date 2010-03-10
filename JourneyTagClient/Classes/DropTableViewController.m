@@ -639,9 +639,10 @@
 }
 
 #pragma mark imagePickerController
-- (void) takePicture
-{
-    if( !currentLocation ) {
+- (void) takePicture {
+    
+    //negative horizontalAccuracy indicates invalid lat/lon
+    if( !currentLocation || ( currentLocation && currentLocation.horizontalAccuracy < 0 ) ) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"I don't have your current location yet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         [alertView release];
@@ -793,7 +794,7 @@
     [inventoryService get:self didFinish:@selector(didGetInventories:) didFail:@selector(didFail:)];
 }
 
-#pragma mark CLLocationManager
+#pragma mark CLLocationManagerDelegate
 - (void) locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation
 {
     [currentLocation release];
@@ -811,6 +812,8 @@
     [alertView release];
     [manager stopUpdatingLocation];
 }
+
+#pragma mark -
 
 - (void)dealloc {
     [list release];
