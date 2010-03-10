@@ -59,7 +59,6 @@
 		B575413B0FD4F00D004762E6 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57541260FD4F00D004762E6 /* SignInView.xib */; };
 		B57541410FD4F04E004762E6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57541400FD4F04E004762E6 /* MainWindow.xib */; };
 		B57541940FD4F0D3004762E6 /* ActivityButtonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B57541480FD4F0D3004762E6 /* ActivityButtonUtil.m */; };
-		B57541950FD4F0D3004762E6 /* ActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B575414A0FD4F0D3004762E6 /* ActivityTableViewController.m */; };
 		B57541960FD4F0D3004762E6 /* AlternateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B575414C0FD4F0D3004762E6 /* AlternateViewController.m */; };
 		B57541970FD4F0D3004762E6 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B575414E0FD4F0D3004762E6 /* ASIFormDataRequest.m */; };
 		B57541980FD4F0D3004762E6 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B57541500FD4F0D3004762E6 /* ASIHTTPRequest.m */; };
@@ -245,8 +244,6 @@
 		B57541400FD4F04E004762E6 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = SOURCE_ROOT; };
 		B57541470FD4F0D3004762E6 /* ActivityButtonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityButtonUtil.h; sourceTree = "<group>"; };
 		B57541480FD4F0D3004762E6 /* ActivityButtonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityButtonUtil.m; sourceTree = "<group>"; };
-		B57541490FD4F0D3004762E6 /* ActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewController.h; sourceTree = "<group>"; };
-		B575414A0FD4F0D3004762E6 /* ActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewController.m; sourceTree = "<group>"; };
 		B575414B0FD4F0D3004762E6 /* AlternateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlternateViewController.h; sourceTree = "<group>"; };
 		B575414C0FD4F0D3004762E6 /* AlternateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlternateViewController.m; sourceTree = "<group>"; };
 		B575414D0FD4F0D3004762E6 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
@@ -755,8 +752,6 @@
 				B57541810FD4F0D3004762E6 /* NewAccountViewController.m */,
 				B57541880FD4F0D3004762E6 /* SignInViewController.h */,
 				B57541890FD4F0D3004762E6 /* SignInViewController.m */,
-				B57541490FD4F0D3004762E6 /* ActivityTableViewController.h */,
-				B575414A0FD4F0D3004762E6 /* ActivityTableViewController.m */,
 				B57C6723105CFE7B00116B81 /* ActivityViewController.h */,
 				B57C6724105CFE7B00116B81 /* ActivityViewController.m */,
 				B595DE431018E22E004A8055 /* ActivityHelpTableViewController.h */,
@@ -1128,7 +1123,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* JourneyTagAppDelegate.m in Sources */,
 				B57541940FD4F0D3004762E6 /* ActivityButtonUtil.m in Sources */,
-				B57541950FD4F0D3004762E6 /* ActivityTableViewController.m in Sources */,
 				B57541960FD4F0D3004762E6 /* AlternateViewController.m in Sources */,
 				B57541970FD4F0D3004762E6 /* ASIFormDataRequest.m in Sources */,
 				B57541980FD4F0D3004762E6 /* ASIHTTPRequest.m in Sources */,
@@ -1245,8 +1239,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = JourneyTag;
-				PROVISIONING_PROFILE = "71BE2C81-7744-48F3-927C-5602321A15F1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "71BE2C81-7744-48F3-927C-5602321A15F1";
+				PROVISIONING_PROFILE = "6293389E-39DE-4F7A-8901-3CF2D832124F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6293389E-39DE-4F7A-8901-3CF2D832124F";
 				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;

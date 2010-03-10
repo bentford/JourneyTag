@@ -10,10 +10,9 @@
 
 #import <UIKit/UIKit.h>
 #import "JTAccountService.h"
-#import "ARRollerProtocol.h"
 
 @interface ActivityViewController : UIViewController
-<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate,ARRollerDelegate>
+<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 {
     UITableView *myTableView;
     JTAccountService *accountService;

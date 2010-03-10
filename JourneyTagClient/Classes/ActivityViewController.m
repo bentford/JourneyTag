@@ -16,12 +16,9 @@
 #import "AppCheckOperation.h"
 #import "JTGlobal.h"
 #import "NetworkUtil.h"
-#import "AdMobView.h"
 #import "AppSettings.h"
-#import "ARRollerView.h"
 
 #define kTableViewTag 5
-#define kAdMobViewTag 6
 @implementation ActivityViewController
 
 - (void) awakeFromNib
@@ -36,16 +33,11 @@
     self.view = view;
     [view release];
                     
-    myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, 320, 317) style:UITableViewStyleGrouped];
+    myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 367) style:UITableViewStyleGrouped];
     myTableView.tag = kTableViewTag;
     myTableView.delegate = self;
     myTableView.dataSource = self;
     [self.view addSubview:myTableView];
-    
-    ARRollerView* rollerView = [ARRollerView requestRollerViewWithDelegate:self];
-    rollerView.frame = CGRectMake(0, 0, 320, 50);
-    rollerView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-	[self.view addSubview:rollerView];
     
     self.navigationItem.leftBarButtonItem = [ActivityButtonUtil createRefreshButton:self action:@selector(refreshData)];
 }
@@ -65,10 +57,6 @@
     [myTableView removeFromSuperview];
     [myTableView release];
     myTableView = nil;
-    
-    AdMobView *adMobView = (AdMobView*)[self.view viewWithTag:kAdMobViewTag];
-    [adMobView removeFromSuperview];
-    adMobView = nil;
     
     self.view = nil;
     

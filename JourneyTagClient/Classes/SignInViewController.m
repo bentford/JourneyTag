@@ -7,7 +7,6 @@
 //
 
 #import "SignInViewController.h"
-#import "ActivityTableViewController.h"
 #import "NewAccountViewController.h"
 #import "PasswordResetViewController.h"
 #import "NetworkUtil.h"

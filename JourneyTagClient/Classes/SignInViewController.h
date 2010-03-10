@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "JTServiceHttpRequest.h"
 #import "JTAccountService.h"
-#import "ActivityTableViewController.h"
 
 @interface SignInViewController : UIViewController 
 <UITextFieldDelegate>
