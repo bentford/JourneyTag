@@ -23,6 +23,8 @@
 #define kTagView 0
 #define kDepotView 1
 
+#define kMaxAgeInSeconds 30
+
 @implementation DropTableViewController
 
 - (void)awakeFromNib
@@ -808,8 +810,13 @@
 }
 
 #pragma mark CLLocationManagerDelegate
-- (void) locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation
-{
+- (void) locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation {
+
+    //ignore location updates older than kMaxAge
+    NSTimeInterval ageInSeconds = [newLocation.timestamp timeIntervalSinceNow];
+    if( fabs(ageInSeconds) > kMaxAgeInSeconds ) 
+        return;
+        
     [currentLocation release];
     currentLocation = [newLocation retain];
     hasLocation = YES;
