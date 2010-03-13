@@ -60,6 +60,11 @@ class Start(webapp.RequestHandler):
         tPath = os.path.join(os.path.dirname(__file__),'Templates/start.html')
         self.response.out.write(template.render(tPath,{}))
 
+class News(webapp.RequestHandler):
+    def get(self):
+        tPath = os.path.join(os.path.dirname(__file__),'Templates/news.html')
+        self.response.out.write(template.render(tPath,{}))
+                
 def main():
   application = webapp.WSGIApplication([('/', MainHandler),
                                         ('/about_tags', AboutTags),
@@ -70,7 +75,8 @@ def main():
                                         ('/start', Start),
                                         ('/send', SendEmail),
                                         ('/robots.txt',Robots),
-                                        ('/sitemap.xml',Sitemap)],
+                                        ('/sitemap.xml',Sitemap),
+                                        ('/news',News)],
                                        debug=True)
   wsgiref.handlers.CGIHandler().run(application)
 
