@@ -16,8 +16,8 @@ typedef enum {
     DropSubtitleModeDestinationDistance
 } DropSubtitleMode;
 
-
-@interface DropTableViewController : UITableViewController 
+@class GpsInfoView;
+@interface DropTableViewController : UIViewController 
 <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, CLLocationManagerDelegate>{
     NSMutableArray *list;
     NSMutableArray *keyList;
@@ -59,6 +59,10 @@ typedef enum {
     UIImage *destinationImage;
     
     BOOL hasTags;
+    
+    GpsInfoView *gpsInfoView;
+    
+    UITableView *theTableView;
 }
 - (void) takePicture;
 
@@ -73,7 +77,6 @@ typedef enum {
 - (void) refreshTags:(id)sender;
 - (void) refreshDepots:(id)sender;
 
-- (void) locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation;
 
 - (void) dropTagAtDepot:(NSDictionary*)data;
 

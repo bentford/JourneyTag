@@ -19,16 +19,21 @@
 #import "FakeImagePickerViewController.h"
 #import "ImageResize.h"
 #import "LogUtil.h"
+#import "GpsInfoView.h"
 
 #define kTagView 0
 #define kDepotView 1
 
 #define kMaxAgeInSeconds 30
 
-@implementation DropTableViewController
+@interface DropTableViewController()
+@property (nonatomic,retain) UITableView *tableView;
+@end
 
-- (void)awakeFromNib
-{
+@implementation DropTableViewController
+@synthesize tableView=theTableView;
+- (void)awakeFromNib {
+   
     self.title = @"Drop";
     
     list = [[NSArray alloc] initWithObjects:@"Loading...", nil];
@@ -61,8 +66,14 @@
     [super awakeFromNib];
 }
 
-- (void)viewDidLoad 
-{
+- (void)viewDidLoad  {
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 328) style:UITableViewStylePlain];
+    [self.tableView release];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+    
     self.navigationItem.titleView = [self createSegment];
     self.navigationItem.leftBarButtonItem = [ActivityButtonUtil createRefreshButton:self action:@selector(refreshData:)];
     self.navigationItem.rightBarButtonItem = [self makeToggleButton];
@@ -72,6 +83,9 @@
     subtitleMode = [[dropSettings objectForKey:[LogUtil logKeyForString:@"detailMode"]] intValue];
     
     destinationImage =  [[UIImage imageNamed:@"CircleCheckered.png"] retain];
+    
+    gpsInfoView = [[GpsInfoView alloc] initWithFrame:CGRectMake(0, 328, 320, 44)];
+    [self.view addSubview:gpsInfoView];
     
     [super viewDidLoad];
 }
@@ -644,7 +658,7 @@
 - (void) takePicture {
     
     if( !currentLocation ) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"I don't have your current location yet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"GPS accuracy is not at least 100 yards.  Try again in a minute or two." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         [alertView release];
         return;
@@ -812,6 +826,8 @@
 #pragma mark CLLocationManagerDelegate
 - (void) locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation {
 
+    [gpsInfoView updateAccuracy:newLocation.horizontalAccuracy];
+    
     //ignore location updates older than kMaxAge
     NSTimeInterval ageInSeconds = [newLocation.timestamp timeIntervalSinceNow];
     if( fabs(ageInSeconds) > kMaxAgeInSeconds ) 
