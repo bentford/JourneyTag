@@ -886,6 +886,10 @@
     [dropSettings release];
     
     [destinationImage release];
+    
+    [gpsInfoView release];
+    self.tableView = nil;
+    
     [super dealloc];
 }
 
