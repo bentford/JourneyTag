@@ -107,6 +107,17 @@
 		B57B051E0FED885200D718B3 /* TagAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B57B051D0FED885200D718B3 /* TagAnnotationView.m */; };
 		B57C66A3105C587E00116B81 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57C66A2105C587E00116B81 /* AddressBook.framework */; };
 		B57C6725105CFE7B00116B81 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57C6724105CFE7B00116B81 /* ActivityViewController.m */; };
+		B58D12B8114B47B500DEDFA1 /* GpsInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D12B7114B47B500DEDFA1 /* GpsInfoView.m */; };
+		B58D12BA114B47E000DEDFA1 /* GpsInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58D12B9114B47E000DEDFA1 /* GpsInfoView.xib */; };
+		B58D12E7114B966700DEDFA1 /* GPSBars1.png in Resources */ = {isa = PBXBuildFile; fileRef = B58D12E0114B966700DEDFA1 /* GPSBars1.png */; };
+		B58D12E8114B966700DEDFA1 /* GPSBars2.png in Resources */ = {isa = PBXBuildFile; fileRef = B58D12E1114B966700DEDFA1 /* GPSBars2.png */; };
+		B58D12E9114B966700DEDFA1 /* GPSBars3.png in Resources */ = {isa = PBXBuildFile; fileRef = B58D12E2114B966700DEDFA1 /* GPSBars3.png */; };
+		B58D12EA114B966700DEDFA1 /* GPSBars4.png in Resources */ = {isa = PBXBuildFile; fileRef = B58D12E3114B966700DEDFA1 /* GPSBars4.png */; };
+		B58D12EB114B966700DEDFA1 /* GPSBars5.png in Resources */ = {isa = PBXBuildFile; fileRef = B58D12E4114B966700DEDFA1 /* GPSBars5.png */; };
+		B58D12EC114B966700DEDFA1 /* GPSBars6.png in Resources */ = {isa = PBXBuildFile; fileRef = B58D12E5114B966700DEDFA1 /* GPSBars6.png */; };
+		B58D12ED114B966700DEDFA1 /* GPSBarsColored.png in Resources */ = {isa = PBXBuildFile; fileRef = B58D12E6114B966700DEDFA1 /* GPSBarsColored.png */; };
+		B58D12F6114BA4FC00DEDFA1 /* InfoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B58D12F5114BA4FC00DEDFA1 /* InfoIcon.png */; };
+		B58D1482114BC03F00DEDFA1 /* InfoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D1481114BC03F00DEDFA1 /* InfoUtil.m */; };
 		B58DC1311047D72F00D2C164 /* JTFormListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B58DC12F1047D72F00D2C164 /* JTFormListViewController.m */; };
 		B58DC1321047D72F00D2C164 /* JTFormListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58DC1301047D72F00D2C164 /* JTFormListViewController.xib */; };
 		B595DE451018E22E004A8055 /* ActivityHelpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B595DE441018E22E004A8055 /* ActivityHelpTableViewController.m */; };
@@ -343,6 +354,19 @@
 		B57C66A2105C587E00116B81 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		B57C6723105CFE7B00116B81 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		B57C6724105CFE7B00116B81 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		B58D12B6114B47B500DEDFA1 /* GpsInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GpsInfoView.h; sourceTree = "<group>"; };
+		B58D12B7114B47B500DEDFA1 /* GpsInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GpsInfoView.m; sourceTree = "<group>"; };
+		B58D12B9114B47E000DEDFA1 /* GpsInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GpsInfoView.xib; sourceTree = "<group>"; };
+		B58D12E0114B966700DEDFA1 /* GPSBars1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GPSBars1.png; sourceTree = "<group>"; };
+		B58D12E1114B966700DEDFA1 /* GPSBars2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GPSBars2.png; sourceTree = "<group>"; };
+		B58D12E2114B966700DEDFA1 /* GPSBars3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GPSBars3.png; sourceTree = "<group>"; };
+		B58D12E3114B966700DEDFA1 /* GPSBars4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GPSBars4.png; sourceTree = "<group>"; };
+		B58D12E4114B966700DEDFA1 /* GPSBars5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GPSBars5.png; sourceTree = "<group>"; };
+		B58D12E5114B966700DEDFA1 /* GPSBars6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GPSBars6.png; sourceTree = "<group>"; };
+		B58D12E6114B966700DEDFA1 /* GPSBarsColored.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GPSBarsColored.png; sourceTree = "<group>"; };
+		B58D12F5114BA4FC00DEDFA1 /* InfoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InfoIcon.png; sourceTree = "<group>"; };
+		B58D1480114BC03F00DEDFA1 /* InfoUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoUtil.h; sourceTree = "<group>"; };
+		B58D1481114BC03F00DEDFA1 /* InfoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoUtil.m; sourceTree = "<group>"; };
 		B58DC12E1047D72F00D2C164 /* JTFormListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTFormListViewController.h; sourceTree = "<group>"; };
 		B58DC12F1047D72F00D2C164 /* JTFormListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTFormListViewController.m; sourceTree = "<group>"; };
 		B58DC1301047D72F00D2C164 /* JTFormListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JTFormListViewController.xib; sourceTree = "<group>"; };
@@ -601,6 +625,7 @@
 				B57542100FD4FA85004762E6 /* Tag */,
 				B57542140FD4FAD5004762E6 /* Pickup */,
 				B57542130FD4FAC4004762E6 /* Drop */,
+				B58D12B4114B479300DEDFA1 /* Views */,
 				B5130B17103BED8300E73D32 /* Misc */,
 				B575420E0FD4FA67004762E6 /* Util */,
 				B57541C70FD4F11B004762E6 /* Library */,
@@ -637,6 +662,14 @@
 		B57541170FD4F00D004762E6 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				B58D12F5114BA4FC00DEDFA1 /* InfoIcon.png */,
+				B58D12E0114B966700DEDFA1 /* GPSBars1.png */,
+				B58D12E1114B966700DEDFA1 /* GPSBars2.png */,
+				B58D12E2114B966700DEDFA1 /* GPSBars3.png */,
+				B58D12E3114B966700DEDFA1 /* GPSBars4.png */,
+				B58D12E4114B966700DEDFA1 /* GPSBars5.png */,
+				B58D12E5114B966700DEDFA1 /* GPSBars6.png */,
+				B58D12E6114B966700DEDFA1 /* GPSBarsColored.png */,
 				B5DCA83E1067F21500EEFEC0 /* JourneyTagIcon8.png */,
 				B5DCA7C81067CFE300EEFEC0 /* AnimatedBarOrange.png */,
 				B5D3FAB8105E531D0060B838 /* JourneyTagLogo.png */,
@@ -705,6 +738,8 @@
 		B575420E0FD4FA67004762E6 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				B58D1480114BC03F00DEDFA1 /* InfoUtil.h */,
+				B58D1481114BC03F00DEDFA1 /* InfoUtil.m */,
 				B57541670FD4F0D3004762E6 /* JTImageView.h */,
 				B57541680FD4F0D3004762E6 /* JTImageView.m */,
 				B57541470FD4F0D3004762E6 /* ActivityButtonUtil.h */,
@@ -941,6 +976,16 @@
 			name = AdMob;
 			sourceTree = "<group>";
 		};
+		B58D12B4114B479300DEDFA1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B58D12B6114B47B500DEDFA1 /* GpsInfoView.h */,
+				B58D12B7114B47B500DEDFA1 /* GpsInfoView.m */,
+				B58D12B9114B47E000DEDFA1 /* GpsInfoView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		B58DC1331047D73300D2C164 /* JTForm */ = {
 			isa = PBXGroup;
 			children = (
@@ -1087,6 +1132,15 @@
 				B55AA6A21061289100ED84AE /* iTunesArtwork in Resources */,
 				B5DCA7C91067CFE300EEFEC0 /* AnimatedBarOrange.png in Resources */,
 				B5DCA83F1067F21500EEFEC0 /* JourneyTagIcon8.png in Resources */,
+				B58D12BA114B47E000DEDFA1 /* GpsInfoView.xib in Resources */,
+				B58D12E7114B966700DEDFA1 /* GPSBars1.png in Resources */,
+				B58D12E8114B966700DEDFA1 /* GPSBars2.png in Resources */,
+				B58D12E9114B966700DEDFA1 /* GPSBars3.png in Resources */,
+				B58D12EA114B966700DEDFA1 /* GPSBars4.png in Resources */,
+				B58D12EB114B966700DEDFA1 /* GPSBars5.png in Resources */,
+				B58D12EC114B966700DEDFA1 /* GPSBars6.png in Resources */,
+				B58D12ED114B966700DEDFA1 /* GPSBarsColored.png in Resources */,
+				B58D12F6114BA4FC00DEDFA1 /* InfoIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,6 +1258,8 @@
 				B5DA9FA0105884F8000AB50F /* DistanceTextUtil.m in Sources */,
 				B57C6725105CFE7B00116B81 /* ActivityViewController.m in Sources */,
 				B55AA3FB105F9B9F00ED84AE /* TouchJSON.m in Sources */,
+				B58D12B8114B47B500DEDFA1 /* GpsInfoView.m in Sources */,
+				B58D1482114BC03F00DEDFA1 /* InfoUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
