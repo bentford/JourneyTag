@@ -20,6 +20,8 @@
     
     
     BOOL signingIn;
+    
+    IBOutlet UILabel *version;
 }
 
 - (IBAction) closeKeyboard:(id)sender;

@@ -10,11 +10,12 @@
 #import "NewAccountViewController.h"
 #import "PasswordResetViewController.h"
 #import "NetworkUtil.h"
+#import "InfoUtil.h"
 
 @implementation SignInViewController
 - (id)init
 {
-    if( self = [super init] ) {
+    if( self = [super initWithNibName:@"SignInView" bundle:nil] ) {
         accountService = [[JTAccountService alloc] init];    
     }
     return self;
@@ -27,6 +28,8 @@
     UIBarButtonItem *newAccountButton = [[UIBarButtonItem alloc] initWithTitle:@"New Account" style:UIBarButtonItemStyleBordered target:self action:@selector(newAccount:)];
     self.navigationItem.rightBarButtonItem = newAccountButton;
     [newAccountButton release];
+    
+    version.text = [InfoUtil appVersion];
     
     [super viewDidLoad];
 }
