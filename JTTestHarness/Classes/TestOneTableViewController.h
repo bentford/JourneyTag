@@ -61,6 +61,6 @@
 - (void)run23:(NSDictionary*)dict;
 - (void)run24:(NSDictionary*)dict;
 - (void) run25:(NSDictionary*)dict;
-- (void) didFail:(JTServiceHttpRequest*)request;
+- (void)didFail:(NSDictionary *)info;
 - (void) updateTable:(NSString*)message;
 @end

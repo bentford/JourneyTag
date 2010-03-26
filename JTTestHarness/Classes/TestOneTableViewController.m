@@ -358,9 +358,9 @@
         [self updateTable:@"error"];
 }
 
-- (void) didFail:(JTServiceHttpRequest*)request
-{
-    NSLog(@"I FAILED YOU MASTER - %@", [request responseString]);
+- (void)didFail:(NSDictionary *)info {
+    NSLog(@"I FAILED YOU MASTER - %@", [info objectForKey:@"error"]);
+    NSLog(@"Server Output: %@", [info objectForKey:@"responseString"]);
 }
 
 - (void) updateTable:(NSString*)message
