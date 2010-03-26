@@ -12,6 +12,8 @@ import jt.service.account
 import jt.auth
 import jt.service.hash
 import jt.service.tagseed
+import jt.service.email
+import jt.service.transfer
 
 import logging
 import datetime
@@ -116,7 +118,7 @@ class RequestTransferCode(webapp.RequestHandler):
 
         account = db.get(jt.auth.accountKey(self))
         
-        token = jtTransferService.generateToken(5)
+        token = jt.service.transfer.generateToken(5)
         code = jt.model.TransferCode(parent=account,account=account, uuid=account.uuid, token=token, dateCreated=datetime.datetime.utcnow())
         code.put()
 
@@ -133,12 +135,12 @@ class TransferAccount(webapp.RequestHandler):
             self.response.out.write('{"response":"AccessDenied"}')
             return
 
-        if not jtTransferService.canTransferToUuid(account, self.request.get('uuid')):
+        if not jt.service.transfer.canTransferToUuid(account, self.request.get('uuid')):
             self.response.out.write('{"response":"PreviousDevice"}')
             return
 
-        if jtTransferService.validToken(account, self.request.get('token')):
-            db.run_in_transaction(jtTransferService.transfer, account,self.request.get('uuid'), self.request.get('token'))
+        if jt.service.transfer.validToken(account, self.request.get('token')):
+            db.run_in_transaction(jt.service.transfer.transfer, account,self.request.get('uuid'), self.request.get('token'))
             self.response.out.write('{"response":"success"}')
         else:
             self.response.out.write('{"response":"failed"}')

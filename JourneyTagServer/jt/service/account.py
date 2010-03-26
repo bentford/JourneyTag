@@ -5,6 +5,8 @@ import jt.gamesettings
 import jt.auth
 import jt.service.depot
 
+from jt.password import jtPassword
+
 import datetime
 import logging
 
@@ -48,6 +50,11 @@ def usernameTaken(username):
 
 
 def create(uuid, username, password, email, tagSeed=None):
+    """ 
+    -create new account
+    -give user depots based on jt.gamesettings.startingDepotCount
+    -if a tagSeed exists, create a tag for a user
+    """
     token = jt.auth.generateLoginToken()
     acc = jt.model.Account(uuid=uuid,
                         username=username,

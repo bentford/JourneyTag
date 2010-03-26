@@ -9,7 +9,9 @@ import jt.model
 import jt.modelhelper
 import jt.auth
 
+from jt.password import jtPassword
 from jt.location import jtLocation
+
 import jt.gamesettings
 
 import logging
