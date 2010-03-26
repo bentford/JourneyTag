@@ -6,34 +6,34 @@ from google.appengine.ext import db
 
 import jt.model
 import jt.modelhelper
-from jt.auth import jtAuth
-from jt.service import *
+import jt.auth
+
 
 import logging
 class GetAll(webapp.RequestHandler):
   def get(self):
-      if not jtAuth.auth(self):
-          jtAuth.denied(self)
+      if not jt.auth.auth(self):
+          jt.auth.denied(self)
           return
-      query = db.GqlQuery("SELECT * FROM Inventory WHERE account = :1 ORDER BY dateCreated DESC",jtAuth.accountKey(self))
+      query = db.GqlQuery("SELECT * FROM Inventory WHERE account = :1 ORDER BY dateCreated DESC",jt.auth.accountKey(self))
       self.response.out.write(jt.modelhelper.JsonQueryUtil.toArray('inventories',query))
      
 
 class Create(webapp.RequestHandler):
   def post(self):
-      if not jtAuth.auth(self):
-          jtAuth.denied(self)
+      if not jt.auth.auth(self):
+          jt.auth.denied(self)
           return
-      key = db.run_in_transaction(jtInventoryService.create,jtAuth.accountKey(self), db.Key(self.request.get('tagKey')) )
+      key = db.run_in_transaction(jt.service.inventory.create,jt.auth.accountKey(self), db.Key(self.request.get('tagKey')) )
       self.response.out.write('{"inventoryKey":"%s"}' % (key) )
                                             
 
 class Delete(webapp.RequestHandler):
   def post(self):
-      if not jtAuth.auth(self):
-            jtAuth.denied(self)
+      if not jt.auth.auth(self):
+            jt.auth.denied(self)
             return
-      key = db.run_in_transaction(jtInventoryService.delete, db.Key(self.request.get('tagKey')), jtAuth.accountKey(self) )
+      key = db.run_in_transaction(jt.service.inventory.delete, db.Key(self.request.get('tagKey')), jt.auth.accountKey(self) )
       self.response.out.write('{"inventoryKey":"%s"}' % (key) )
 
     

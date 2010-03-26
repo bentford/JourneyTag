@@ -7,8 +7,8 @@ from google.appengine.ext import db
 
 import jt.model
 import jt.modelhelper
-from jt.auth import jtAuth
-from jt.service import *
+import jt.auth
+
 from jt.location import jtLocation
 import jt.gamesettings
 
@@ -27,9 +27,9 @@ class CreateAccounts(webapp.RequestHandler):
         for index in range(count):
             u = uuid.uuid4().hex
             username = 'user%s_%d' % (passGen.generatePassword(3), index) #using random username
-            hashedPassword = jtHashService.hashPassword(passGen.generatePassword(5))
+            hashedPassword = jt.service.hash.hashPassword(passGen.generatePassword(5))
             email = 'blargg27@gmail.com'
-            jtAccountService.create(u, username, hashedPassword, email)
+            jt.service.account.create(u, username, hashedPassword, email)
             self.response.out.write('created account: %s <br />' % username)
         self.response.out.write('DONE')
 

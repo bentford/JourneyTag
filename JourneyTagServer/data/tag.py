@@ -6,46 +6,47 @@ from google.appengine.ext import db
 
 import jt.model
 import jt.modelhelper
-from jt.auth import jtAuth
-from jt.service import *
+import jt.auth
 from jt.location import jtLocation
 import jt.wordfilter
 import jt.gamesettings
+import jt.service.tag
+import jt.service.carryscoreindex
 
 import logging
 import time
 
 class DeleteTag(webapp.RequestHandler):
   def post(self):
-      if not jtAuth.auth(self):
-          jtAuth.denied(self)
+      if not jt.auth.auth(self):
+          jt.auth.denied(self)
           return
 
-      tagKey = db.GqlQuery("SELECT __key__ FROM Tag WHERE __key__ = :1 AND account = :2",db.Key(self.request.get('tagKey')), jtAuth.accountKey(self) ).get()
+      tagKey = db.GqlQuery("SELECT __key__ FROM Tag WHERE __key__ = :1 AND account = :2",db.Key(self.request.get('tagKey')), jt.auth.accountKey(self) ).get()
       if tagKey is None:
           response = '{"response":"Denied"}'
       else:
-          db.run_in_transaction(jtTagService.delete, tagKey)
+          db.run_in_transaction(jt.service.tag.delete, tagKey)
           response = '{"tagKey":"%s"}' % tagKey
       
       self.response.out.write(response)
 
 class GetAllForAccount(webapp.RequestHandler):
   def get(self):
-      if not jtAuth.auth(self):
-          jtAuth.denied(self)
+      if not jt.auth.auth(self):
+          jt.auth.denied(self)
           return
-      query = db.GqlQuery("SELECT * FROM Tag WHERE account = :1 AND deleted = False ORDER BY dateCreated DESC",jtAuth.accountKey(self))
+      query = db.GqlQuery("SELECT * FROM Tag WHERE account = :1 AND deleted = False ORDER BY dateCreated DESC",jt.auth.accountKey(self))
       self.response.out.write(jt.modelhelper.JsonQueryUtil.toArray('tags',query))
 
 
 class Create(webapp.RequestHandler):
   def post(self):
-      if not jtAuth.auth(self):
-          jtAuth.denied(self)
+      if not jt.auth.auth(self):
+          jt.auth.denied(self)
           return
-    
-      tagCount = db.GqlQuery("SELECT __key__ FROM Tag WHERE account = :1 AND hasReachedDestination = False AND deleted = False",jtAuth.accountKey(self)).count(jt.gamesettings.activeTagLimit)
+      
+      tagCount = db.GqlQuery("SELECT __key__ FROM Tag WHERE account = :1 AND hasReachedDestination = False AND deleted = False",jt.auth.accountKey(self)).count(jt.gamesettings.activeTagLimit)
       if tagCount == jt.gamesettings.activeTagLimit:
           self.response.out.write('{"response":"LimitReached", "amount":"%s"}' % jt.gamesettings.activeTagLimit )
           return
@@ -54,20 +55,22 @@ class Create(webapp.RequestHandler):
       destCoord = db.GeoPt(lat=self.request.get('destLat'), lon=self.request.get('destLon')) 
       
       destinationAccuracy = int(self.request.get('destinationAccuracy'))
-      destinationAccuracy = jtTagService.validateDestinationAccuracy(destinationAccuracy)
+      destinationAccuracy = jt.service.tag.validateDestinationAccuracy(destinationAccuracy)
       
       name = self.request.get('name').replace('"',"'")
       
-      tagKey = db.run_in_transaction(jtTagService.create,jtAuth.accountKey(self), jt.wordfilter.filterWord(name), homeCoord, destCoord, int(destinationAccuracy) )
+      tagKey = db.run_in_transaction(jt.service.tag.create,jt.auth.accountKey(self), jt.wordfilter.filterWord(name), homeCoord, destCoord, int(destinationAccuracy) )
+
       self.response.out.write('{"tagKey":"%s"}' % tagKey )
                                             
 
 class Update(webapp.RequestHandler):
   def post(self):
-      if not jtAuth.auth(self):
-            jtAuth.denied(self)
+      if not jt.auth.auth(self):
+            jt.auth.denied(self)
             return
-      t = db.GqlQuery("SELECT * FROM Tag WHERE __key__ = :1 AND account=:2",db.Key(self.request.get('tagKey')), jtAuth.accountKey(self)).get()
+
+      t = db.GqlQuery("SELECT * FROM Tag WHERE __key__ = :1 AND account=:2",db.Key(self.request.get('tagKey')), jt.auth.accountKey(self)).get()
       
       if self.request.get('destinationAccuracy') == '':
           destinationAccuracy = jt.gamesettings.defaultDestinationAccuracy
@@ -84,18 +87,18 @@ class Update(webapp.RequestHandler):
 
 class Drop(webapp.RequestHandler):
     def post(self):
-        if not jtAuth.auth(self):
-            jtAuth.denied(self)
+        if not jt.auth.auth(self):
+            jt.auth.denied(self)
             return
 
         tagKey = db.Key(self.request.get('tagKey'))
         tag = db.get(tagKey)
         
-        (newMarkCount, newDistanceTraveled, distanceDelta) = jtTagService.distanceChangesForDirectDrop(tagKey, self.request.get('lat'), self.request.get('lon') )
-        carryScoreIndex = jtCarryScoreIndexService.incrementIndex(jtAuth.accountKey(self))
+        (newMarkCount, newDistanceTraveled, distanceDelta) = jt.service.tag.distanceChangesForDirectDrop(tagKey, self.request.get('lat'), self.request.get('lon') )
+        carryScoreIndex = jt.service.carryscoreindex.incrementIndex(jt.auth.accountKey(self))
         
-        key = db.run_in_transaction(jtTagService.drop,
-                                jtAuth.accountKey(self),
+        key = db.run_in_transaction(jt.service.tag.drop,
+                                jt.auth.accountKey(self),
                                 db.Blob(self.request.get('imageData')),
                                 tag, 
                                 self.request.get('lat'), 
@@ -108,17 +111,17 @@ class Drop(webapp.RequestHandler):
 
 class DropAndPickup(webapp.RequestHandler):
     def post(self):
-        if not jtAuth.auth(self):
-            jtAuth.denied(self)
+        if not jt.auth.auth(self):
+            jt.auth.denied(self)
             return
         tagKey = db.Key(self.request.get('tagKey'))
         tag = db.get(tagKey)
         
-        (newMarkCount, newDistanceTraveled, distanceDelta) = jtTagService.distanceChangesForDirectDrop(tagKey, self.request.get('lat'), self.request.get('lon') )
-        carryScoreIndex = jtCarryScoreIndexService.incrementIndex(jtAuth.accountKey(self))
+        (newMarkCount, newDistanceTraveled, distanceDelta) = jt.service.tag.distanceChangesForDirectDrop(tagKey, self.request.get('lat'), self.request.get('lon') )
+        carryScoreIndex = jt.service.carryscoreindex.incrementIndex(jt.auth.accountKey(self))
         
-        key = db.run_in_transaction(jtTagService.dropAndPickup,
-                                jtAuth.accountKey(self),
+        key = db.run_in_transaction(jt.service.tag.dropAndPickup,
+                                jt.auth.accountKey(self),
                                 db.Blob(self.request.get('imageData')),
                                 tag, 
                                 self.request.get('lat'), 
@@ -132,21 +135,21 @@ class DropAndPickup(webapp.RequestHandler):
 
 class DropAtDepot(webapp.RequestHandler):
     def post(self):
-        if not jtAuth.auth(self):
-            jtAuth.denied(self)
+        if not jt.auth.auth(self):
+            jt.auth.denied(self)
             return
         
         tagKey = db.Key(self.request.get('tagKey'))
         tag = db.get(tagKey)
         depotKey = db.Key(self.request.get('depotKey'))
         
-        (newMarkCount, newDistanceTraveled, distanceDelta) = jtTagService.distanceChangesForDepotDrop(tagKey, depotKey )
-        carryScoreIndex = jtCarryScoreIndexService.incrementIndex(jtAuth.accountKey(self))
+        (newMarkCount, newDistanceTraveled, distanceDelta) = jt.service.tag.distanceChangesForDepotDrop(tagKey, depotKey )
+        carryScoreIndex = jt.service.carryscoreindex.incrementIndex(jt.auth.accountKey(self))
         
         depot = db.get(depotKey)
         
-        key = db.run_in_transaction(jtTagService.dropAtDepot,
-                                    jtAuth.accountKey(self),
+        key = db.run_in_transaction(jt.service.tag.dropAtDepot,
+                                    jt.auth.accountKey(self),
                                     tag, 
                                     depotKey, 
                                     distanceDelta, 
@@ -159,16 +162,16 @@ class DropAtDepot(webapp.RequestHandler):
 
 class Pickup(webapp.RequestHandler):
     def post(self):
-        if not jtAuth.auth(self):
-            jtAuth.denied(self)
+        if not jt.auth.auth(self):
+            jt.auth.denied(self)
             return
-        key = db.run_in_transaction(jtTagService.pickup, jtAuth.accountKey(self), db.Key(self.request.get('tagKey')))
+        key = db.run_in_transaction(jt.service.tag.pickup, jt.auth.accountKey(self), db.Key(self.request.get('tagKey')))
         self.response.out.write('{"tagKey":"%s"}' % key)
 
 class GetForCoordinate(webapp.RequestHandler):
     def get(self):
-        if not jtAuth.auth(self):
-            jtAuth.denied(self)
+        if not jt.auth.auth(self):
+            jt.auth.denied(self)
             return
         viewLat = float(self.request.get('viewLat'))
         viewLon = float(self.request.get('viewLon'))
@@ -195,18 +198,18 @@ class GetForCoordinate(webapp.RequestHandler):
                            
 class GetTag(webapp.RequestHandler):
     def get(self):
-        if not jtAuth.auth(self):
-            jtAuth.denied(self)
+        if not jt.auth.auth(self):
+            jt.auth.denied(self)
             return
-        accountKey = jtAuth.accountKey(self)
+        accountKey = jt.auth.accountKey(self)
         tag = db.get(db.Key(self.request.get('tagKey')))
         tag.youOwn = accountKey == tag.account.key()
         self.response.out.write(tag.toJSON())
 
 class SetProblemCode(webapp.RequestHandler):
     def post(self):
-        if not jtAuth.auth(self):
-            jtAuth.denied(self)
+        if not jt.auth.auth(self):
+            jt.auth.denied(self)
             return
         tagKey = db.Key(self.request.get('tagKey'))
         tag = db.get(tagKey)

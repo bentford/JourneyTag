@@ -9,15 +9,15 @@ from google.appengine.api import memcache
 
 import jt.model
 import jt.modelhelper
-from jt.auth import jtAuth
-from jt.service import *
+import jt.auth
+import jt.service.photoscoreindex
 
 
 
 class GetData(webapp.RequestHandler):
   def get(self):
-      #if not jtAuth.auth(self):
-            #jtAuth.denied(self)
+      #if not jt.auth.auth(self):
+            #jt.auth.denied(self)
             #return
       photo = memcache.get("photo_%s" % self.request.get('photoKey'))
       if photo is None:
@@ -29,52 +29,52 @@ class GetData(webapp.RequestHandler):
 
 class GetInfo(webapp.RequestHandler):
     def get(self):
-        if not jtAuth.auth(self):
-              jtAuth.denied(self)
+        if not jt.auth.auth(self):
+              jt.auth.denied(self)
               return
         photo = db.get(db.Key(self.request.get('photoKey')))
         self.response.out.write(photo.toJSON())
 
 class Create(webapp.RequestHandler):
   def post(self):
-      if not jtAuth.auth(self):
-            jtAuth.denied(self)
+      if not jt.auth.auth(self):
+            jt.auth.denied(self)
             return
-      photoKey = db.run_in_transaction(jtPhotoService.create, db.Blob(self.request.get('data')),jtAuth.accountKey(self),jtAuth.accountKey(self))
+      photoKey = db.run_in_transaction(jt.service.photo.create, db.Blob(self.request.get('data')),jt.auth.accountKey(self),jt.auth.accountKey(self))
       self.response.out.write('{"photoKey":"%s"}' % (photoKey))
     
 class TakenBy(webapp.RequestHandler):
     def get(self):
-        if not jtAuth.auth(self):
-              jtAuth.denied(self)
+        if not jt.auth.auth(self):
+              jt.auth.denied(self)
               return
         
-        query = db.GqlQuery("SELECT * FROM Photo WHERE takenBy = :1",jtAuth.accountKey(self))
+        query = db.GqlQuery("SELECT * FROM Photo WHERE takenBy = :1",jt.auth.accountKey(self))
         self.response.out.write(jt.modelhelper.JsonQueryUtil.toArray('photos',query))
 
 class FlagPhoto(webapp.RequestHandler):
     def post(self):
-        if not jtAuth.auth(self):
-              jtAuth.denied(self)
+        if not jt.auth.auth(self):
+              jt.auth.denied(self)
               return
         
         flag = self.request.get('flag') == 'True'
-        photoKey = db.run_in_transaction(jtPhotoService.flag,db.Key(self.request.get('photoKey')), flag)
+        photoKey = db.run_in_transaction(jt.service.photo.flag,db.Key(self.request.get('photoKey')), flag)
         self.response.out.write('{"photoKey":"%s"}' % photoKey)
 
 class LikePhoto(webapp.RequestHandler):
     def post(self):
-        if not jtAuth.auth(self):
-              jtAuth.denied(self)
+        if not jt.auth.auth(self):
+              jt.auth.denied(self)
               return
 
         liked = self.request.get('like') == 'True'
         
         #cannot fetch account key inside transaction
         photo = db.get(db.Key(self.request.get('photoKey')))
-        photoScoreIndex = jtPhotoScoreIndexService.incrementIndex(photo.takenBy, photo.takenBy)
+        photoScoreIndex = jt.service.photoscoreindex.incrementIndex(photo.takenBy, photo.takenBy)
         
-        photoKey = db.run_in_transaction(jtPhotoService.like, photo.key(), liked, photo.takenBy, photoScoreIndex)
+        photoKey = db.run_in_transaction(jt.service.photo.like, photo.key(), liked, photo.takenBy, photoScoreIndex)
         self.response.out.write('{"photoKey":"%s"}' % photoKey)
 
 

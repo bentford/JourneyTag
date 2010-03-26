@@ -1,7 +1,7 @@
 from google.appengine.ext import db
 import math
-from jt.service import jtMarkService
-from jt.service import jtDepotService
+import jt.service.mark
+import jt.service.depot
 from jt.payout import jtPayout
 import jt.gamesettings
 
@@ -96,7 +96,7 @@ class Account(db.Model):
 
         while currentCount < expectedCount:
             currentCount += 1
-            jtDepotService.create(self.key(), currentCount)
+            jt.service.depot.create(self.key(), currentCount)
     
     def cacheTotalScore(self):
         if self.totalScore != self.computeTotalScore():

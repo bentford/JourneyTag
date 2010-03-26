@@ -7,8 +7,8 @@ from google.appengine.ext import db
 
 import jt.model
 import jt.modelhelper
-from jt.auth import jtAuth
-from jt.service import *
+import jt.auth
+
 from jt.location import jtLocation
 import jt.gamesettings
 
