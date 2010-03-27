@@ -155,6 +155,14 @@
     [self presentModalViewController:privacyController animated:YES];
 }
 
+- (void)didFail:(ASIHTTPRequest *)request {
+    creatingAccount = NO;
+    NSString *message = [request.error localizedDescription];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"Oops, something went wrong.  Here is a clue: %@", message] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
 - (void)dealloc {
     [accountService cancelReadRequests];
     [accountService release];

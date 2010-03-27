@@ -36,8 +36,6 @@
 		B542D36E1053931000B88A8E /* ExamplePhotoHorizontal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B542D36D1053931000B88A8E /* ExamplePhotoHorizontal.jpg */; };
 		B547135C104A453F0025059A /* ImageResize.m in Sources */ = {isa = PBXBuildFile; fileRef = B547135B104A453F0025059A /* ImageResize.m */; };
 		B54713A0104A89F80025059A /* ExamplePhoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B547139F104A89F80025059A /* ExamplePhoto.jpg */; };
-		B55AA376105F935100ED84AE /* libAdWhirlDevice_1.2.7_OS3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B55AA374105F935100ED84AE /* libAdWhirlDevice_1.2.7_OS3.0.a */; };
-		B55AA377105F935100ED84AE /* libAdWhirlSimulator_1.2.7_OS3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B55AA375105F935100ED84AE /* libAdWhirlSimulator_1.2.7_OS3.0.a */; };
 		B55AA395105F95F400ED84AE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B57BFD9F0FE8C61900D718B3 /* libsqlite3.dylib */; };
 		B55AA3A2105F969B00ED84AE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B55AA3A1105F969B00ED84AE /* libxml2.dylib */; };
 		B55AA3FB105F9B9F00ED84AE /* TouchJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B55AA3FA105F9B9F00ED84AE /* TouchJSON.m */; };
@@ -120,6 +118,11 @@
 		B58D1482114BC03F00DEDFA1 /* InfoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B58D1481114BC03F00DEDFA1 /* InfoUtil.m */; };
 		B58DC1311047D72F00D2C164 /* JTFormListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B58DC12F1047D72F00D2C164 /* JTFormListViewController.m */; };
 		B58DC1321047D72F00D2C164 /* JTFormListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58DC1301047D72F00D2C164 /* JTFormListViewController.xib */; };
+		B592685E115DC77C009A825A /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B592685D115DC77C009A825A /* CJSONDeserializer.m */; };
+		B5926860115DC788009A825A /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B592685F115DC788009A825A /* CJSONSerializer.m */; };
+		B5926862115DC791009A825A /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = B5926861115DC791009A825A /* CDataScanner.m */; };
+		B5926864115DC7A1009A825A /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5926863115DC7A1009A825A /* NSDictionary_JSONExtensions.m */; };
+		B5926870115DC834009A825A /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = B592686F115DC834009A825A /* CJSONScanner.m */; };
 		B595DE451018E22E004A8055 /* ActivityHelpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B595DE441018E22E004A8055 /* ActivityHelpTableViewController.m */; };
 		B595DFFA10194BDC004A8055 /* PasswordResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B595DFF810194BDC004A8055 /* PasswordResetViewController.m */; };
 		B595DFFB10194BDC004A8055 /* PasswordResetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B595DFF910194BDC004A8055 /* PasswordResetViewController.xib */; };
@@ -230,8 +233,6 @@
 		B547139F104A89F80025059A /* ExamplePhoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExamplePhoto.jpg; sourceTree = "<group>"; };
 		B55AA372105F933F00ED84AE /* ARRollerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRollerProtocol.h; sourceTree = "<group>"; };
 		B55AA373105F933F00ED84AE /* ARRollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRollerView.h; sourceTree = "<group>"; };
-		B55AA374105F935100ED84AE /* libAdWhirlDevice_1.2.7_OS3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdWhirlDevice_1.2.7_OS3.0.a; sourceTree = "<group>"; };
-		B55AA375105F935100ED84AE /* libAdWhirlSimulator_1.2.7_OS3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdWhirlSimulator_1.2.7_OS3.0.a; sourceTree = "<group>"; };
 		B55AA3A1105F969B00ED84AE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		B55AA3FA105F9B9F00ED84AE /* TouchJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchJSON.m; sourceTree = "<group>"; };
 		B55AA6A11061289100ED84AE /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
@@ -370,6 +371,11 @@
 		B58DC12E1047D72F00D2C164 /* JTFormListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTFormListViewController.h; sourceTree = "<group>"; };
 		B58DC12F1047D72F00D2C164 /* JTFormListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTFormListViewController.m; sourceTree = "<group>"; };
 		B58DC1301047D72F00D2C164 /* JTFormListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JTFormListViewController.xib; sourceTree = "<group>"; };
+		B592685D115DC77C009A825A /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		B592685F115DC788009A825A /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		B5926861115DC791009A825A /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		B5926863115DC7A1009A825A /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		B592686F115DC834009A825A /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
 		B595DE431018E22E004A8055 /* ActivityHelpTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityHelpTableViewController.h; sourceTree = "<group>"; };
 		B595DE441018E22E004A8055 /* ActivityHelpTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityHelpTableViewController.m; sourceTree = "<group>"; };
 		B595DFF710194BDC004A8055 /* PasswordResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordResetViewController.h; sourceTree = "<group>"; };
@@ -467,8 +473,6 @@
 				B57B000A0FE9AD7F00D718B3 /* MapKit.framework in Frameworks */,
 				B5D54BE2104BCA16003EDF58 /* SystemConfiguration.framework in Frameworks */,
 				B57C66A3105C587E00116B81 /* AddressBook.framework in Frameworks */,
-				B55AA376105F935100ED84AE /* libAdWhirlDevice_1.2.7_OS3.0.a in Frameworks */,
-				B55AA377105F935100ED84AE /* libAdWhirlSimulator_1.2.7_OS3.0.a in Frameworks */,
 				B55AA395105F95F400ED84AE /* libsqlite3.dylib in Frameworks */,
 				B55AA3A2105F969B00ED84AE /* libxml2.dylib in Frameworks */,
 			);
@@ -545,7 +549,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B55AA378105F935500ED84AE /* Ads */,
 				B57C66A2105C587E00116B81 /* AddressBook.framework */,
 				B5D54BE1104BCA16003EDF58 /* SystemConfiguration.framework */,
 				B57B00090FE9AD7F00D718B3 /* MapKit.framework */,
@@ -592,15 +595,6 @@
 				B55AA373105F933F00ED84AE /* ARRollerView.h */,
 			);
 			name = AdWhirl;
-			sourceTree = "<group>";
-		};
-		B55AA378105F935500ED84AE /* Ads */ = {
-			isa = PBXGroup;
-			children = (
-				B55AA374105F935100ED84AE /* libAdWhirlDevice_1.2.7_OS3.0.a */,
-				B55AA375105F935100ED84AE /* libAdWhirlSimulator_1.2.7_OS3.0.a */,
-			);
-			name = Ads;
 			sourceTree = "<group>";
 		};
 		B56760440FFF216D00713E84 /* Operation */ = {
@@ -723,12 +717,17 @@
 			isa = PBXGroup;
 			children = (
 				B57541D90FD4F13E004762E6 /* CJSONDeserializer.h */,
+				B592685D115DC77C009A825A /* CJSONDeserializer.m */,
 				B57541DB0FD4F13E004762E6 /* CJSONScanner.h */,
+				B592686F115DC834009A825A /* CJSONScanner.m */,
 				B57541DD0FD4F13E004762E6 /* CJSONSerializer.h */,
+				B592685F115DC788009A825A /* CJSONSerializer.m */,
 				B57541D00FD4F136004762E6 /* CDataScanner_Extensions.h */,
 				B57541D20FD4F136004762E6 /* NSCharacterSet_Extensions.h */,
 				B57541D40FD4F136004762E6 /* NSDictionary_JSONExtensions.h */,
+				B5926863115DC7A1009A825A /* NSDictionary_JSONExtensions.m */,
 				B57541CD0FD4F130004762E6 /* CDataScanner.h */,
+				B5926861115DC791009A825A /* CDataScanner.m */,
 				B57541CA0FD4F12B004762E6 /* TouchJSON.h */,
 				B55AA3FA105F9B9F00ED84AE /* TouchJSON.m */,
 			);
@@ -1260,6 +1259,11 @@
 				B55AA3FB105F9B9F00ED84AE /* TouchJSON.m in Sources */,
 				B58D12B8114B47B500DEDFA1 /* GpsInfoView.m in Sources */,
 				B58D1482114BC03F00DEDFA1 /* InfoUtil.m in Sources */,
+				B592685E115DC77C009A825A /* CJSONDeserializer.m in Sources */,
+				B5926860115DC788009A825A /* CJSONSerializer.m in Sources */,
+				B5926862115DC791009A825A /* CDataScanner.m in Sources */,
+				B5926864115DC7A1009A825A /* NSDictionary_JSONExtensions.m in Sources */,
+				B5926870115DC834009A825A /* CJSONScanner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
