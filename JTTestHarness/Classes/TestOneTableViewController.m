@@ -62,8 +62,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    if( indexPath.row == 0  )
+    if( indexPath.row == 0  ) {
+        shouldTestLogout = YES;
         [self runTestStructure];
+    }
 }
 
 
@@ -76,42 +78,42 @@
         [titles release];
         titles = [[NSMutableArray alloc] initWithCapacity:5];
     }
-    [self updateTable:@"login"];
+    [self updateTable:@"login attempt"];
     [accountService login:@"1234" username:@"testharnessaccount" password:@"hendrix" delegate:self didFinish:@selector(run2:) didFail:@selector(didFail:)];
     
 }
 
-- (void) run2:(NSDictionary*)dict
-{
+- (void) run2:(NSDictionary*)dict {
     self.accountKey = [dict valueForKey:@"accountKey"];
-    if( [accountKey caseInsensitiveCompare:@"NotFound"] == NSOrderedSame ) 
-    {
+    if( [accountKey caseInsensitiveCompare:@"NotFound"] == NSOrderedSame ) {
+        [self updateTable:@"account not found"];
+        
         [self updateTable:@"creating account"];
-        [accountService createAccount:@"1234" username:@"testharnessaccount" password:@"hendrix" email:@"blargg27@gmail.com" delegate:self didFinish:@selector(run2_0:) didFail:@selector(didFail:)];    
+        [accountService createAccount:@"1234" username:@"testharnessaccount" password:@"hendrix" email:@"blargg27@gmail.com" delegate:self didFinish:@selector(runTestStructure:) didFail:@selector(didFail:)];    
         return;
     }
+
     [self run2_0:dict];
 }
 
-- (void) run2_0:(NSDictionary*)dict
-{
-    [self updateTable:@"has account"];
-    self.accountKey = [dict valueForKey:@"accountKey"];
+- (void) run2_0:(NSDictionary*)dict {
     
+    [self updateTable:@"login success"];
+    self.accountKey = [dict valueForKey:@"accountKey"];
+
+    [self updateTable:@"try creating dup account"];
     [accountService createAccount:@"1234" username:@"testharnessaccount" password:@"hendrix" email:@"blargg27@gmail.com" delegate:self didFinish:@selector(run2_1:) didFail:@selector(didFail:)];    
 }
 
-- (void) run2_1:(NSDictionary*)dict
-{
+- (void) run2_1:(NSDictionary*)dict {
     NSString *value = [dict valueForKey:@"accountKey"];
-   if( [value caseInsensitiveCompare:@"NotUnique"] == NSOrderedSame )
-   {
-       [self updateTable:@"was dup account"];
-   } else {
-       
-       [self updateTable:@"not dup account"];
-       return;
-   }
+    
+    if( [value caseInsensitiveCompare:@"NotUnique"] == NSOrderedSame )
+        [self updateTable:@"was dup account"];
+    else {
+        [self updateTable:@"not dup account (problem!!)"];
+        return; //stop testing
+    }
     
     if( shouldTestLogout )
     {
