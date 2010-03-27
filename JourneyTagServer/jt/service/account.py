@@ -4,6 +4,8 @@ import jt.model
 import jt.gamesettings
 import jt.auth
 import jt.service.depot
+import jt.service.tag
+import jt.service.hash
 
 from jt.password import jtPassword
 

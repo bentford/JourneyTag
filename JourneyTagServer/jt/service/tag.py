@@ -4,6 +4,7 @@ import jt.model
 import jt.service.inventory
 import jt.service.photo
 import jt.service.carryscore
+import jt.service.mark
 
 import datetime
 

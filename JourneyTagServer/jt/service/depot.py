@@ -6,6 +6,7 @@ from jt.password import jtPassword
 import jt.model
 import jt.service.photo
 import jt.service.mark
+import jt.service.depot
 
 import datetime
 import logging

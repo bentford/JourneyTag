@@ -4,16 +4,15 @@ from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext import db
 
-import cgi
-
 import jt.model
 import jt.modelhelper
-import jt.service.account
 import jt.auth
+
 import jt.service.hash
 import jt.service.tagseed
 import jt.service.email
 import jt.service.transfer
+import jt.service.account
 
 import logging
 import datetime
