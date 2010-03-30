@@ -7,6 +7,7 @@ import jt.gamesettings
 import jt.service.account
 import jt.service.carryscoreindex
 import maint.worlddata
+import jt.location
 
 username = 'TagBot'
 
@@ -31,7 +32,8 @@ class CreateAndDropRandomTag(webapp.RequestHandler):
         homeCoord = db.GeoPt(lat=start_lat,lon=start_lon)
 
         (end_name,end_lat,end_lon) = maint.worlddata.get_random_city()
-        destCoord = db.GeoPt(lat=end_lat, lon=end_lon)
+        randomized_end_coord = jt.location.jtLocation.randomCoordinateFromBase(db.GeoPt(end_lat, end_lon))
+        destCoord = db.GeoPt(lat=randomized_end_coord.lat, lon=randomized_end_coord.lon)
 
         destinationAccuracy = jt.gamesettings.defaultDestinationAccuracy
         name = '%s to %s' % (start_name, end_name)
