@@ -27,17 +27,17 @@
 - (void)updateAccuracy:(double) horizontalAccuracy {
     gpsAccuracyValue.text = [NSString stringWithFormat:@"%1.0fm",horizontalAccuracy];
     
-    if( horizontalAccuracy <= 50.0 ) 
+    if( horizontalAccuracy <= 100.0 ) 
         gpsBars.image = [UIImage imageNamed:@"GPSBars6.png"];
-    else if( horizontalAccuracy > 50.0 && horizontalAccuracy <= 100.0 )
+    else if( horizontalAccuracy > 100.0 && horizontalAccuracy <= 300.0 )
         gpsBars.image = [UIImage imageNamed:@"GPSBars5.png"];
-    else if( horizontalAccuracy > 100.0 && horizontalAccuracy <= 150.0 )
+    else if( horizontalAccuracy > 300.0 && horizontalAccuracy <= 600.0 )
         gpsBars.image = [UIImage imageNamed:@"GPSBars4.png"];
-    else if( horizontalAccuracy > 150.0 && horizontalAccuracy <= 200.0 )
+    else if( horizontalAccuracy > 600.0 && horizontalAccuracy <= 1000.0 )
         gpsBars.image = [UIImage imageNamed:@"GPSBars3.png"];
-    else if( horizontalAccuracy > 200.0 && horizontalAccuracy <= 250.0 )
+    else if( horizontalAccuracy > 1000.0 && horizontalAccuracy <= 1500.0 )
         gpsBars.image = [UIImage imageNamed:@"GPSBars2.png"];
-    else if( horizontalAccuracy > 250.0 )
+    else if( horizontalAccuracy > 1500.0 )
         gpsBars.image = [UIImage imageNamed:@"GPSBars1.png"];
 }
 

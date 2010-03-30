@@ -27,7 +27,7 @@
 
 + (int)desiredGpsAccuracyInMeters
 {
-    return 100;
+    return 300;
 }
 
 + (UIColor*)subtitleColorStandard
