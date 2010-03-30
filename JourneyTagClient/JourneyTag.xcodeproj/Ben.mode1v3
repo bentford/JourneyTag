@@ -268,8 +268,7 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>B5753FE70FD4EE1C004762E6</string>
-								<string>B57542130FD4FAC4004762E6</string>
-								<string>B58D12B4114B479300DEDFA1</string>
+								<string>B575420F0FD4FA72004762E6</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
@@ -279,8 +278,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>18</integer>
-									<integer>15</integer>
+									<integer>11</integer>
+									<integer>5</integer>
 									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -322,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DropTableViewController.m</string>
+								<string>Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DropTableViewController.m</string>
+										<string>Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5B68E831161DA180039147A</string>
+										<string>B5B68EA01161DC1F0039147A</string>
 										<key>history</key>
 										<array>
 											<string>B57542200FD4FBBD004762E6</string>
@@ -545,13 +544,10 @@
 											<string>B58D1310114BAA6200DEDFA1</string>
 											<string>B58D1311114BAA6200DEDFA1</string>
 											<string>B58D1312114BAA6200DEDFA1</string>
-											<string>B58D13A4114BB5AA00DEDFA1</string>
 											<string>B58D1422114BBC0800DEDFA1</string>
 											<string>B58D146C114BBFB100DEDFA1</string>
 											<string>B58D1489114BC05E00DEDFA1</string>
-											<string>B58D14A4114BC45700DEDFA1</string>
 											<string>B58D14A5114BC45700DEDFA1</string>
-											<string>B58D14A9114BD36900DEDFA1</string>
 											<string>B58D14AA114BD36900DEDFA1</string>
 											<string>B592689F115DD039009A825A</string>
 											<string>B59268A0115DD039009A825A</string>
@@ -569,7 +565,10 @@
 											<string>B59268AD115DD039009A825A</string>
 											<string>B59268AE115DD039009A825A</string>
 											<string>B5B68E811161DA180039147A</string>
-											<string>B5B68E821161DA180039147A</string>
+											<string>B5B68E911161DBD40039147A</string>
+											<string>B5B68E921161DBD40039147A</string>
+											<string>B5B68E931161DBD40039147A</string>
+											<string>B5B68E941161DBD40039147A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -791,6 +790,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>B5B68E9D1161DBD40039147A</string>
+		<string>B5B68E9E1161DBD40039147A</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>B57540CC0FD4EED4004762E6</string>
 		<string>/Users/Ben/Devel/JourneyTag/JourneyTagClient/JourneyTag.xcodeproj</string>
@@ -993,13 +996,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>B59268B3115DD039009A825A</string>
+				<string>B5B68E961161DBD40039147A</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>B59268B4115DD039009A825A</string>
-				<string>B59268B5115DD039009A825A</string>
-				<string>B59268B6115DD039009A825A</string>
-				<string>B59268B7115DD039009A825A</string>
-				<string>B59268B8115DD039009A825A</string>
+				<string>B5B68E971161DBD40039147A</string>
+				<string>B5B68E981161DBD40039147A</string>
+				<string>B5B68E991161DBD40039147A</string>
+				<string>B5B68E9A1161DBD40039147A</string>
+				<string>B5B68E9B1161DBD40039147A</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1118,8 +1121,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1155,7 +1156,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>B59268B9115DD039009A825A</string>
+				<string>B5B68E9C1161DBD40039147A</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -1165,7 +1166,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

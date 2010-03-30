@@ -43,7 +43,7 @@
 					<object class="IBUITextField" id="1046136616">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{18, 100}, {280, 31}}</string>
+						<string key="NSFrame">{{18, 98}, {280, 31}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -74,7 +74,7 @@
 					<object class="IBUITextField" id="767599753">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{18, 139}, {280, 31}}</string>
+						<string key="NSFrame">{{18, 134}, {280, 31}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -100,7 +100,7 @@
 					<object class="IBUIButton" id="26351122">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{18, 217}, {282, 37}}</string>
+						<string key="NSFrame">{{18, 211}, {282, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -146,7 +146,7 @@
 					<object class="IBUITextField" id="618446812">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{18, 178}, {280, 31}}</string>
+						<string key="NSFrame">{{18, 171}, {280, 31}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -171,7 +171,7 @@
 					<object class="IBUILabel" id="539570393">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{13, 252}, {280, 73}}</string>
+						<string key="NSFrame">{{18, 252}, {280, 73}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -196,7 +196,7 @@ IHNlbmQgeW91IGVtYWlscyB1bmxlc3MgeW91IG5lZWQgdG8gcmVzZXQgeW91ciBwYXNzd29yZC4gIA</
 					<object class="IBUILabel" id="291946187">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{13, 395}, {282, 21}}</string>
+						<string key="NSFrame">{{13, 395}, {287, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>

@@ -24,7 +24,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = B5753FE40FD4EE0D004762E6 /* JourneyTag */;
-		activeSDKPreference = iphoneos3.0;
+		activeSDKPreference = iphonesimulator3.0;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* JourneyTag */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* JourneyTag */,
@@ -326,6 +326,12 @@
 			B5B68E811161DA180039147A /* PBXTextBookmark */ = B5B68E811161DA180039147A /* PBXTextBookmark */;
 			B5B68E821161DA180039147A /* PBXTextBookmark */ = B5B68E821161DA180039147A /* PBXTextBookmark */;
 			B5B68E831161DA180039147A /* PBXTextBookmark */ = B5B68E831161DA180039147A /* PBXTextBookmark */;
+			B5B68E911161DBD40039147A /* PBXTextBookmark */ = B5B68E911161DBD40039147A /* PBXTextBookmark */;
+			B5B68E921161DBD40039147A /* PBXTextBookmark */ = B5B68E921161DBD40039147A /* PBXTextBookmark */;
+			B5B68E931161DBD40039147A /* PBXTextBookmark */ = B5B68E931161DBD40039147A /* PBXTextBookmark */;
+			B5B68E941161DBD40039147A /* PlistBookmark */ = B5B68E941161DBD40039147A /* PlistBookmark */;
+			B5B68E951161DBD40039147A /* PlistBookmark */ = B5B68E951161DBD40039147A /* PlistBookmark */;
+			B5B68EA01161DC1F0039147A /* PlistBookmark */ = B5B68EA01161DC1F0039147A /* PlistBookmark */;
 			B5B79C381061C2BA00D8A32C = B5B79C381061C2BA00D8A32C /* PBXTextBookmark */;
 			B5B79C4C1061C73500D8A32C = B5B79C4C1061C73500D8A32C /* PBXTextBookmark */;
 			B5B79CD71063018400D8A32C = B5B79CD71063018400D8A32C /* PBXTextBookmark */;
@@ -1484,9 +1490,9 @@
 	};
 	B575415E0FD4F0D3004762E6 /* DropTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2739, 17633}}";
-			sepNavSelRange = "{23564, 26}";
-			sepNavVisRange = "{22573, 2041}";
+			sepNavIntBoundsRect = "{{0, 0}, {2739, 17853}}";
+			sepNavSelRange = "{25961, 26}";
+			sepNavVisRange = "{25517, 1044}";
 			sepNavWindowFrame = "{{15, 83}, {1039, 945}}";
 		};
 	};
@@ -2352,8 +2358,8 @@
 	B58D12B7114B47B500DEDFA1 /* GpsInfoView.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1028, 1033}}";
-			sepNavSelRange = "{184, 0}";
-			sepNavVisRange = "{125, 1373}";
+			sepNavSelRange = "{1359, 0}";
+			sepNavVisRange = "{125, 1379}";
 		};
 	};
 	B58D12C2114B484B00DEDFA1 /* CTFontTraits.h */ = {
@@ -3293,9 +3299,9 @@
 	};
 	B5A922CC10449B0800744C64 /* AppSettings.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1028, 1453}}";
-			sepNavSelRange = "{992, 21}";
-			sepNavVisRange = "{162, 695}";
+			sepNavIntBoundsRect = "{{0, 0}, {1028, 1413}}";
+			sepNavSelRange = "{512, 0}";
+			sepNavVisRange = "{194, 663}";
 		};
 	};
 	B5A923D41044BDA600744C64 /* PBXTextBookmark */ = {
@@ -3556,6 +3562,69 @@
 		rType = 0;
 		vrLen = 2041;
 		vrLoc = 22573;
+	};
+	B5B68E911161DBD40039147A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B575415E0FD4F0D3004762E6 /* DropTableViewController.m */;
+		name = "DropTableViewController.m: 675";
+		rLen = 26;
+		rLoc = 23564;
+		rType = 0;
+		vrLen = 2041;
+		vrLoc = 22573;
+	};
+	B5B68E921161DBD40039147A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5A922CC10449B0800744C64 /* AppSettings.m */;
+		name = "AppSettings.m: 30";
+		rLen = 0;
+		rLoc = 512;
+		rType = 0;
+		vrLen = 663;
+		vrLoc = 194;
+	};
+	B5B68E931161DBD40039147A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B58D12B7114B47B500DEDFA1 /* GpsInfoView.m */;
+		name = "GpsInfoView.m: 40";
+		rLen = 0;
+		rLoc = 1359;
+		rType = 0;
+		vrLen = 1379;
+		vrLoc = 125;
+	};
+	B5B68E941161DBD40039147A /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/Ben/Devel/JourneyTag/JourneyTagClient/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	B5B68E951161DBD40039147A /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/Ben/Devel/JourneyTag/JourneyTagClient/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	B5B68EA01161DC1F0039147A /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/Ben/Devel/JourneyTag/JourneyTagClient/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
 	};
 	B5B79C381061C2BA00D8A32C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
