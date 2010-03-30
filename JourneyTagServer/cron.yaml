@@ -6,3 +6,7 @@ cron:
 - description: account total count
   url: /cron/account_total_count
   schedule: every 24 hours
+
+- description: create and drop random 'seed' tag
+  url: /maint/maint4/CreateAndDropRandomTag
+  schedule: every 24 hours
