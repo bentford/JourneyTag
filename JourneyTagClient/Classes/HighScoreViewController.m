@@ -9,6 +9,11 @@
 #import "HighScoreViewController.h"
 #import "JTGameService.h"
 
+
+@interface HighScoreViewController(PrivateMethods)
+- (void)setupTitleView;
+@end
+
 @interface HighScoreViewController()
 @property (nonatomic,retain) NSArray *accounts;
 @end
@@ -26,7 +31,10 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
+	//self.title = @"Highscores Overall";
+    
+    [self setupTitleView];
+    
 	[gameService getAccountsByHighScoreWithDelegate:self didFinish:@selector(didLoadAccounts:) didFail:@selector(didFail:)];
 	
 }
@@ -76,3 +84,23 @@
 
 @end
 
+@implementation HighScoreViewController(PrivateMethods)
+// Trying out using a xib for a simple view
+// What is the benifit to this:
+// Good:
+// -Easier to modify the view
+// Bad:
+// -Loading is more complex.
+
+- (void)setupTitleView {
+    NSArray *parts = [[NSBundle mainBundle] loadNibNamed:@"TitleView" owner:nil options:nil];
+    UIView *titleView = [parts objectAtIndex:0];
+    
+    UILabel *titleLabel = (UILabel *)[titleView viewWithTag:1];
+    UILabel *subTitleLabel = (UILabel *)[titleView viewWithTag:2];
+    titleLabel.text = @"Highscores Overall";
+    subTitleLabel.text = @"Top 200";
+    
+    self.navigationItem.titleView = titleView;
+}
+@end

@@ -26,6 +26,7 @@
 		B5130B1C103BEDA300E73D32 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5130B1A103BEDA300E73D32 /* HelpViewController.xib */; };
 		B517BBAC10413C080014E6D9 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = B517BBAB10413C080014E6D9 /* about.html */; };
 		B517BBF3104141620014E6D9 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = B517BBF2104141620014E6D9 /* privacy.html */; };
+		B51E8D6E11960A610040FD28 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51E8D6D11960A610040FD28 /* TitleView.xib */; };
 		B5302F970FFAB2B700621AF8 /* JTServiceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B5302F960FFAB2B700621AF8 /* JTServiceBase.m */; };
 		B536A1D11044CD0A0050266E /* FakeImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B536A1CF1044CD0A0050266E /* FakeImagePickerViewController.m */; };
 		B536A1D21044CD0A0050266E /* FakeImagePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B536A1D01044CD0A0050266E /* FakeImagePickerView.xib */; };
@@ -217,6 +218,7 @@
 		B5130B1A103BEDA300E73D32 /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
 		B517BBAB10413C080014E6D9 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		B517BBF2104141620014E6D9 /* privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
+		B51E8D6D11960A610040FD28 /* TitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 		B5302F950FFAB2B700621AF8 /* JTServiceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTServiceBase.h; sourceTree = "<group>"; };
 		B5302F960FFAB2B700621AF8 /* JTServiceBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTServiceBase.m; sourceTree = "<group>"; };
 		B536A1CE1044CD0A0050266E /* FakeImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeImagePickerViewController.h; sourceTree = "<group>"; };
@@ -1029,6 +1031,7 @@
 				B5BED7C61195702200989F02 /* GameViewController.m */,
 				B5BED81B11957B7700989F02 /* HighScoreViewController.h */,
 				B5BED81C11957B7700989F02 /* HighScoreViewController.m */,
+				B51E8D6D11960A610040FD28 /* TitleView.xib */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -1163,6 +1166,7 @@
 				B58D12EC114B966700DEDFA1 /* GPSBars6.png in Resources */,
 				B58D12ED114B966700DEDFA1 /* GPSBarsColored.png in Resources */,
 				B58D12F6114BA4FC00DEDFA1 /* InfoIcon.png in Resources */,
+				B51E8D6E11960A610040FD28 /* TitleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
