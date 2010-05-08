@@ -72,6 +72,7 @@ class GetAccountInfo(webapp.RequestHandler):
         if account == None:
             self.response.out.write('{"response":"denied"}')
         else:
+            account.computeAndCacheScores() #important for realtime data
             self.response.out.write( account.toJSON() )
 
 class ResetPassword(webapp.RequestHandler):

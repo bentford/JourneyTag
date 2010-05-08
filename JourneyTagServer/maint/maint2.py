@@ -40,7 +40,7 @@ class UpdateAccounts(webapp.RequestHandler):
         accounts = jt.model.Account.all()
         for account in accounts:
             self.response.out.write('updated tag: %s <br />' % account.username)
-            account.toJSON()
+            account.computeAndCacheScores()
             account.put()
         self.response.out.write('done')
 

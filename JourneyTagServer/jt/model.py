@@ -42,13 +42,18 @@ class Account(db.Model):
     
     dateCreated = db.DateTimeProperty(required=True,default=datetime.datetime.utcnow())
     lastLogin = db.DateTimeProperty()
+
     def toJSON(self):
+        return '{"key":"%s", "username":"%s", "totalDistanceTraveled":"%d", "totalDistanceCarried":"%d", "score":"%d", "payout":"%1.2f", "level":"%d", "totalDrops":"%d", "pointsNeededForNextLevel":"%d", "photoScore":"%s", "carryScore":"%s" }' % (self.key(), self.username, self.totalDistanceTraveled, self.totalDistanceCarried, self.computeTotalScore(), self.payout(), self.level(), self.totalDrops, self.pointsNeededForNextLevel(), self.photoScorePoints(), self.carryScore)        
+
+    def computeAndCacheScores(self):
+        """ Calculates scores and caches values into database
+        """
         self.updateCarryScore()
         self.updatePhotoScore()
         self.awardDepots()
         self.cacheTotalScore()
-        return '{"key":"%s", "username":"%s", "totalDistanceTraveled":"%d", "totalDistanceCarried":"%d", "score":"%d", "payout":"%1.2f", "level":"%d", "totalDrops":"%d", "pointsNeededForNextLevel":"%d", "photoScore":"%s", "carryScore":"%s" }' % (self.key(), self.username, self.totalDistanceTraveled, self.totalDistanceCarried, self.computeTotalScore(), self.payout(), self.level(), self.totalDrops, self.pointsNeededForNextLevel(), self.photoScorePoints(), self.carryScore)
-
+        
     def photoScorePoints(self):
         return self.photoScore * jt.gamesettings.photoVoteAward
 

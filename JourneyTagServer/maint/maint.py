@@ -53,7 +53,7 @@ class VerifyCarryScores(webapp.RequestHandler):
         self.response.out.write('verifying carry scores <br />')
         accounts = jt.model.Account.all()
         for account in accounts:     
-            account.toJSON() #cache everything   
+            account.computeAndCacheScores() #cache everything   
             self.response.out.write('for account: %d - %s<br />' % (account.key().id(), account.username))
             scores = db.GqlQuery("SELECT * FROM CarryScore WHERE account = :1",account)
             count = 0
@@ -107,7 +107,7 @@ class VerifyPhotoScores(webapp.RequestHandler):
         self.response.out.write('verifying photo scores <br />')
         accounts = jt.model.Account.all()
         for account in accounts:     
-            account.toJSON() #cache everything   
+            account.computeAndCacheScores() #cache everything   
             self.response.out.write('for account: %d - %s<br />' % (account.key().id(), account.username))
             scores = db.GqlQuery("SELECT * FROM PhotoScore WHERE account = :1",account)
             count = 0
