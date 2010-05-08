@@ -24,7 +24,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = B5753FE40FD4EE0D004762E6 /* JourneyTag */;
-		activeSDKPreference = iphonesimulator3.1.3;
+		activeSDKPreference = iphonesimulator3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* JourneyTag */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* JourneyTag */,
@@ -104,7 +104,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					735,
+					758,
 					20,
 					48,
 					43,
@@ -155,8 +155,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 295005015;
-			PBXWorkspaceStateSaveDate = 295005015;
+			PBXPerProjectTemplateStateSaveDate = 295038402;
+			PBXWorkspaceStateSaveDate = 295038402;
 		};
 		perUserProjectItems = {
 			B506706E0FEEE76D002C843B = B506706E0FEEE76D002C843B /* PBXTextBookmark */;
@@ -170,6 +170,11 @@
 			B517BA6A104112970014E6D9 = B517BA6A104112970014E6D9 /* PBXTextBookmark */;
 			B517BAE5104123C70014E6D9 = B517BAE5104123C70014E6D9 /* PBXTextBookmark */;
 			B517BC07104149F40014E6D9 = B517BC07104149F40014E6D9 /* PBXTextBookmark */;
+			B51E8D021195EDEE0040FD28 /* PBXTextBookmark */ = B51E8D021195EDEE0040FD28 /* PBXTextBookmark */;
+			B51E8D421195F2990040FD28 /* PBXTextBookmark */ = B51E8D421195F2990040FD28 /* PBXTextBookmark */;
+			B51E8D431195F2990040FD28 /* PBXTextBookmark */ = B51E8D431195F2990040FD28 /* PBXTextBookmark */;
+			B51E8D441195F2990040FD28 /* PBXBookmark */ = B51E8D441195F2990040FD28 /* PBXBookmark */;
+			B51E8D451195F2990040FD28 /* PBXTextBookmark */ = B51E8D451195F2990040FD28 /* PBXTextBookmark */;
 			B5302FB20FFABA5400621AF8 = B5302FB20FFABA5400621AF8 /* PBXTextBookmark */;
 			B536A2001044D5630050266E = B536A2001044D5630050266E /* PBXTextBookmark */;
 			B536A20A1044D8F00050266E = B536A20A1044D8F00050266E /* PBXTextBookmark */;
@@ -346,14 +351,14 @@
 			B5BDE9131147AD4E008F0504 = B5BDE9131147AD4E008F0504 /* PBXTextBookmark */;
 			B5BDE9141147AD4E008F0504 = B5BDE9141147AD4E008F0504 /* PBXTextBookmark */;
 			B5BDE9201148D35F008F0504 = B5BDE9201148D35F008F0504 /* PBXTextBookmark */;
-			B5BED7A011956B7200989F02 /* PBXTextBookmark */ = B5BED7A011956B7200989F02 /* PBXTextBookmark */;
-			B5BED7A611956B9200989F02 /* PBXTextBookmark */ = B5BED7A611956B9200989F02 /* PBXTextBookmark */;
-			B5BED7B411956E2100989F02 /* PBXTextBookmark */ = B5BED7B411956E2100989F02 /* PBXTextBookmark */;
-			B5BED7B511956E2100989F02 /* PBXTextBookmark */ = B5BED7B511956E2100989F02 /* PBXTextBookmark */;
-			B5BED7B711956E8000989F02 /* PBXTextBookmark */ = B5BED7B711956E8000989F02 /* PBXTextBookmark */;
-			B5BED7BC11956EB100989F02 /* PBXTextBookmark */ = B5BED7BC11956EB100989F02 /* PBXTextBookmark */;
-			B5BED7C211956FF300989F02 /* PBXTextBookmark */ = B5BED7C211956FF300989F02 /* PBXTextBookmark */;
-			B5BED7C311956FF300989F02 /* PBXTextBookmark */ = B5BED7C311956FF300989F02 /* PBXTextBookmark */;
+			B5BED7A011956B7200989F02 = B5BED7A011956B7200989F02 /* PBXTextBookmark */;
+			B5BED7A611956B9200989F02 = B5BED7A611956B9200989F02 /* PBXTextBookmark */;
+			B5BED7B411956E2100989F02 = B5BED7B411956E2100989F02 /* PBXTextBookmark */;
+			B5BED7B511956E2100989F02 = B5BED7B511956E2100989F02 /* PBXTextBookmark */;
+			B5BED7B711956E8000989F02 = B5BED7B711956E8000989F02 /* PBXTextBookmark */;
+			B5BED7BC11956EB100989F02 = B5BED7BC11956EB100989F02 /* PBXTextBookmark */;
+			B5BED7C211956FF300989F02 = B5BED7C211956FF300989F02 /* PBXTextBookmark */;
+			B5BED7C311956FF300989F02 = B5BED7C311956FF300989F02 /* PBXTextBookmark */;
 			B5C0193510F0B89600FD436D = B5C0193510F0B89600FD436D /* PBXTextBookmark */;
 			B5C0193610F0B89600FD436D = B5C0193610F0B89600FD436D /* PBXTextBookmark */;
 			B5C7F267104365860041FE23 = B5C7F267104365860041FE23 /* PBXTextBookmark */;
@@ -664,6 +669,50 @@
 		rLoc = 0;
 		rType = 0;
 		vrLen = 254;
+		vrLoc = 0;
+	};
+	B51E8D021195EDEE0040FD28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541780FD4F0D3004762E6 /* JTServiceURLs.m */;
+		name = "JTServiceURLs.m: 23";
+		rLen = 0;
+		rLoc = 629;
+		rType = 0;
+		vrLen = 1614;
+		vrLoc = 80;
+	};
+	B51E8D421195F2990040FD28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541780FD4F0D3004762E6 /* JTServiceURLs.m */;
+		name = "JTServiceURLs.m: 23";
+		rLen = 0;
+		rLoc = 629;
+		rType = 0;
+		vrLen = 1674;
+		vrLoc = 80;
+	};
+	B51E8D431195F2990040FD28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5BED80F1195799E00989F02 /* JTGameService.m */;
+		name = "JTGameService.m: 14";
+		rLen = 102;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 853;
+		vrLoc = 0;
+	};
+	B51E8D441195F2990040FD28 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = B5BED80E1195799E00989F02 /* JTGameService.h */;
+	};
+	B51E8D451195F2990040FD28 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5BED80E1195799E00989F02 /* JTGameService.h */;
+		name = "JTGameService.h: 15";
+		rLen = 0;
+		rLoc = 342;
+		rType = 0;
+		vrLen = 348;
 		vrLoc = 0;
 	};
 	B5302F950FFAB2B700621AF8 /* JTServiceBase.h */ = {
@@ -1632,9 +1681,9 @@
 	};
 	B57541780FD4F0D3004762E6 /* JTServiceURLs.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {913, 1824}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 1753}}";
 			sepNavSelRange = "{629, 0}";
-			sepNavVisRange = "{80, 693}";
+			sepNavVisRange = "{80, 1674}";
 			sepNavWindowFrame = "{{15, 76}, {1039, 952}}";
 		};
 	};
@@ -3863,16 +3912,16 @@
 	};
 	B5BED80E1195799E00989F02 /* JTGameService.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {913, 425}}";
+			sepNavIntBoundsRect = "{{0, 0}, {939, 1032}}";
 			sepNavSelRange = "{342, 0}";
 			sepNavVisRange = "{0, 348}";
 		};
 	};
 	B5BED80F1195799E00989F02 /* JTGameService.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {913, 551}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 1032}}";
 			sepNavSelRange = "{246, 102}";
-			sepNavVisRange = "{126, 727}";
+			sepNavVisRange = "{0, 853}";
 		};
 	};
 	B5C0193510F0B89600FD436D /* PBXTextBookmark */ = {
