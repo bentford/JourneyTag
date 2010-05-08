@@ -352,6 +352,8 @@
 			B5BED7B511956E2100989F02 /* PBXTextBookmark */ = B5BED7B511956E2100989F02 /* PBXTextBookmark */;
 			B5BED7B711956E8000989F02 /* PBXTextBookmark */ = B5BED7B711956E8000989F02 /* PBXTextBookmark */;
 			B5BED7BC11956EB100989F02 /* PBXTextBookmark */ = B5BED7BC11956EB100989F02 /* PBXTextBookmark */;
+			B5BED7C211956FF300989F02 /* PBXTextBookmark */ = B5BED7C211956FF300989F02 /* PBXTextBookmark */;
+			B5BED7C311956FF300989F02 /* PBXTextBookmark */ = B5BED7C311956FF300989F02 /* PBXTextBookmark */;
 			B5C0193510F0B89600FD436D = B5C0193510F0B89600FD436D /* PBXTextBookmark */;
 			B5C0193610F0B89600FD436D = B5C0193610F0B89600FD436D /* PBXTextBookmark */;
 			B5C7F267104365860041FE23 = B5C7F267104365860041FE23 /* PBXTextBookmark */;
@@ -1630,7 +1632,7 @@
 	};
 	B57541780FD4F0D3004762E6 /* JTServiceURLs.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {913, 1805}}";
+			sepNavIntBoundsRect = "{{0, 0}, {913, 1824}}";
 			sepNavSelRange = "{629, 0}";
 			sepNavVisRange = "{80, 693}";
 			sepNavWindowFrame = "{{15, 76}, {1039, 952}}";
@@ -3824,6 +3826,54 @@
 		rType = 0;
 		vrLen = 693;
 		vrLoc = 80;
+	};
+	B5BED7C211956FF300989F02 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541780FD4F0D3004762E6 /* JTServiceURLs.m */;
+		name = "JTServiceURLs.m: 23";
+		rLen = 0;
+		rLoc = 629;
+		rType = 0;
+		vrLen = 693;
+		vrLoc = 80;
+	};
+	B5BED7C311956FF300989F02 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541780FD4F0D3004762E6 /* JTServiceURLs.m */;
+		name = "JTServiceURLs.m: 23";
+		rLen = 0;
+		rLoc = 629;
+		rType = 0;
+		vrLen = 693;
+		vrLoc = 80;
+	};
+	B5BED7C51195702200989F02 /* GameViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {913, 402}}";
+			sepNavSelRange = "{221, 0}";
+			sepNavVisRange = "{0, 227}";
+		};
+	};
+	B5BED7C61195702200989F02 /* GameViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {913, 1083}}";
+			sepNavSelRange = "{303, 0}";
+			sepNavVisRange = "{46, 559}";
+		};
+	};
+	B5BED7EA1195729F00989F02 /* HighScoreViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {913, 425}}";
+			sepNavSelRange = "{225, 0}";
+			sepNavVisRange = "{0, 231}";
+		};
+	};
+	B5BED7EB1195729F00989F02 /* HighScoreViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {913, 475}}";
+			sepNavSelRange = "{260, 0}";
+			sepNavVisRange = "{0, 309}";
+		};
 	};
 	B5C0193510F0B89600FD436D /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
