@@ -10,6 +10,7 @@ import jt.model
 import logging
 import os
 import urllib
+import jt.service.gamescore
 
 def durationFromSeconds(seconds):
     if seconds > 60:
@@ -34,10 +35,7 @@ class Photos(webapp.RequestHandler):
 
 class HighScores(webapp.RequestHandler):
     def get(self):
-        accounts = memcache.get('highscores')
-        if accounts is None:
-            accounts = db.GqlQuery("SELECT * FROM Account ORDER BY totalScore DESC").fetch(200)
-            memcache.set('highscores', accounts, jt.sitesettings.gameStatCache)
+        accounts = jt.service.gamescore.getAccountsByHighScore(count=200)
         
         (duration, timeName) = durationFromSeconds(jt.sitesettings.gameStatCache)
         
