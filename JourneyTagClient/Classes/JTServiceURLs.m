@@ -16,7 +16,9 @@
 
 + (NSString*) host:(BOOL)secure
 {
-    if( [[UIDevice currentDevice].uniqueIdentifier compare:@"BCDB12A8-0EA2-54AC-BCB2-B48E7165EB44"] == NSOrderedSame )
+	// This is just hard coded to the two iphone simulators that I use.
+    if( [[UIDevice currentDevice].uniqueIdentifier isEqualToString:@"BCDB12A8-0EA2-54AC-BCB2-B48E7165EB44"] ||
+	    [[UIDevice currentDevice].uniqueIdentifier isEqualToString:@"E10ACB44-7EC0-5672-9AF7-C67EB807B653"] )
         return @"http://localhost:8085";        
     else
         return secure ? @"https://journeytag.appspot.com" : @"http://journeytag.appspot.com";
