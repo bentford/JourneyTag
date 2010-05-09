@@ -275,8 +275,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>45</integer>
-									<integer>43</integer>
+									<integer>23</integer>
+									<integer>3</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>41</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -325,10 +331,6 @@
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
 										<string>GameTestTableViewController.m</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>B51E8D60119609BE0040FD28</string>
 										<key>history</key>
 										<array>
 											<string>B58F981E0FB2AC0A00117608</string>
@@ -372,8 +374,6 @@
 											<string>B5099C20115D4BD200AAD414</string>
 											<string>B5099C21115D4BD200AAD414</string>
 											<string>B51E8D51119609BE0040FD28</string>
-											<string>B51E8D52119609BE0040FD28</string>
-											<string>B51E8D53119609BE0040FD28</string>
 											<string>B51E8D54119609BE0040FD28</string>
 											<string>B51E8D55119609BE0040FD28</string>
 											<string>B51E8D56119609BE0040FD28</string>
@@ -385,7 +385,6 @@
 											<string>B51E8D5C119609BE0040FD28</string>
 											<string>B51E8D5D119609BE0040FD28</string>
 											<string>B51E8D5E119609BE0040FD28</string>
-											<string>B51E8D5F119609BE0040FD28</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -397,14 +396,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1155, 943}}</string>
+								<string>{{0, 0}, {1155, 937}}</string>
 								<key>RubberWindowFrame</key>
 								<string>538 289 1431 1129 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>943pt</string>
+							<string>937pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -417,14 +416,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 948}, {1155, 140}}</string>
+								<string>{{0, 942}, {1155, 146}}</string>
 								<key>RubberWindowFrame</key>
 								<string>538 289 1431 1129 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>140pt</string>
+							<string>146pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -443,9 +442,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>B51E8D61119609BE0040FD28</string>
+				<string>B51E8F571196CE560040FD28</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>B51E8D62119609BE0040FD28</string>
+				<string>B51E8F581196CE560040FD28</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -581,8 +580,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B58F96510FB24F7100117608</string>
 		<string>/Users/Ben/Devel/JourneyTag/JTTestHarness/JTTestHarness1.xcodeproj</string>
 	</array>
@@ -625,8 +622,6 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -666,7 +661,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>B58F96510FB24F7100117608</string>
-				<string>B51E8D63119609BE0040FD28</string>
+				<string>B51E8F591196CE560040FD28</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -786,13 +781,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>B51E8D64119609BE0040FD28</string>
+				<string>B51E8F4A1196CE520040FD28</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>B51E8D65119609BE0040FD28</string>
-				<string>B51E8D66119609BE0040FD28</string>
-				<string>B51E8D67119609BE0040FD28</string>
-				<string>B51E8D68119609BE0040FD28</string>
-				<string>B51E8D69119609BE0040FD28</string>
+				<string>B51E8F4B1196CE520040FD28</string>
+				<string>B51E8F4C1196CE520040FD28</string>
+				<string>B51E8F4D1196CE520040FD28</string>
+				<string>B51E8F4E1196CE520040FD28</string>
+				<string>B51E8F4F1196CE520040FD28</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -946,7 +941,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>B51E8D6A119609BE0040FD28</string>
+				<string>B51E8F501196CE520040FD28</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
