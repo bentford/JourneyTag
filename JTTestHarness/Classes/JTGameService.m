@@ -25,4 +25,17 @@
     [queue addOperation:request];
     [request release];
 }
+
+- (void)getLastTenPhotosWithDelegate:(id)delegate didFinish:(SEL)didFinish didFail:(SEL)didFail {
+    NSArray *params = [NSArray arrayWithObjects:@"dummy",@"1",nil]; //required to have a parameter
+    NSURL *url = [JTServiceURLs serviceUrlWithPath:@"/data/game/getLastTenPhotos" withParameters:params];
+    JTServiceHttpRequest *request = [[JTServiceHttpRequest alloc] initWithURL:url];
+    
+    [request setDelegate:delegate];
+    [request setDidFinishSelector:didFinish];
+    [request setDidFailSelector:didFail];
+    
+    [queue addOperation:request];
+    [request release];
+}
 @end

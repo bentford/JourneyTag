@@ -10,7 +10,7 @@
 
 
 @interface GameViewController : UITableViewController {
-	
+    NSArray *titles;
 }
 
 @end

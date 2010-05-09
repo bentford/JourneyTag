@@ -13,4 +13,5 @@
 
 }
 - (void) getAccountsByHighScoreWithDelegate:(id)delegate didFinish:(SEL)didFinish didFail:(SEL)didFail;
+- (void)getLastTenPhotosWithDelegate:(id)delegate didFinish:(SEL)didFinish didFail:(SEL)didFail;
 @end

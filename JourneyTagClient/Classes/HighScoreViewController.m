@@ -98,7 +98,7 @@
     
     UILabel *titleLabel = (UILabel *)[titleView viewWithTag:1];
     UILabel *subTitleLabel = (UILabel *)[titleView viewWithTag:2];
-    titleLabel.text = @"Highscores Overall";
+    titleLabel.text = @"High Scores Overall";
     subTitleLabel.text = @"Top 200";
     
     self.navigationItem.titleView = titleView;

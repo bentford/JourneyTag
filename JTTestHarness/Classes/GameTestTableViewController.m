@@ -18,13 +18,19 @@
 }
 
 - (void)runTestStructure {
-    [self updateTable:@"starting"];
     [gameService getAccountsByHighScoreWithDelegate:self didFinish:@selector(run1:) didFail:@selector(didFail:)];
 }
 
 - (void)run1:(NSDictionary *)data {
     NSArray *accounts = [data objectForKey:@"accounts"];
     [self updateTable:[NSString stringWithFormat:@"fetched %d scores", [accounts count]]];
+    [gameService getLastTenPhotosWithDelegate:self didFinish:@selector(run2:) didFail:@selector(didFail:)];
+}
+
+- (void)run2:(NSDictionary *)data {
+    NSArray *photos = [data objectForKey:@"photoKeys"];
+    
+    [self updateTable:[NSString stringWithFormat:@"fetched %d photos", [photos count]]];
 }
 
 - (void)didFail:(ASIHTTPRequest *)request {
