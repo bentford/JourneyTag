@@ -4,16 +4,21 @@ from google.appengine.ext import db
 
 import jt.model
 import jt.modelhelper
-import jt.service.gamescore
+import jt.service.gameinfo
 import logging
 
 class GetAccountsByHighScore(webapp.RequestHandler):
     def get(self):
-        accounts = jt.service.gamescore.getAccountsByHighScore(200)
-        logging.info('loaded %d accounts' % len(accounts))
+        accounts = jt.service.gameinfo.getAccountsByHighScore(200)
         self.response.out.write(jt.modelhelper.JsonQueryUtil.toArray('accounts',accounts))
 
+class GetLastTenPhotoKeys(webapp.RequestHandler):
+    def get(self):
+        photoKeys = jt.service.gameinfo.getLastTenPhotoKeys()
+        self.response.out.write(jt.modelhelper.keyArrayToJson('photoKeys',photoKeys))
+
 application = webapp.WSGIApplication([('/data/game/getAccountsByHighScore', GetAccountsByHighScore),
+                                      ('/data/game/getLastTenPhotos', GetLastTenPhotoKeys),
 								     ],
                                      debug=True)
 

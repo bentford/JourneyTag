@@ -10,34 +10,24 @@ import jt.model
 import logging
 import os
 import urllib
-import jt.service.gamescore
+import jt.service.gameinfo
 
-def durationFromSeconds(seconds):
-    if seconds > 60:
-        duration = seconds / 60
-        timeName = 'minutes'
-    else:
-        duration = seconds
-        timeName = 'seconds'
-    return (duration,timeName)
+
 
 class Photos(webapp.RequestHandler):
     def get(self):
-        photos = memcache.get('last_ten_photos')
-        if photos is None:
-            photos = db.GqlQuery("SELECT __key__ FROM Photo ORDER BY dateTaken DESC").fetch(10)
-            memcache.add('last_ten_photos', photos, jt.sitesettings.photoCacheDuration)
+        photos = jt.service.gameinfo.getLastTenPhotoKeys()
 
-        (duration, timeName) = durationFromSeconds(jt.sitesettings.photoCacheDuration)
+        (duration, timeName) = jt.service.gameinfo.durationFromSeconds(jt.sitesettings.photoCacheDuration)
         
         tPath = os.path.join(os.path.dirname(__file__),'Templates/imagePreview.html')
         self.response.out.write(template.render(tPath,{'photos':photos, 'count':10, 'duration':duration, 'timeName':timeName}))
 
 class HighScores(webapp.RequestHandler):
     def get(self):
-        accounts = jt.service.gamescore.getAccountsByHighScore(count=200)
+        accounts = jt.service.gameinfo.getAccountsByHighScore(count=200)
         
-        (duration, timeName) = durationFromSeconds(jt.sitesettings.gameStatCache)
+        (duration, timeName) = jt.service.gameinfo.durationFromSeconds(jt.sitesettings.gameStatCache)
         
         tPath = os.path.join(os.path.dirname(__file__),'Templates/highScores.html')
         self.response.out.write(template.render(tPath,{'accounts':accounts, 'count':200, 'duration':duration, 'timeName':timeName}))

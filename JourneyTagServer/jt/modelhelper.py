@@ -21,9 +21,21 @@ class JsonQueryUtil:
           key = str(entity[0].key())
           
         return '{"%s":"%s"}' % (name,key)
-        
+
 class JsonObjectUtil:
     @staticmethod
     def toSingleValue(name,key):
         return '{"%s":"%s"}' % (name,key)
+        
+def keyArrayToJson(name, array):
+    first = True
+    response = '{"%s":[' % (name)
+    for key in array:
+        if not first:
+            response += ','
+        else:
+            first = False
+        response += '"%s"' % str(key)
+    response += ']}'
+    return response
         
