@@ -29,6 +29,7 @@
 		B51E8D6E11960A610040FD28 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51E8D6D11960A610040FD28 /* TitleView.xib */; };
 		B51E8DBE119610300040FD28 /* LatestPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51E8DBD119610300040FD28 /* LatestPhotoViewController.m */; };
 		B51E8DC4119610580040FD28 /* LatestPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51E8DC3119610580040FD28 /* LatestPhotoView.xib */; };
+		B51E8F261196C9BD0040FD28 /* GameIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B51E8F251196C9BD0040FD28 /* GameIcon.png */; };
 		B5302F970FFAB2B700621AF8 /* JTServiceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B5302F960FFAB2B700621AF8 /* JTServiceBase.m */; };
 		B536A1D11044CD0A0050266E /* FakeImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B536A1CF1044CD0A0050266E /* FakeImagePickerViewController.m */; };
 		B536A1D21044CD0A0050266E /* FakeImagePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B536A1D01044CD0A0050266E /* FakeImagePickerView.xib */; };
@@ -224,6 +225,7 @@
 		B51E8DBC119610300040FD28 /* LatestPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestPhotoViewController.h; sourceTree = "<group>"; };
 		B51E8DBD119610300040FD28 /* LatestPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestPhotoViewController.m; sourceTree = "<group>"; };
 		B51E8DC3119610580040FD28 /* LatestPhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestPhotoView.xib; sourceTree = "<group>"; };
+		B51E8F251196C9BD0040FD28 /* GameIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameIcon.png; sourceTree = "<group>"; };
 		B5302F950FFAB2B700621AF8 /* JTServiceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTServiceBase.h; sourceTree = "<group>"; };
 		B5302F960FFAB2B700621AF8 /* JTServiceBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTServiceBase.m; sourceTree = "<group>"; };
 		B536A1CE1044CD0A0050266E /* FakeImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeImagePickerViewController.h; sourceTree = "<group>"; };
@@ -673,6 +675,7 @@
 		B57541170FD4F00D004762E6 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				B51E8F251196C9BD0040FD28 /* GameIcon.png */,
 				B58D12F5114BA4FC00DEDFA1 /* InfoIcon.png */,
 				B58D12E0114B966700DEDFA1 /* GPSBars1.png */,
 				B58D12E1114B966700DEDFA1 /* GPSBars2.png */,
@@ -1176,6 +1179,7 @@
 				B58D12F6114BA4FC00DEDFA1 /* InfoIcon.png in Resources */,
 				B51E8D6E11960A610040FD28 /* TitleView.xib in Resources */,
 				B51E8DC4119610580040FD28 /* LatestPhotoView.xib in Resources */,
+				B51E8F261196C9BD0040FD28 /* GameIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

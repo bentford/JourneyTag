@@ -73,6 +73,12 @@
 }
 
 - (void)dealloc {
+    self.photos = nil;
+    [controllerList release];
+    
+    [gameService cancelReadRequests];
+    [gameService release];
+    
     [super dealloc];
 }
 
