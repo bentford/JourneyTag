@@ -52,6 +52,12 @@
     IBOutlet UILabel *destinationNameLabel;
     IBOutlet UIView *distanceTraveledMeter;
 #pragma mark -
+	
+#pragma mark DistanceMeterView
+	IBOutlet UIView *distanceMeterView;
+	IBOutlet UIImageView *progressGreen;
+	IBOutlet UIImageView *progressOrange;
+#pragma mark -
     
 }
 @property (nonatomic, retain) IBOutlet MKMapView *myMapView;

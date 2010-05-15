@@ -38,6 +38,7 @@
 		B53717F3104E7D9B00BF38AD /* YourTagDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53717F2104E7D9B00BF38AD /* YourTagDetailsTableViewController.m */; };
 		B537198D104FBD0900BF38AD /* DropTagDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B537198C104FBD0900BF38AD /* DropTagDetailsTableViewController.m */; };
 		B542D36E1053931000B88A8E /* ExamplePhotoHorizontal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B542D36D1053931000B88A8E /* ExamplePhotoHorizontal.jpg */; };
+		B5449D36119EC172009299AA /* DistanceMeterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5449D35119EC172009299AA /* DistanceMeterView.xib */; };
 		B547135C104A453F0025059A /* ImageResize.m in Sources */ = {isa = PBXBuildFile; fileRef = B547135B104A453F0025059A /* ImageResize.m */; };
 		B54713A0104A89F80025059A /* ExamplePhoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B547139F104A89F80025059A /* ExamplePhoto.jpg */; };
 		B55AA395105F95F400ED84AE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B57BFD9F0FE8C61900D718B3 /* libsqlite3.dylib */; };
@@ -252,6 +253,7 @@
 		B537198B104FBD0900BF38AD /* DropTagDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropTagDetailsTableViewController.h; sourceTree = "<group>"; };
 		B537198C104FBD0900BF38AD /* DropTagDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropTagDetailsTableViewController.m; sourceTree = "<group>"; };
 		B542D36D1053931000B88A8E /* ExamplePhotoHorizontal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExamplePhotoHorizontal.jpg; sourceTree = "<group>"; };
+		B5449D35119EC172009299AA /* DistanceMeterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistanceMeterView.xib; sourceTree = "<group>"; };
 		B547135A104A453F0025059A /* ImageResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResize.h; sourceTree = "<group>"; };
 		B547135B104A453F0025059A /* ImageResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResize.m; sourceTree = "<group>"; };
 		B547139F104A89F80025059A /* ExamplePhoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExamplePhoto.jpg; sourceTree = "<group>"; };
@@ -1022,6 +1024,7 @@
 				B58D12B9114B47E000DEDFA1 /* GpsInfoView.xib */,
 				B5D1D4F3119E9118008FD96F /* PickupAnnotationView.xib */,
 				B5D1D559119EA673008FD96F /* PickupInfoView.xib */,
+				B5449D35119EC172009299AA /* DistanceMeterView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1228,6 +1231,7 @@
 				B5D1D4F4119E9118008FD96F /* PickupAnnotationView.xib in Resources */,
 				B5D1D4F7119E924D008FD96F /* SampleImage.png in Resources */,
 				B5D1D55A119EA673008FD96F /* PickupInfoView.xib in Resources */,
+				B5449D36119EC172009299AA /* DistanceMeterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

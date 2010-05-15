@@ -679,7 +679,8 @@
         return;        
     }
     
-    if( [[UIDevice currentDevice].uniqueIdentifier compare:@"BCDB12A8-0EA2-54AC-BCB2-B48E7165EB44"] == NSOrderedSame )
+    if( [[UIDevice currentDevice].uniqueIdentifier isEqualToString:@"BCDB12A8-0EA2-54AC-BCB2-B48E7165EB44"] ||
+		[[UIDevice currentDevice].uniqueIdentifier isEqualToString:@"E10ACB44-7EC0-5672-9AF7-C67EB807B653"] )
     {
         FakeImagePickerViewController *fakePicker = [[FakeImagePickerViewController alloc] initWithDelegate:self selector:@selector(didPickFakeImage:)];
         [self presentModalViewController:fakePicker animated:YES];

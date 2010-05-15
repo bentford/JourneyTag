@@ -635,8 +635,13 @@
 
 - (void)showPickupInfoView {
     [[NSBundle mainBundle] loadNibNamed:@"PickupInfoView" owner:self options:nil];
-    [self.view addSubview:pickupInfoView];
-    //pickupInfoView.frame = CGRectMake(0, -50, pickupRangeView.frame.size.width, pickupRangeView.frame.size.height);
+    
+	[[NSBundle mainBundle] loadNibNamed:@"DistanceMeterView" owner:self options:nil];
+	distanceMeterView.frame = CGRectMake(0, 0, distanceTraveledMeter.frame.size.width, distanceTraveledMeter.frame.size.height);
+	[distanceTraveledMeter addSubview:distanceMeterView];
+	
+	[self.view addSubview:pickupInfoView];
+    
     pickupInfoView.center = CGPointMake(pickupInfoView.center.x, pickupInfoView.center.y+20);
     UIWindow *window = [[UIApplication sharedApplication].windows objectAtIndex:0];
     [window addSubview:pickupInfoView];
