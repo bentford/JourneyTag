@@ -45,6 +45,14 @@
     
     UIView *messageView;
     BOOL messageVisible;
+    
+#pragma mark PickupInfoView
+    IBOutlet UIView *pickupInfoView;
+    IBOutlet UILabel *distanceTraveledLabel;
+    IBOutlet UILabel *destinationNameLabel;
+    IBOutlet UIView *distanceTraveledMeter;
+#pragma mark -
+    
 }
 @property (nonatomic, retain) IBOutlet MKMapView *myMapView;
 
@@ -74,4 +82,9 @@
 - (void)setMapType:(int)typeNumber;
 
 - (void)loadDepotOntoMap:(NSDictionary*)depot;
+
+#pragma mark PickupInfoView Actions
+- (IBAction)pickupTagAction:(id)sender;
+- (IBAction)moreInfoAction:(id)sender;
+#pragma mark -
 @end

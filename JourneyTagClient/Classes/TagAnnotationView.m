@@ -25,7 +25,9 @@
     BOOL withinPickupRange = [tagAnnotation withinPickupRange];
     
     [TagAnnotationView addEmblem:self withinPickupRange:withinPickupRange level:level];
-    
+
+    // this is a hack, it hides the built-in callout view
+    self.calloutOffset = CGPointMake(1000, 1000);
     return self;	
 }
 

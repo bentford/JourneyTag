@@ -173,6 +173,18 @@
 		B5BED7C71195702200989F02 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BED7C61195702200989F02 /* GameViewController.m */; };
 		B5BED8101195799E00989F02 /* JTGameService.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BED80F1195799E00989F02 /* JTGameService.m */; };
 		B5BED81D11957B7700989F02 /* HighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BED81C11957B7700989F02 /* HighScoreViewController.m */; };
+		B5D1D4AB119E8A7A008FD96F /* CalloutBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A2119E8A7A008FD96F /* CalloutBackground.png */; };
+		B5D1D4AC119E8A7A008FD96F /* ExpandButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A3119E8A7A008FD96F /* ExpandButton.png */; };
+		B5D1D4AD119E8A7A008FD96F /* MoreInfoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A4119E8A7A008FD96F /* MoreInfoButton.png */; };
+		B5D1D4AE119E8A7A008FD96F /* PickupBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A5119E8A7A008FD96F /* PickupBackground.png */; };
+		B5D1D4AF119E8A7A008FD96F /* PickupTagButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A6119E8A7A008FD96F /* PickupTagButton.png */; };
+		B5D1D4B0119E8A7A008FD96F /* ProgressGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A7119E8A7A008FD96F /* ProgressGreen.png */; };
+		B5D1D4B1119E8A7A008FD96F /* ProgressGreenEndCap.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A8119E8A7A008FD96F /* ProgressGreenEndCap.png */; };
+		B5D1D4B2119E8A7A008FD96F /* ProgressOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A9119E8A7A008FD96F /* ProgressOrange.png */; };
+		B5D1D4B3119E8A7A008FD96F /* ProgressOrangeEndCap.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4AA119E8A7A008FD96F /* ProgressOrangeEndCap.png */; };
+		B5D1D4F4119E9118008FD96F /* PickupAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4F3119E9118008FD96F /* PickupAnnotationView.xib */; };
+		B5D1D4F7119E924D008FD96F /* SampleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4F6119E924D008FD96F /* SampleImage.png */; };
+		B5D1D55A119EA673008FD96F /* PickupInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D559119EA673008FD96F /* PickupInfoView.xib */; };
 		B5D3FAB9105E531D0060B838 /* JourneyTagLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D3FAB8105E531D0060B838 /* JourneyTagLogo.png */; };
 		B5D54B70104BC2E5003EDF58 /* LogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D54B6F104BC2E5003EDF58 /* LogUtil.m */; };
 		B5D54BC3104BC8BF003EDF58 /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D54BC2104BC8BF003EDF58 /* NetworkUtil.m */; };
@@ -342,7 +354,7 @@
 		B5776DC6105B020100DA87A3 /* LogicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogicTests.m; sourceTree = "<group>"; };
 		B5776DE9105B2BA400DA87A3 /* GreatCircleTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreatCircleTests.h; sourceTree = "<group>"; };
 		B5776DEA105B2BA400DA87A3 /* GreatCircleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreatCircleTests.m; sourceTree = "<group>"; };
-		B57ABADE1042641B001731E8 /* PickupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupView.xib; sourceTree = "<group>"; };
+		B57ABADE1042641B001731E8 /* PickupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PickupView.xib; path = ../PickupView.xib; sourceTree = "<group>"; };
 		B57ABAE81042650E001731E8 /* AlternateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlternateView.xib; sourceTree = "<group>"; };
 		B57ABBC4104342F4001731E8 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		B57B00090FE9AD7F00D718B3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -405,7 +417,7 @@
 		B595E78E101FA382004A8055 /* FinishIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FinishIcon2.png; sourceTree = "<group>"; };
 		B595E79C101FA42B004A8055 /* DestinationLocationViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationLocationViewController2.h; sourceTree = "<group>"; };
 		B595E79D101FA42B004A8055 /* DestinationLocationViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationLocationViewController2.m; sourceTree = "<group>"; };
-		B595E7E4101FAAC8004A8055 /* DestinationLocationViewController2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DestinationLocationViewController2.xib; path = Classes/DestinationLocationViewController2.xib; sourceTree = "<group>"; };
+		B595E7E4101FAAC8004A8055 /* DestinationLocationViewController2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DestinationLocationViewController2.xib; sourceTree = "<group>"; };
 		B595E848101FCFB5004A8055 /* TagGrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TagGrey.png; sourceTree = "<group>"; };
 		B595E84A101FD237004A8055 /* TagOutline2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TagOutline2.png; sourceTree = "<group>"; };
 		B595E8C3101FF216004A8055 /* JTAnnotation2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTAnnotation2.h; sourceTree = "<group>"; };
@@ -420,7 +432,7 @@
 		B595ECC41022BAF7004A8055 /* PhotoInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoTableViewController.m; sourceTree = "<group>"; };
 		B595ED841022D501004A8055 /* TraveledMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraveledMapViewController.h; sourceTree = "<group>"; };
 		B595ED851022D501004A8055 /* TraveledMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraveledMapViewController.m; sourceTree = "<group>"; };
-		B595EDAE1022D768004A8055 /* TraveledMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TraveledMapView.xib; sourceTree = "<group>"; };
+		B595EDAE1022D768004A8055 /* TraveledMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TraveledMapView.xib; path = ../TraveledMapView.xib; sourceTree = "<group>"; };
 		B595EF25102398F9004A8055 /* TableCellUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCellUtil.h; sourceTree = "<group>"; };
 		B595EF26102398F9004A8055 /* TableCellUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCellUtil.m; sourceTree = "<group>"; };
 		B595EFE21023BF27004A8055 /* JTScoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTScoreService.h; sourceTree = "<group>"; };
@@ -456,6 +468,18 @@
 		B5BED80F1195799E00989F02 /* JTGameService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTGameService.m; sourceTree = "<group>"; };
 		B5BED81B11957B7700989F02 /* HighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreViewController.h; sourceTree = "<group>"; };
 		B5BED81C11957B7700989F02 /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreViewController.m; sourceTree = "<group>"; };
+		B5D1D4A2119E8A7A008FD96F /* CalloutBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalloutBackground.png; sourceTree = "<group>"; };
+		B5D1D4A3119E8A7A008FD96F /* ExpandButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExpandButton.png; sourceTree = "<group>"; };
+		B5D1D4A4119E8A7A008FD96F /* MoreInfoButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MoreInfoButton.png; sourceTree = "<group>"; };
+		B5D1D4A5119E8A7A008FD96F /* PickupBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PickupBackground.png; sourceTree = "<group>"; };
+		B5D1D4A6119E8A7A008FD96F /* PickupTagButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PickupTagButton.png; sourceTree = "<group>"; };
+		B5D1D4A7119E8A7A008FD96F /* ProgressGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressGreen.png; sourceTree = "<group>"; };
+		B5D1D4A8119E8A7A008FD96F /* ProgressGreenEndCap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressGreenEndCap.png; sourceTree = "<group>"; };
+		B5D1D4A9119E8A7A008FD96F /* ProgressOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressOrange.png; sourceTree = "<group>"; };
+		B5D1D4AA119E8A7A008FD96F /* ProgressOrangeEndCap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressOrangeEndCap.png; sourceTree = "<group>"; };
+		B5D1D4F3119E9118008FD96F /* PickupAnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupAnnotationView.xib; sourceTree = "<group>"; };
+		B5D1D4F6119E924D008FD96F /* SampleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage.png; sourceTree = "<group>"; };
+		B5D1D559119EA673008FD96F /* PickupInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupInfoView.xib; sourceTree = "<group>"; };
 		B5D3FAB8105E531D0060B838 /* JourneyTagLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JourneyTagLogo.png; sourceTree = "<group>"; };
 		B5D54B6E104BC2E5003EDF58 /* LogUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogUtil.h; sourceTree = "<group>"; };
 		B5D54B6F104BC2E5003EDF58 /* LogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogUtil.m; sourceTree = "<group>"; };
@@ -551,11 +575,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B5D1D49F119E8A6A008FD96F /* Graphics */,
 				B5AA9EAE102ABBE30015A22C /* Html */,
 				B57541240FD4F00D004762E6 /* Activity */,
 				B57541170FD4F00D004762E6 /* Icons */,
 				B57541110FD4F00D004762E6 /* Tags */,
-				B575410E0FD4F00D004762E6 /* Pickup */,
 				B57541400FD4F04E004762E6 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				B57ABBC4104342F4001731E8 /* Entitlements.plist */,
@@ -645,17 +669,6 @@
 			);
 			name = Source;
 			path = Classes;
-			sourceTree = SOURCE_ROOT;
-		};
-		B575410E0FD4F00D004762E6 /* Pickup */ = {
-			isa = PBXGroup;
-			children = (
-				B595E7E4101FAAC8004A8055 /* DestinationLocationViewController2.xib */,
-				B57541100FD4F00D004762E6 /* DepotImageView.xib */,
-				B595EDAE1022D768004A8055 /* TraveledMapView.xib */,
-				B57ABADE1042641B001731E8 /* PickupView.xib */,
-			);
-			name = Pickup;
 			sourceTree = SOURCE_ROOT;
 		};
 		B57541110FD4F00D004762E6 /* Tags */ = {
@@ -890,16 +903,20 @@
 				B5731C590FF9D6B500C06F20 /* PickupTagDetailsTableViewController.m */,
 				B57541860FD4F0D3004762E6 /* PickupViewController.h */,
 				B57541870FD4F0D3004762E6 /* PickupViewController.m */,
+				B57ABADE1042641B001731E8 /* PickupView.xib */,
 				B57541590FD4F0D3004762E6 /* DepotIndexTableViewController.h */,
 				B575415A0FD4F0D3004762E6 /* DepotIndexTableViewController.m */,
 				B57541550FD4F0D3004762E6 /* DepotDetailsTableViewController.h */,
 				B57541560FD4F0D3004762E6 /* DepotDetailsTableViewController.m */,
 				B57541570FD4F0D3004762E6 /* DepotImageViewController.h */,
 				B57541580FD4F0D3004762E6 /* DepotImageViewController.m */,
+				B57541100FD4F00D004762E6 /* DepotImageView.xib */,
 				B595E79C101FA42B004A8055 /* DestinationLocationViewController2.h */,
 				B595E79D101FA42B004A8055 /* DestinationLocationViewController2.m */,
+				B595E7E4101FAAC8004A8055 /* DestinationLocationViewController2.xib */,
 				B595ED841022D501004A8055 /* TraveledMapViewController.h */,
 				B595ED851022D501004A8055 /* TraveledMapViewController.m */,
+				B595EDAE1022D768004A8055 /* TraveledMapView.xib */,
 			);
 			name = Pickup;
 			sourceTree = "<group>";
@@ -1003,6 +1020,8 @@
 				B58D12B6114B47B500DEDFA1 /* GpsInfoView.h */,
 				B58D12B7114B47B500DEDFA1 /* GpsInfoView.m */,
 				B58D12B9114B47E000DEDFA1 /* GpsInfoView.xib */,
+				B5D1D4F3119E9118008FD96F /* PickupAnnotationView.xib */,
+				B5D1D559119EA673008FD96F /* PickupInfoView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1045,6 +1064,23 @@
 				B51E8DC3119610580040FD28 /* LatestPhotoView.xib */,
 			);
 			name = Game;
+			sourceTree = "<group>";
+		};
+		B5D1D49F119E8A6A008FD96F /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				B5D1D4F6119E924D008FD96F /* SampleImage.png */,
+				B5D1D4A2119E8A7A008FD96F /* CalloutBackground.png */,
+				B5D1D4A3119E8A7A008FD96F /* ExpandButton.png */,
+				B5D1D4A4119E8A7A008FD96F /* MoreInfoButton.png */,
+				B5D1D4A5119E8A7A008FD96F /* PickupBackground.png */,
+				B5D1D4A6119E8A7A008FD96F /* PickupTagButton.png */,
+				B5D1D4A7119E8A7A008FD96F /* ProgressGreen.png */,
+				B5D1D4A8119E8A7A008FD96F /* ProgressGreenEndCap.png */,
+				B5D1D4A9119E8A7A008FD96F /* ProgressOrange.png */,
+				B5D1D4AA119E8A7A008FD96F /* ProgressOrangeEndCap.png */,
+			);
+			name = Graphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1180,6 +1216,18 @@
 				B51E8D6E11960A610040FD28 /* TitleView.xib in Resources */,
 				B51E8DC4119610580040FD28 /* LatestPhotoView.xib in Resources */,
 				B51E8F261196C9BD0040FD28 /* GameIcon.png in Resources */,
+				B5D1D4AB119E8A7A008FD96F /* CalloutBackground.png in Resources */,
+				B5D1D4AC119E8A7A008FD96F /* ExpandButton.png in Resources */,
+				B5D1D4AD119E8A7A008FD96F /* MoreInfoButton.png in Resources */,
+				B5D1D4AE119E8A7A008FD96F /* PickupBackground.png in Resources */,
+				B5D1D4AF119E8A7A008FD96F /* PickupTagButton.png in Resources */,
+				B5D1D4B0119E8A7A008FD96F /* ProgressGreen.png in Resources */,
+				B5D1D4B1119E8A7A008FD96F /* ProgressGreenEndCap.png in Resources */,
+				B5D1D4B2119E8A7A008FD96F /* ProgressOrange.png in Resources */,
+				B5D1D4B3119E8A7A008FD96F /* ProgressOrangeEndCap.png in Resources */,
+				B5D1D4F4119E9118008FD96F /* PickupAnnotationView.xib in Resources */,
+				B5D1D4F7119E924D008FD96F /* SampleImage.png in Resources */,
+				B5D1D55A119EA673008FD96F /* PickupInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1329,8 +1377,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ben Ford (39PAC2A863)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ben Ford (39PAC2A863)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1343,8 +1391,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = JourneyTag;
-				PROVISIONING_PROFILE = "6293389E-39DE-4F7A-8901-3CF2D832124F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6293389E-39DE-4F7A-8901-3CF2D832124F";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;

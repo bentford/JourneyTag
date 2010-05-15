@@ -18,9 +18,22 @@
 #import "PickupTagDetailsTableViewController.h"
 #import "AppSettings.h"
 
+@interface PickupViewController(PrivateMethods)
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context;
+
+- (void)showCustomCalloutView:(id<MKAnnotation>)annotation;
+- (void)hideCustomAnnotation;
+- (void)showPickupInfoView;
+- (void)hidePickupInfoView;
+@end
+
 @implementation PickupViewController
 @synthesize myMapView;
 
+#define kCustomCalloutView 100
 #define kTextViewTag 5
 #define MOVE_ANIMATION_DURATION_SECONDS 0.5
 
@@ -324,6 +337,12 @@
         pin.canShowCallout = YES;
         pin.rightCalloutAccessoryView = button;
 
+        // used to override built in callout
+        [pin addObserver:self
+                    forKeyPath:@"selected"
+                       options:NSKeyValueObservingOptionNew
+                       context:@"PIN_ANNOTATION_SELECTED"];
+        
         return pin;
     }
 }
@@ -331,12 +350,25 @@
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
 {
     pickupRangeView.hidden = YES;
+    
+    if( [[myMapView selectedAnnotations] count] > 0 ) 
+        [self.view viewWithTag:kCustomCalloutView].hidden = YES;
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
     pickupRangeView.hidden = NO;
     [pickupRangeView setNeedsDisplay];
+    
+    if( [[myMapView selectedAnnotations] count] > 0 ) {
+        UIView *customCalloutView = [self.view viewWithTag:kCustomCalloutView];
+        customCalloutView.hidden = NO;
+
+        id<MKAnnotation> annotation = [[myMapView selectedAnnotations] objectAtIndex:0];
+        CGPoint pinLocation = [myMapView convertCoordinate:annotation.coordinate toPointToView:self.view];
+        customCalloutView.center = CGPointMake(pinLocation.x+20, pinLocation.y-(customCalloutView.frame.size.height/2 + 25));
+    }
+    
 }
 
 #pragma mark MapLoading
@@ -539,6 +571,17 @@
     [self addGotoButton];
 }
 
+#pragma mark PickupInfoView 
+- (IBAction)pickupTagAction:(id)sender {
+    
+}
+
+- (IBAction)moreInfoAction:(id)sender {
+    
+}
+
+#pragma mark -
+
 #pragma mark other
 - (void)dealloc {
     [myMapView release];
@@ -547,5 +590,59 @@
     [pickupRangeView release];
     
     [super dealloc];
+}
+@end
+
+@implementation PickupViewController(PrivateMethods)
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    NSString *action = (NSString*)context;
+	MKAnnotationView *pin = (MKAnnotationView *)object;    
+    
+    if([action isEqualToString:@"PIN_ANNOTATION_SELECTED"]){
+		BOOL annotationAppeared = [[change valueForKey:@"new"] boolValue];
+		if (annotationAppeared) {
+
+			NSLog(@"annotation selected %@", pin.annotation.title);
+			[self showCustomCalloutView:pin.annotation];
+		}
+		else {
+			NSLog(@"annotation deselected %@", pin.annotation.title);
+			[self hideCustomAnnotation];
+		}
+	}
+}
+
+- (void)showCustomCalloutView:(id<MKAnnotation>)annotation {
+    
+    CGPoint pinLocation = [myMapView convertCoordinate:annotation.coordinate toPointToView:self.view];
+    NSLog(@"pin location: %f, %f", pinLocation.x, pinLocation.y);
+    
+    NSArray *parts = [[NSBundle mainBundle] loadNibNamed:@"PickupAnnotationView" owner:nil options:nil];
+    UIView *customAnnotationView = [parts objectAtIndex:0];
+    
+    customAnnotationView.center = CGPointMake(pinLocation.x+20, pinLocation.y-(customAnnotationView.frame.size.height/2 + 25));
+    customAnnotationView.tag = kCustomCalloutView;
+    [self.view addSubview:customAnnotationView];
+    
+    [self showPickupInfoView];
+    
+}
+
+- (void)hideCustomAnnotation {
+    [[self.view viewWithTag:100] removeFromSuperview];
+}
+
+- (void)showPickupInfoView {
+    [[NSBundle mainBundle] loadNibNamed:@"PickupInfoView" owner:self options:nil];
+    [self.view addSubview:pickupInfoView];
+    //pickupInfoView.frame = CGRectMake(0, -50, pickupRangeView.frame.size.width, pickupRangeView.frame.size.height);
+    pickupInfoView.center = CGPointMake(pickupInfoView.center.x, pickupInfoView.center.y+20);
+    UIWindow *window = [[UIApplication sharedApplication].windows objectAtIndex:0];
+    [window addSubview:pickupInfoView];
+}
+
+- (void)hidePickupInfoView {
+    [pickupInfoView release];
 }
 @end
