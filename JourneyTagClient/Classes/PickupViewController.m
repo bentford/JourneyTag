@@ -615,15 +615,10 @@
     
     if([action isEqualToString:@"PIN_ANNOTATION_SELECTED"]){
 		BOOL annotationAppeared = [[change valueForKey:@"new"] boolValue];
-		if (annotationAppeared) {
-
-			NSLog(@"annotation selected %@", pin.annotation.title);
+		if (annotationAppeared)
 			[self showCustomCalloutView:pin.annotation];
-		}
-		else {
-			NSLog(@"annotation deselected %@", pin.annotation.title);
+		else 
 			[self hideCustomTagCallout];
-		}
 	}
 }
 
@@ -674,7 +669,6 @@
 
 - (void)didLoadCalloutImageData:(NSData *)data {
 
-    NSLog(@"did load callout image with: %f bytes", data.length);
     calloutImage.image = [UIImage imageWithData:data];
     [calloutActivity stopAnimating];
 }
