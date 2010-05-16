@@ -15,6 +15,7 @@
 - (void) createPhoto:(NSData*)data delegate:(id)delegate didFinish:(SEL)didFinish didFail:(SEL)didFail;
 - (void) getInfo:(NSString*)photoKey delegate:(id)delegate didFinish:(SEL)didFinish didFail:(SEL)didFail;
 - (void) getData:(NSString*)photoKey delegate:(id)delegate didFinish:(SEL)didFinish didFail:(SEL)didFail;
+- (void)getImageDataWithTagKey:(NSString*)tagKey delegate:(id)delegate didFinish:(SEL)didFinish didFail:(SEL)didFail;
 - (void) flagPhoto:(NSString*)photoKey flag:(BOOL)flag delegate:(id)delegate didFinish:(SEL)didFinish didFail:(SEL)didFail;
 - (void) likePhoto:(NSString*)photoKey like:(BOOL)like delegate:(id)delegate didFinish:(SEL)didFinish didFail:(SEL)didFail;
 @end

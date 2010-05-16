@@ -330,37 +330,47 @@
 - (void)run23:(NSDictionary*)dict
 {
     [self updateTable:@"photo score"];
-    [scoreService getCarryScores:self didFinish:@selector(run24:) didFail:@selector(didFail:)];
+    [scoreService getCarryScores:self didFinish:@selector(run25:) didFail:@selector(didFail:)];
 }
 
-- (void)run24:(NSDictionary*)dict
-{
-    [self updateTable:@"carry score"];
-    [scoreService getArriveScores:self didFinish:@selector(run25:) didFail:@selector(didFail:)];
+- (void)run24:(NSDictionary *)dict {
+    //intentionaly left blank, ok not really
 }
 
 - (void) run25:(NSDictionary*)dict
 {
     [self updateTable:@"arrive score"];
-    [tagService problem:tagKey problemCode:1 delegate:self didFinish:@selector(run26:) didFail:@selector(didFail:)];
-
+    [tagService problem:tagKey problemCode:1 delegate:self didFinish:@selector(run25b:) didFail:@selector(didFail:)];
 }
 
-- (void)run26:(NSDictionary*)dict
-{
+- (void)run25b:(NSDictionary *)dict {
     [self updateTable:@"reported problem"];
-    [tagService delete:tagKey delegate:self didFinish:@selector(run27:) didFail:@selector(didFail:)];    
+    [photoService getImageDataWithTagKey:tagKey delegate:self didFinish:@selector(run25c:) didFail:@selector(didFail:)];    
+}
+
+- (void)run25c:(NSData *)data {
+    [self updateTable:[NSString stringWithFormat:@"fetched %d photo bytes", [data length] ] ];
+    [photoService getData:photoKey delegate:self didFinish:@selector(run26:) didFail:@selector(didFail:)];
+}
+
+- (void)run26:(NSData *)data
+{
+    [self updateTable:[NSString stringWithFormat:@"fetched %d photo bytes", [data length] ] ];
+    [tagService delete:tagKey delegate:self didFinish:@selector(run26b:) didFail:@selector(didFail:)];    
 }
 
 - (void)run27:(NSDictionary*)dict
 {
-    if( [(NSString*)[dict objectForKey:@"tagKey"] compare:tagKey] == NSOrderedSame )
+    if( [(NSString*)[dict objectForKey:@"tagKey"] compare:tagKey] == NSOrderedSame ) {
         [self updateTable:@"deleted tag"];
-    else
+    } else
         [self updateTable:@"error"];
 }
 
+
+
 - (void)didFail:(NSDictionary *)info {
+    [self updateTable:@"ERROR ERROR ERROR"];
     NSLog(@"I FAILED YOU MASTER - %@", [info objectForKey:@"error"]);
     NSLog(@"Server Output: %@", [info objectForKey:@"responseString"]);
 }

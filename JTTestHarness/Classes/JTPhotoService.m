@@ -61,6 +61,19 @@
     [queue addOperation:request];
 }
 
+- (void)getImageDataWithTagKey:(NSString*)tagKey delegate:(id)delegate didFinish:(SEL)didFinish didFail:(SEL)didFail
+{
+    NSArray *params = [NSArray arrayWithObjects:@"tagKey",tagKey,nil];
+    NSURL *url = [JTServiceURLs serviceUrlWithPath:@"/data/photo/getImageDataWithTagKey" withParameters:params];
+    JTServiceFormDataRequestData *request = [[[JTServiceFormDataRequestData alloc] initWithURL:url] autorelease];                                    
+    
+    [request setDelegate:delegate];
+    [request setDidFinishSelector:didFinish];
+    [request setDidFailSelector:didFail];
+    
+    [queue addOperation:request];
+}
+
 - (void) flagPhoto:(NSString*)photoKey flag:(BOOL)flag delegate:(id)delegate didFinish:(SEL)didFinish didFail:(SEL)didFail
 {
     NSString *flagValue = flag ? @"True" : @"False";
