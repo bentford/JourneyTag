@@ -162,11 +162,20 @@ class DropAtDepot(webapp.RequestHandler):
 
 class Pickup(webapp.RequestHandler):
     def post(self):
+        """
+        On success, returns tagKey
+        Of fail, return 'False' string
+        """
         if not jt.auth.auth(self):
             jt.auth.denied(self)
             return
-        key = db.run_in_transaction(jt.service.tag.pickup, jt.auth.accountKey(self), db.Key(self.request.get('tagKey')))
-        self.response.out.write('{"tagKey":"%s"}' % key)
+        inventoryKey = db.run_in_transaction(jt.service.tag.pickup, jt.auth.accountKey(self), db.Key(self.request.get('tagKey')))
+        
+        result = self.request.get('tagKey')
+        if inventoryKey == 'False':
+            result = 'False'
+        
+        self.response.out.write('{"tagKey":"%s"}' % result)
 
 class GetForCoordinate(webapp.RequestHandler):
     def get(self):

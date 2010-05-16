@@ -169,7 +169,15 @@ def validateDestinationAccuracy(meters):
         return jt.gamesettings.defaultDestinationAccuracy
 
 
-def pickup(accountKey, tagKey):    
+def pickup(accountKey, tagKey):   
+    """
+    On success, returns inventory key (not tagKey)
+    Of fail, return 'False' string
+    --
+    Tag pickups only fail if someone else has already picked it up
+    
+    This must be run in a transaction for it to work.
+    """ 
     tag = db.get(tagKey)
     
     #final defense against invalid pickups
