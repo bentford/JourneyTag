@@ -38,6 +38,7 @@
     
     JTTagService *tagService;
     JTDepotService *depotService;
+    JTPhotoService *photoService;
     
     JTDrawPickupRange *pickupRangeView;
     
@@ -45,6 +46,7 @@
     
     UIView *messageView;
     BOOL messageVisible;
+    
     
 #pragma mark PickupInfoView
     IBOutlet UIView *pickupInfoView;
@@ -57,6 +59,14 @@
 	IBOutlet UIView *distanceMeterView;
 	IBOutlet UIImageView *progressGreen;
 	IBOutlet UIImageView *progressOrange;
+#pragma mark -
+    
+#pragma mark TagCalloutView
+    IBOutlet UIView *customTagCallout;
+    IBOutlet UILabel *calloutTitle;
+    IBOutlet UILabel *calloutDestinationDirection;
+    IBOutlet UIImageView *calloutImage;
+    IBOutlet UIActivityIndicatorView *calloutActivity;
 #pragma mark -
     
 }

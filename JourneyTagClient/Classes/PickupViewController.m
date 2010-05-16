@@ -17,6 +17,7 @@
 #import "GreatCircleDistance.h"
 #import "PickupTagDetailsTableViewController.h"
 #import "AppSettings.h"
+#import "JTServiceURLs.h"
 
 @interface PickupViewController(PrivateMethods)
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -25,15 +26,16 @@
                        context:(void *)context;
 
 - (void)showCustomCalloutView:(id<MKAnnotation>)annotation;
-- (void)hideCustomAnnotation;
+- (void)hideCustomTagCallout;
 - (void)showPickupInfoView;
 - (void)hidePickupInfoView;
+- (void)didLoadCalloutImageData:(NSData *)data;
+- (void)didFail:(ASIHTTPRequest *)request;
 @end
 
 @implementation PickupViewController
 @synthesize myMapView;
 
-#define kCustomCalloutView 100
 #define kTextViewTag 5
 #define MOVE_ANIMATION_DURATION_SECONDS 0.5
 
@@ -42,6 +44,7 @@
     self.title = @"Pickup";
     tagService = [[JTTagService alloc] init];
     depotService = [[JTDepotService alloc] init];
+    photoService = [[JTPhotoService alloc] init];
     
     hasPreviouslySelectedDepot = NO;
     
@@ -124,6 +127,11 @@
     [self startLocationManager];
     
     [self createScrollCheckTimer];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [self hideCustomTagCallout];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -352,7 +360,7 @@
     pickupRangeView.hidden = YES;
     
     if( [[myMapView selectedAnnotations] count] > 0 ) 
-        [self.view viewWithTag:kCustomCalloutView].hidden = YES;
+        customTagCallout.hidden = YES;
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
@@ -361,12 +369,12 @@
     [pickupRangeView setNeedsDisplay];
     
     if( [[myMapView selectedAnnotations] count] > 0 ) {
-        UIView *customCalloutView = [self.view viewWithTag:kCustomCalloutView];
-        customCalloutView.hidden = NO;
+        
+        customTagCallout.hidden = NO;
 
         id<MKAnnotation> annotation = [[myMapView selectedAnnotations] objectAtIndex:0];
         CGPoint pinLocation = [myMapView convertCoordinate:annotation.coordinate toPointToView:self.view];
-        customCalloutView.center = CGPointMake(pinLocation.x+20, pinLocation.y-(customCalloutView.frame.size.height/2 + 25));
+        customTagCallout.center = CGPointMake(pinLocation.x+20, pinLocation.y-(customTagCallout.frame.size.height/2 + 25));
     }
     
 }
@@ -608,29 +616,41 @@
 		}
 		else {
 			NSLog(@"annotation deselected %@", pin.annotation.title);
-			[self hideCustomAnnotation];
+			[self hideCustomTagCallout];
 		}
 	}
 }
 
 - (void)showCustomCalloutView:(id<MKAnnotation>)annotation {
+
+    // this contains the key, which can be used to get the image
+    JTAnnotation *tagAnnotation = (JTAnnotation *)annotation;
+    NSLog(@"tag key: %@", tagAnnotation.key);
     
     CGPoint pinLocation = [myMapView convertCoordinate:annotation.coordinate toPointToView:self.view];
     NSLog(@"pin location: %f, %f", pinLocation.x, pinLocation.y);
     
-    NSArray *parts = [[NSBundle mainBundle] loadNibNamed:@"PickupAnnotationView" owner:nil options:nil];
-    UIView *customAnnotationView = [parts objectAtIndex:0];
+    [[NSBundle mainBundle] loadNibNamed:@"TagCalloutView" owner:self options:nil];
     
-    customAnnotationView.center = CGPointMake(pinLocation.x+20, pinLocation.y-(customAnnotationView.frame.size.height/2 + 25));
-    customAnnotationView.tag = kCustomCalloutView;
-    [self.view addSubview:customAnnotationView];
+    customTagCallout.center = CGPointMake(pinLocation.x+20, pinLocation.y-(customTagCallout.frame.size.height/2 + 25));
+    calloutTitle.text = annotation.title;
+    calloutDestinationDirection.text = annotation.subtitle;
+    
+    
+    [self.view addSubview:customTagCallout];
     
     [self showPickupInfoView];
     
+    [calloutActivity startAnimating];
+    [photoService getImageDataWithTagKey:tagAnnotation.key delegate:self didFinish:@selector(didLoadCalloutImageData:) didFail:@selector(didFail:)];
 }
 
-- (void)hideCustomAnnotation {
-    [[self.view viewWithTag:100] removeFromSuperview];
+- (void)hideCustomTagCallout {
+    [customTagCallout removeFromSuperview]; //not retained so it dies
+    customTagCallout = nil;
+    
+    [pickupInfoView removeFromSuperview];
+    pickupInfoView = nil;
 }
 
 - (void)showPickupInfoView {
@@ -649,5 +669,17 @@
 
 - (void)hidePickupInfoView {
     [pickupInfoView release];
+}
+
+- (void)didLoadCalloutImageData:(NSData *)data {
+
+    NSLog(@"did load callout image with: %f bytes", data.length);
+    calloutImage.image = [UIImage imageWithData:data];
+    [calloutActivity stopAnimating];
+}
+
+- (void)didFail:(ASIHTTPRequest *)request {
+    NSLog(@"request failed");
+    [calloutActivity stopAnimating];
 }
 @end

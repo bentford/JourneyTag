@@ -11,8 +11,8 @@ import jt.model
 import jt.modelhelper
 import jt.auth
 import jt.service.photoscoreindex
-
-
+import jt.service.mark
+import logging
 
 class GetData(webapp.RequestHandler):
   def get(self):
@@ -26,6 +26,15 @@ class GetData(webapp.RequestHandler):
       
       self.response.headers['Content-Type'] = 'image/jpeg'
       self.response.out.write(photo.data)
+
+class GetImageDataWithTagKey(webapp.RequestHandler):
+    def get(self):
+        #fetch photoKey from tagKey
+        mark = jt.service.mark.mostRecentMarkForTag(db.Key(self.request.get('tagKey')))
+
+        # TODO: memcache the photo by tagKey
+        self.response.headers['Content-Type'] = 'image/jpeg'
+        self.response.out.write(mark.photo.data)
 
 class GetInfo(webapp.RequestHandler):
     def get(self):
@@ -79,6 +88,7 @@ class LikePhoto(webapp.RequestHandler):
 
 
 application = webapp.WSGIApplication([('/data/photo/getData', GetData),
+                                      ('/data/photo/getImageDataWithTagKey', GetImageDataWithTagKey),
                                       ('/data/photo/getInfo', GetInfo),
 								      ('/data/photo/create', Create),
 								      ('/data/photo/takenBy', TakenBy),
