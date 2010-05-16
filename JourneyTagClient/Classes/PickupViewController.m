@@ -479,7 +479,7 @@
         details.currentLocation = currentLocation;
         details.hasLocation = hasLocation || hasPreviouslySelectedDepot;
         details.pickupDelegate = self;
-        details.didPickupTagSelector = @selector(didPickupTag:);
+        details.didPickupTagSelector = @selector(removeTagFromMap:);
         
         details.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:details animated:YES];    
@@ -508,44 +508,20 @@
     }
 }
 
-// remove the tag from the map
-- (void)didPickupTag:(NSString*)tagKey
-{       
-    int count = [myMapView.annotations count];
-    
-    NSMutableArray *removeList = [[NSMutableArray alloc] initWithCapacity:0];
-    for( int i = 0; i < count; i++ )
-    {
-        id<MKAnnotation> ob = [myMapView.annotations objectAtIndex:i];
-        if( [ob isKindOfClass:[JTAnnotation class]] )
-        {
-            JTAnnotation *annotation = (JTAnnotation*)ob;
-            // TODO: this only works on selectedTagKey, the tagKey parameter is different?
-            if( [annotation.key isEqualToString:self.selectedTagKey] ) { 
-                [removeList addObject:annotation];
 
-            }
-        }
-    }
+- (void)removeTagFromMap:(NSString*)tagKey {     
     
-    for( JTAnnotation *annotation in removeList) {
-        
-        // 1) remove observer 
-        TagAnnotationView *annotationView = [annotationViews objectForKey:annotation.key];
-        [annotationView removeObserver:self forKeyPath:@"selected"];
-        
-        // 2) remove from tracking dictionary
-        [annotationViews removeObjectForKey:annotation.key];
-        
-        // 3) remove from map
-        [myMapView removeAnnotation:annotation];
-        
-        // 4) annotation is no longer referenced and dies a glorious death
-    }
-    [removeList release];
+    // 1) remove observer 
+    TagAnnotationView *annotationView = [annotationViews objectForKey:tagKey];
+    [annotationView removeObserver:self forKeyPath:@"selected"];
     
-    // WARNING: do not hide custom callout until removing the tag from the map
-    // this method clears the selectedTagKey
+    // 2) remove from tracking dictionary
+    [annotationViews removeObjectForKey:tagKey];
+    
+    // 3) remove annotation from map
+    [TagMapLoader removeJTAnnotationFromMap:myMapView forTagKey:tagKey];
+    
+    // 4) dismiss callout - this method clears the selectedTagKey
     [self hideCustomTagCallout];
 }
 
@@ -625,7 +601,7 @@
     details.currentLocation = currentLocation;
     details.hasLocation = hasLocation || hasPreviouslySelectedDepot;
     details.pickupDelegate = self;
-    details.didPickupTagSelector = @selector(didPickupTag:);
+    details.didPickupTagSelector = @selector(removeTagFromMap:);
     
     details.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:details animated:YES];    
@@ -748,11 +724,13 @@
 }
 
 - (void)pickupTag {
+
     [tagService pickup:self.selectedTagKey delegate:self didFinish:@selector(checkForFailedTagPickup:) didFail:@selector(didFail:)]; 
 }
 
 - (void)checkForFailedTagPickup:(NSDictionary *)dict {
     
+
     NSString *tagKey = [dict objectForKey:@"tagKey"];
     if( [tagKey isEqualToString:@"False"] )
     {
@@ -761,7 +739,7 @@
         [alert release]; 
     } 
     
-    [self didPickupTag:tagKey];
+    [self removeTagFromMap:tagKey];
 }
 
 - (JTAnnotation *)getJTAnnotationWithTagKey:(NSString *)tagKey {

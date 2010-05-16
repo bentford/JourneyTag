@@ -56,6 +56,28 @@
     [removeList release];    
 }
 
++ (void)removeJTAnnotationFromMap:(MKMapView *)mapView forTagKey:(NSString *)tagKey {
+    int count = [mapView.annotations count];
+    
+    NSMutableArray *removeList = [[NSMutableArray alloc] initWithCapacity:0];
+    for( int i = 0; i < count; i++ )
+    {
+        id<MKAnnotation> ob = [mapView.annotations objectAtIndex:i];
+        if( [ob isKindOfClass:[JTAnnotation class]] )
+        {
+            JTAnnotation *annotation = (JTAnnotation*)ob;
+            if( [annotation.key isEqualToString:tagKey] ) { 
+                [removeList addObject:annotation];
+            }
+        }
+    }
+    
+    for( JTAnnotation *annotation in removeList) {
+        [mapView removeAnnotation:annotation];
+    }
+    [removeList release];
+}
+
 + (void) loadTag:(MKMapView*)mapView lat:(double)lat lon:(double)lon
 {
     CLLocationCoordinate2D newCoordinate;
