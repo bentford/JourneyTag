@@ -29,7 +29,7 @@
                         change:(NSDictionary *)change
                        context:(void *)context;
 
-- (void)showCustomCalloutView:(id<MKAnnotation>)annotation;
+- (void)showCustomTagCalloutView:(id<MKAnnotation>)annotation;
 - (void)hideCustomTagCallout;
 - (void)showPickupInfoView;
 - (void)hidePickupInfoView;
@@ -668,13 +668,13 @@
     if([action isEqualToString:@"PIN_ANNOTATION_SELECTED"]){
 		BOOL annotationAppeared = [[change valueForKey:@"new"] boolValue];
 		if (annotationAppeared)
-			[self showCustomCalloutView:pin.annotation];
+			[self showCustomTagCalloutView:pin.annotation];
 		else 
 			[self hideCustomTagCallout];
 	}
 }
 
-- (void)showCustomCalloutView:(id<MKAnnotation>)annotation {
+- (void)showCustomTagCalloutView:(id<MKAnnotation>)annotation {
     
     [[NSBundle mainBundle] loadNibNamed:@"TagCalloutView" owner:self options:nil];
 
