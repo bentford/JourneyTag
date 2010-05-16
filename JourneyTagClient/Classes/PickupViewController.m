@@ -31,6 +31,7 @@
 - (void)hidePickupInfoView;
 - (void)didLoadCalloutImageData:(NSData *)data;
 - (void)didFail:(ASIHTTPRequest *)request;
+- (CGRect)getCalloutFrameForAnnotationView:(id<MKAnnotation>)annotation;
 @end
 
 @implementation PickupViewController
@@ -373,8 +374,7 @@
         customTagCallout.hidden = NO;
 
         id<MKAnnotation> annotation = [[myMapView selectedAnnotations] objectAtIndex:0];
-        CGPoint pinLocation = [myMapView convertCoordinate:annotation.coordinate toPointToView:self.view];
-        customTagCallout.center = CGPointMake(pinLocation.x+20, pinLocation.y-(customTagCallout.frame.size.height/2 + 25));
+        customTagCallout.frame = [self getCalloutFrameForAnnotationView:annotation];
     }
     
 }
@@ -590,6 +590,12 @@
 
 #pragma mark -
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    if( touch.view == customTagCallout )
+        NSLog(@"touched callout");
+}
+
 #pragma mark other
 - (void)dealloc {
     [myMapView release];
@@ -622,26 +628,21 @@
 }
 
 - (void)showCustomCalloutView:(id<MKAnnotation>)annotation {
-
-    // this contains the key, which can be used to get the image
-    JTAnnotation *tagAnnotation = (JTAnnotation *)annotation;
-    NSLog(@"tag key: %@", tagAnnotation.key);
-    
-    CGPoint pinLocation = [myMapView convertCoordinate:annotation.coordinate toPointToView:self.view];
-    NSLog(@"pin location: %f, %f", pinLocation.x, pinLocation.y);
     
     [[NSBundle mainBundle] loadNibNamed:@"TagCalloutView" owner:self options:nil];
-    
-    customTagCallout.center = CGPointMake(pinLocation.x+20, pinLocation.y-(customTagCallout.frame.size.height/2 + 25));
+
+    customTagCallout.frame = [self getCalloutFrameForAnnotationView:annotation];
     calloutTitle.text = annotation.title;
     calloutDestinationDirection.text = annotation.subtitle;
-    
     
     [self.view addSubview:customTagCallout];
     
     [self showPickupInfoView];
     
     [calloutActivity startAnimating];
+    
+    // this contains the tagKey, which can be used to get the image
+    JTAnnotation *tagAnnotation = (JTAnnotation *)annotation;
     [photoService getImageDataWithTagKey:tagAnnotation.key delegate:self didFinish:@selector(didLoadCalloutImageData:) didFail:@selector(didFail:)];
 }
 
@@ -681,5 +682,15 @@
 - (void)didFail:(ASIHTTPRequest *)request {
     NSLog(@"request failed");
     [calloutActivity stopAnimating];
+}
+
+
+- (CGRect)getCalloutFrameForAnnotationView:(id<MKAnnotation>)annotation {
+
+    CGPoint pinLocation = [myMapView convertCoordinate:annotation.coordinate toPointToView:self.view];
+    return CGRectMake(round(pinLocation.x) - 50, 
+                      round(pinLocation.y) - 20 - customTagCallout.frame.size.height, 
+                      customTagCallout.frame.size.width,
+                      customTagCallout.frame.size.height);
 }
 @end
