@@ -19,6 +19,10 @@
 #import "AppSettings.h"
 #import "JTServiceURLs.h"
 
+@interface PickupViewController()
+@property (nonatomic, retain) NSString *selectedTagKey;
+@end
+
 @interface PickupViewController(PrivateMethods)
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
@@ -32,10 +36,13 @@
 - (void)didLoadCalloutImageData:(NSData *)data;
 - (void)didFail:(ASIHTTPRequest *)request;
 - (CGRect)getCalloutFrameForAnnotationView:(id<MKAnnotation>)annotation;
+- (void)pickupTag;
+- (void)checkForFailedTagPickup:(NSDictionary *)dict;
+- (JTAnnotation *)getJTAnnotationWithTagKey:(NSString *)tagKey;
 @end
 
 @implementation PickupViewController
-@synthesize myMapView;
+@synthesize myMapView, selectedTagKey;
 
 #define kTextViewTag 5
 #define MOVE_ANIMATION_DURATION_SECONDS 0.5
@@ -52,6 +59,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushTagDetails) name:@"PushTagDetails" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moveToDepot:) name:@"MoveToDepot" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(markWasTouched:) name:@"MarkWasTouched" object:nil];
+    
+    annotationViews = [[NSMutableDictionary alloc] initWithCapacity:0];
 }
 
 #pragma mark  init
@@ -344,7 +353,8 @@
         TagAnnotationView *pin = [[[TagAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"] autorelease];
         
         pin.canShowCallout = YES;
-        pin.rightCalloutAccessoryView = button;
+        // deprecated
+        //pin.rightCalloutAccessoryView = button; 
 
         // used to override built in callout
         [pin addObserver:self
@@ -352,6 +362,7 @@
                        options:NSKeyValueObservingOptionNew
                        context:@"PIN_ANNOTATION_SELECTED"];
         
+        [annotationViews setObject:pin forKey:tag.key];
         return pin;
     }
 }
@@ -497,31 +508,45 @@
     }
 }
 
+// remove the tag from the map
 - (void)didPickupTag:(NSString*)tagKey
-{    
+{       
     int count = [myMapView.annotations count];
     
-    NSMutableArray *removeList = [[NSMutableArray alloc] initWithCapacity:count];
-    
+    NSMutableArray *removeList = [[NSMutableArray alloc] initWithCapacity:0];
     for( int i = 0; i < count; i++ )
     {
         id<MKAnnotation> ob = [myMapView.annotations objectAtIndex:i];
         if( [ob isKindOfClass:[JTAnnotation class]] )
         {
             JTAnnotation *annotation = (JTAnnotation*)ob;
-            if( [annotation.key compare:tagKey] == NSOrderedSame )
-            {
+            // TODO: this only works on selectedTagKey, the tagKey parameter is different?
+            if( [annotation.key isEqualToString:self.selectedTagKey] ) { 
                 [removeList addObject:annotation];
 
             }
         }
     }
     
-    for( JTAnnotation *annotation in removeList)
-    {
+    for( JTAnnotation *annotation in removeList) {
+        
+        // 1) remove observer 
+        TagAnnotationView *annotationView = [annotationViews objectForKey:annotation.key];
+        [annotationView removeObserver:self forKeyPath:@"selected"];
+        
+        // 2) remove from tracking dictionary
+        [annotationViews removeObjectForKey:annotation.key];
+        
+        // 3) remove from map
         [myMapView removeAnnotation:annotation];
+        
+        // 4) annotation is no longer referenced and dies a glorious death
     }
     [removeList release];
+    
+    // WARNING: do not hide custom callout until removing the tag from the map
+    // this method clears the selectedTagKey
+    [self hideCustomTagCallout];
 }
 
 #pragma mark CLLocationManager
@@ -581,13 +606,39 @@
 
 #pragma mark PickupInfoView 
 - (IBAction)pickupTagAction:(id)sender {
-    
+
+    // confirm tag pickup
+    UIActionSheet *confirm = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Confirm Pickup",@"Cancel",nil];
+    confirm.destructiveButtonIndex = 0;
+    confirm.actionSheetStyle = UIActionSheetStyleDefault;
+    [confirm showInView:self.tabBarController.view];
+    [confirm release];
 }
 
 - (IBAction)moreInfoAction:(id)sender {
     
+    JTAnnotation *annotation = [self getJTAnnotationWithTagKey:self.selectedTagKey];
+    
+    PickupTagDetailsTableViewController *details = [[PickupTagDetailsTableViewController alloc] init];
+    details.tagKey = self.selectedTagKey;    
+    details.withinPickupRange = annotation.withinPickupRange;
+    details.currentLocation = currentLocation;
+    details.hasLocation = hasLocation || hasPreviouslySelectedDepot;
+    details.pickupDelegate = self;
+    details.didPickupTagSelector = @selector(didPickupTag:);
+    
+    details.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:details animated:YES];    
+    [details release];    
 }
 
+#pragma mark -
+
+#pragma mark UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if( buttonIndex == 0)
+        [self pickupTag];
+}
 #pragma mark -
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -602,6 +653,7 @@
     [tagService release];
     [locManager release];
     [pickupRangeView release];
+    [annotationViews release];
     
     [super dealloc];
 }
@@ -638,6 +690,10 @@
     
     // this contains the tagKey, which can be used to get the image
     JTAnnotation *tagAnnotation = (JTAnnotation *)annotation;
+    
+    // need this for picking up tag
+    self.selectedTagKey = tagAnnotation.key;
+    
     [photoService getImageDataWithTagKey:tagAnnotation.key delegate:self didFinish:@selector(didLoadCalloutImageData:) didFail:@selector(didFail:)];
 }
 
@@ -647,6 +703,9 @@
     
     [pickupInfoView removeFromSuperview];
     pickupInfoView = nil;
+    
+    // clear tag selection
+    self.selectedTagKey = nil;
 }
 
 - (void)showPickupInfoView {
@@ -686,5 +745,37 @@
                       round(pinLocation.y) - 20 - customTagCallout.frame.size.height, 
                       customTagCallout.frame.size.width,
                       customTagCallout.frame.size.height);
+}
+
+- (void)pickupTag {
+    [tagService pickup:self.selectedTagKey delegate:self didFinish:@selector(checkForFailedTagPickup:) didFail:@selector(didFail:)]; 
+}
+
+- (void)checkForFailedTagPickup:(NSDictionary *)dict {
+    
+    NSString *tagKey = [dict objectForKey:@"tagKey"];
+    if( [tagKey isEqualToString:@"False"] )
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Too slow" message:@"Another player picked up this tag before you could." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        [alert release]; 
+    } 
+    
+    [self didPickupTag:tagKey];
+}
+
+- (JTAnnotation *)getJTAnnotationWithTagKey:(NSString *)tagKey {
+    int count = [myMapView.annotations count];
+    for( int i = 0; i < count; i++ )
+    {
+        id<MKAnnotation> ob = [myMapView.annotations objectAtIndex:i];
+        if( [ob isKindOfClass:[JTAnnotation class]] )
+        {
+            JTAnnotation *annotation = (JTAnnotation*)ob;
+            if( [annotation.key isEqualToString:self.selectedTagKey] )
+                return annotation;
+        }
+    }   
+    return nil;
 }
 @end
