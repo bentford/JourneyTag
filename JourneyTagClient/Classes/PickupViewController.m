@@ -202,7 +202,7 @@
         
         [self startLocationManager];
         
-        [TagMapLoader removeJTAnnotationFromMap:myMapView forType:JTAnnotationTypeDepot];
+        [TagMapLoader removeAllJTAnnotationsFromMap:myMapView forType:JTAnnotationTypeDepot];
         
         currentLocation = locManager.location.coordinate;
         [self addGotoButton];

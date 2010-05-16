@@ -15,7 +15,7 @@
 
 + (void) loadDepot:(MKMapView*) mapView dictionary:(NSDictionary*)depot
 {
-    [TagMapLoader removeJTAnnotationFromMap:mapView forType:JTAnnotationTypeDepot];
+    [TagMapLoader removeAllJTAnnotationsFromMap:mapView forType:JTAnnotationTypeDepot];
     
     CLLocationCoordinate2D newCoordinate;
     newCoordinate.latitude =  [[[depot objectForKey:@"coordinate"] objectForKey:@"lat"] doubleValue];
@@ -31,8 +31,7 @@
     [marker release];
 }
 
-+ (void) removeJTAnnotationFromMap:(MKMapView*) mapView forType:(JTAnnotationType)type
-{    
++ (void)removeAllJTAnnotationsFromMap:(MKMapView*) mapView forType:(JTAnnotationType)type {    
     
     NSMutableArray *removeList = [[NSMutableArray alloc] initWithCapacity:0];
     
@@ -72,7 +71,7 @@
 + (BOOL) loadTags:(MKMapView*)mapView tags:(NSArray*)tags
 {
     BOOL containsReachableTags = NO;
-    [TagMapLoader removeJTAnnotationFromMap:mapView forType:JTAnnotationTypeTag];
+    [TagMapLoader removeAllJTAnnotationsFromMap:mapView forType:JTAnnotationTypeTag];
     for( NSDictionary *tag in tags)
     {
         NSString *tagKey = [tag objectForKey:@"key"];

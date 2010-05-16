@@ -15,7 +15,7 @@
 }
 
 + (void) loadDepot:(MKMapView*) mapView dictionary:(NSDictionary*)depot;
-+ (void) removeJTAnnotationFromMap:(MKMapView*) mapView forType:(JTAnnotationType)type;
++ (void) removeAllJTAnnotationsFromMap:(MKMapView*) mapView forType:(JTAnnotationType)type;
 
 + (void) loadTag:(MKMapView*)mapView lat:(double)lat lon:(double)lon;
 + (BOOL) loadTags:(MKMapView*)mapView tags:(NSArray*)tags;
