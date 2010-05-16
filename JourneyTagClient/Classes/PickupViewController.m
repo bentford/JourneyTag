@@ -637,8 +637,8 @@
     [[NSBundle mainBundle] loadNibNamed:@"PickupInfoView" owner:self options:nil];
     
 	[[NSBundle mainBundle] loadNibNamed:@"DistanceMeterView" owner:self options:nil];
-	distanceMeterView.frame = CGRectMake(0, 0, distanceTraveledMeter.frame.size.width, distanceTraveledMeter.frame.size.height);
-	[distanceTraveledMeter addSubview:distanceMeterView];
+	distanceMeterView.frame = CGRectMake(0, 0, distanceMeterContainer.frame.size.width, distanceMeterContainer.frame.size.height);
+	[distanceMeterContainer addSubview:distanceMeterView];
 	
 	[self.view addSubview:pickupInfoView];
     

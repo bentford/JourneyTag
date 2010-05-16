@@ -24,7 +24,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = B5753FE40FD4EE0D004762E6 /* JourneyTag */;
-		activeSDKPreference = iphonesimulator3.1.3;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* JourneyTag */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* JourneyTag */,
@@ -154,8 +154,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 295616852;
-			PBXWorkspaceStateSaveDate = 295616852;
+			PBXPerProjectTemplateStateSaveDate = 295656843;
+			PBXWorkspaceStateSaveDate = 295656843;
 		};
 		perUserProjectItems = {
 			B506706E0FEEE76D002C843B = B506706E0FEEE76D002C843B /* PBXTextBookmark */;
@@ -208,25 +208,25 @@
 			B5449D17119E84CE009299AA = B5449D17119E84CE009299AA /* PlistBookmark */;
 			B5449D18119E84CE009299AA = B5449D18119E84CE009299AA /* PBXBookmark */;
 			B5449D19119E84CE009299AA = B5449D19119E84CE009299AA /* PlistBookmark */;
-			B5449D43119EC57E009299AA /* PBXTextBookmark */ = B5449D43119EC57E009299AA /* PBXTextBookmark */;
-			B5449D44119EC57E009299AA /* PBXTextBookmark */ = B5449D44119EC57E009299AA /* PBXTextBookmark */;
-			B5449D45119EC57E009299AA /* PBXTextBookmark */ = B5449D45119EC57E009299AA /* PBXTextBookmark */;
-			B5449D5D119EC678009299AA /* PBXTextBookmark */ = B5449D5D119EC678009299AA /* PBXTextBookmark */;
-			B5449D5E119EC678009299AA /* PBXTextBookmark */ = B5449D5E119EC678009299AA /* PBXTextBookmark */;
-			B5449D5F119EC678009299AA /* PBXTextBookmark */ = B5449D5F119EC678009299AA /* PBXTextBookmark */;
-			B5449D60119EC678009299AA /* PBXTextBookmark */ = B5449D60119EC678009299AA /* PBXTextBookmark */;
-			B5449D61119EC678009299AA /* PBXTextBookmark */ = B5449D61119EC678009299AA /* PBXTextBookmark */;
-			B5449D67119EC6FC009299AA /* PBXTextBookmark */ = B5449D67119EC6FC009299AA /* PBXTextBookmark */;
-			B5449D68119EC6FC009299AA /* PBXTextBookmark */ = B5449D68119EC6FC009299AA /* PBXTextBookmark */;
-			B5449D69119EC6FC009299AA /* PBXTextBookmark */ = B5449D69119EC6FC009299AA /* PBXTextBookmark */;
-			B5449D6C119EC748009299AA /* PBXTextBookmark */ = B5449D6C119EC748009299AA /* PBXTextBookmark */;
-			B5449D6D119EC748009299AA /* PBXTextBookmark */ = B5449D6D119EC748009299AA /* PBXTextBookmark */;
-			B5449D75119EC7EA009299AA /* PBXTextBookmark */ = B5449D75119EC7EA009299AA /* PBXTextBookmark */;
-			B5449D76119EC7EA009299AA /* PBXTextBookmark */ = B5449D76119EC7EA009299AA /* PBXTextBookmark */;
-			B5449D77119EC7EA009299AA /* PBXTextBookmark */ = B5449D77119EC7EA009299AA /* PBXTextBookmark */;
-			B5449D7C119EC822009299AA /* PBXTextBookmark */ = B5449D7C119EC822009299AA /* PBXTextBookmark */;
-			B5449D7D119EC822009299AA /* PBXTextBookmark */ = B5449D7D119EC822009299AA /* PBXTextBookmark */;
-			B5449D7E119EC822009299AA /* PBXTextBookmark */ = B5449D7E119EC822009299AA /* PBXTextBookmark */;
+			B5449D43119EC57E009299AA = B5449D43119EC57E009299AA /* PBXTextBookmark */;
+			B5449D44119EC57E009299AA = B5449D44119EC57E009299AA /* PBXTextBookmark */;
+			B5449D45119EC57E009299AA = B5449D45119EC57E009299AA /* PBXTextBookmark */;
+			B5449D5D119EC678009299AA = B5449D5D119EC678009299AA /* PBXTextBookmark */;
+			B5449D5E119EC678009299AA = B5449D5E119EC678009299AA /* PBXTextBookmark */;
+			B5449D5F119EC678009299AA = B5449D5F119EC678009299AA /* PBXTextBookmark */;
+			B5449D60119EC678009299AA = B5449D60119EC678009299AA /* PBXTextBookmark */;
+			B5449D61119EC678009299AA = B5449D61119EC678009299AA /* PBXTextBookmark */;
+			B5449D67119EC6FC009299AA = B5449D67119EC6FC009299AA /* PBXTextBookmark */;
+			B5449D68119EC6FC009299AA = B5449D68119EC6FC009299AA /* PBXTextBookmark */;
+			B5449D69119EC6FC009299AA = B5449D69119EC6FC009299AA /* PBXTextBookmark */;
+			B5449D6C119EC748009299AA = B5449D6C119EC748009299AA /* PBXTextBookmark */;
+			B5449D6D119EC748009299AA = B5449D6D119EC748009299AA /* PBXTextBookmark */;
+			B5449D75119EC7EA009299AA = B5449D75119EC7EA009299AA /* PBXTextBookmark */;
+			B5449D76119EC7EA009299AA = B5449D76119EC7EA009299AA /* PBXTextBookmark */;
+			B5449D77119EC7EA009299AA = B5449D77119EC7EA009299AA /* PBXTextBookmark */;
+			B5449D7C119EC822009299AA = B5449D7C119EC822009299AA /* PBXTextBookmark */;
+			B5449D7D119EC822009299AA = B5449D7D119EC822009299AA /* PBXTextBookmark */;
+			B5449D7E119EC822009299AA = B5449D7E119EC822009299AA /* PBXTextBookmark */;
 			B5471376104A4B370025059A = B5471376104A4B370025059A /* PBXTextBookmark */;
 			B55AA398105F960300ED84AE = B55AA398105F960300ED84AE /* PBXBookmark */;
 			B55AA399105F960300ED84AE = B55AA399105F960300ED84AE /* PBXTextBookmark */;
@@ -1215,7 +1215,7 @@
 		fRef = B57541860FD4F0D3004762E6 /* PickupViewController.h */;
 		name = "PickupViewController.h: 57";
 		rLen = 0;
-		rLoc = 1332;
+		rLoc = 1333;
 		rType = 0;
 		vrLen = 679;
 		vrLoc = 854;
@@ -1225,7 +1225,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 640";
 		rLen = 19;
-		rLoc = 20550;
+		rLoc = 20553;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 19823;
@@ -1235,7 +1235,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 640";
 		rLen = 0;
-		rLoc = 20569;
+		rLoc = 20572;
 		rType = 0;
 		vrLen = 893;
 		vrLoc = 19823;
@@ -1245,7 +1245,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 640";
 		rLen = 0;
-		rLoc = 20569;
+		rLoc = 20572;
 		rType = 0;
 		vrLen = 952;
 		vrLoc = 19823;
@@ -1305,7 +1305,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 640";
 		rLen = 0;
-		rLoc = 20569;
+		rLoc = 20572;
 		rType = 0;
 		vrLen = 768;
 		vrLoc = 20007;
@@ -1335,7 +1335,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 642";
 		rLen = 0;
-		rLoc = 20611;
+		rLoc = 20614;
 		rType = 0;
 		vrLen = 717;
 		vrLoc = 20056;
@@ -1345,7 +1345,7 @@
 		fRef = B57541860FD4F0D3004762E6 /* PickupViewController.h */;
 		name = "PickupViewController.h: 57";
 		rLen = 0;
-		rLoc = 1332;
+		rLoc = 1333;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 923;
@@ -1355,7 +1355,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 641";
 		rLen = 0;
-		rLoc = 20571;
+		rLoc = 20574;
 		rType = 0;
 		vrLen = 771;
 		vrLoc = 20092;
@@ -1365,9 +1365,9 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 641";
 		rLen = 0;
-		rLoc = 20571;
+		rLoc = 20574;
 		rType = 0;
-		vrLen = 809;
+		vrLen = 807;
 		vrLoc = 20097;
 	};
 	B5449D7C119EC822009299AA /* PBXTextBookmark */ = {
@@ -1375,7 +1375,7 @@
 		fRef = B57541860FD4F0D3004762E6 /* PickupViewController.h */;
 		name = "PickupViewController.h: 57";
 		rLen = 0;
-		rLoc = 1332;
+		rLoc = 1333;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 923;
@@ -1385,9 +1385,9 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 641";
 		rLen = 0;
-		rLoc = 20571;
+		rLoc = 20574;
 		rType = 0;
-		vrLen = 814;
+		vrLen = 812;
 		vrLoc = 20092;
 	};
 	B5449D7E119EC822009299AA /* PBXTextBookmark */ = {
@@ -2116,18 +2116,18 @@
 	};
 	B57541860FD4F0D3004762E6 /* PickupViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {938, 1938}}";
-			sepNavSelRange = "{1332, 0}";
-			sepNavVisRange = "{923, 610}";
+			sepNavIntBoundsRect = "{{0, 0}, {1236, 1953}}";
+			sepNavSelRange = "{1333, 0}";
+			sepNavVisRange = "{849, 1390}";
 			sepNavWindowFrame = "{{15, 86}, {1039, 942}}";
 		};
 	};
 	B57541870FD4F0D3004762E6 /* PickupViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1036, 12350}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1353, 13319}}";
 			sepNavSelRange = "{20389, 0}";
-			sepNavVisRange = "{20097, 807}";
-			sepNavWindowFrame = "{{15, 86}, {1039, 942}}";
+			sepNavVisRange = "{19031, 1876}";
+			sepNavWindowFrame = "{{558, 263}, {1039, 942}}";
 		};
 	};
 	B57541880FD4F0D3004762E6 /* SignInViewController.h */ = {
@@ -4550,7 +4550,7 @@
 		fRef = B57541860FD4F0D3004762E6 /* PickupViewController.h */;
 		name = "PickupViewController.h: 47";
 		rLen = 0;
-		rLoc = 1429;
+		rLoc = 1430;
 		rType = 0;
 		vrLen = 1285;
 		vrLoc = 318;
@@ -4594,7 +4594,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 628";
 		rLen = 0;
-		rLoc = 20834;
+		rLoc = 20837;
 		rType = 0;
 		vrLen = 1645;
 		vrLoc = 18547;
@@ -4632,7 +4632,7 @@
 		fRef = B57541860FD4F0D3004762E6 /* PickupViewController.h */;
 		name = "PickupViewController.h: 91";
 		rLen = 0;
-		rLoc = 2374;
+		rLoc = 2375;
 		rType = 0;
 		vrLen = 1328;
 		vrLoc = 884;
@@ -4662,7 +4662,7 @@
 		fRef = B57541860FD4F0D3004762E6 /* PickupViewController.h */;
 		name = "PickupViewController.h: 91";
 		rLen = 0;
-		rLoc = 2374;
+		rLoc = 2375;
 		rType = 0;
 		vrLen = 1358;
 		vrLoc = 854;
@@ -4672,7 +4672,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 637";
 		rLen = 0;
-		rLoc = 20612;
+		rLoc = 20615;
 		rType = 0;
 		vrLen = 1671;
 		vrLoc = 18627;
@@ -4702,7 +4702,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 639";
 		rLen = 0;
-		rLoc = 20834;
+		rLoc = 20837;
 		rType = 0;
 		vrLen = 1786;
 		vrLoc = 18738;
@@ -4712,7 +4712,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 640";
 		rLen = 0;
-		rLoc = 20834;
+		rLoc = 20837;
 		rType = 0;
 		vrLen = 1854;
 		vrLoc = 18745;
@@ -4732,7 +4732,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 640";
 		rLen = 0;
-		rLoc = 20834;
+		rLoc = 20837;
 		rType = 0;
 		vrLen = 1805;
 		vrLoc = 18799;
@@ -4742,7 +4742,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 640";
 		rLen = 0;
-		rLoc = 20736;
+		rLoc = 20739;
 		rType = 0;
 		vrLen = 1905;
 		vrLoc = 18745;
@@ -4752,7 +4752,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 640";
 		rLen = 0;
-		rLoc = 20710;
+		rLoc = 20713;
 		rType = 0;
 		vrLen = 1998;
 		vrLoc = 18746;
@@ -4762,7 +4762,7 @@
 		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		name = "PickupViewController.m: 640";
 		rLen = 0;
-		rLoc = 20710;
+		rLoc = 20713;
 		rType = 0;
 		vrLen = 2003;
 		vrLoc = 18746;
@@ -4963,7 +4963,7 @@
 		location = JourneyTag;
 		modificationTime = 295094938.130233;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	B5DA9F001057B853000AB50F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

@@ -179,13 +179,11 @@
 		B5D1D4AD119E8A7A008FD96F /* MoreInfoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A4119E8A7A008FD96F /* MoreInfoButton.png */; };
 		B5D1D4AE119E8A7A008FD96F /* PickupBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A5119E8A7A008FD96F /* PickupBackground.png */; };
 		B5D1D4AF119E8A7A008FD96F /* PickupTagButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A6119E8A7A008FD96F /* PickupTagButton.png */; };
-		B5D1D4B0119E8A7A008FD96F /* ProgressGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A7119E8A7A008FD96F /* ProgressGreen.png */; };
-		B5D1D4B1119E8A7A008FD96F /* ProgressGreenEndCap.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A8119E8A7A008FD96F /* ProgressGreenEndCap.png */; };
-		B5D1D4B2119E8A7A008FD96F /* ProgressOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4A9119E8A7A008FD96F /* ProgressOrange.png */; };
-		B5D1D4B3119E8A7A008FD96F /* ProgressOrangeEndCap.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4AA119E8A7A008FD96F /* ProgressOrangeEndCap.png */; };
 		B5D1D4F4119E9118008FD96F /* PickupAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4F3119E9118008FD96F /* PickupAnnotationView.xib */; };
 		B5D1D4F7119E924D008FD96F /* SampleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D4F6119E924D008FD96F /* SampleImage.png */; };
 		B5D1D55A119EA673008FD96F /* PickupInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D559119EA673008FD96F /* PickupInfoView.xib */; };
+		B5D1D5CE119F6269008FD96F /* ProgressGreenEndCap2.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D5CC119F6269008FD96F /* ProgressGreenEndCap2.png */; };
+		B5D1D5CF119F6269008FD96F /* ProgressOrangeEndCap2.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D5CD119F6269008FD96F /* ProgressOrangeEndCap2.png */; };
 		B5D3FAB9105E531D0060B838 /* JourneyTagLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D3FAB8105E531D0060B838 /* JourneyTagLogo.png */; };
 		B5D54B70104BC2E5003EDF58 /* LogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D54B6F104BC2E5003EDF58 /* LogUtil.m */; };
 		B5D54BC3104BC8BF003EDF58 /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D54BC2104BC8BF003EDF58 /* NetworkUtil.m */; };
@@ -475,13 +473,11 @@
 		B5D1D4A4119E8A7A008FD96F /* MoreInfoButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MoreInfoButton.png; sourceTree = "<group>"; };
 		B5D1D4A5119E8A7A008FD96F /* PickupBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PickupBackground.png; sourceTree = "<group>"; };
 		B5D1D4A6119E8A7A008FD96F /* PickupTagButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PickupTagButton.png; sourceTree = "<group>"; };
-		B5D1D4A7119E8A7A008FD96F /* ProgressGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressGreen.png; sourceTree = "<group>"; };
-		B5D1D4A8119E8A7A008FD96F /* ProgressGreenEndCap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressGreenEndCap.png; sourceTree = "<group>"; };
-		B5D1D4A9119E8A7A008FD96F /* ProgressOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressOrange.png; sourceTree = "<group>"; };
-		B5D1D4AA119E8A7A008FD96F /* ProgressOrangeEndCap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressOrangeEndCap.png; sourceTree = "<group>"; };
 		B5D1D4F3119E9118008FD96F /* PickupAnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupAnnotationView.xib; sourceTree = "<group>"; };
 		B5D1D4F6119E924D008FD96F /* SampleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage.png; sourceTree = "<group>"; };
 		B5D1D559119EA673008FD96F /* PickupInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupInfoView.xib; sourceTree = "<group>"; };
+		B5D1D5CC119F6269008FD96F /* ProgressGreenEndCap2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressGreenEndCap2.png; sourceTree = "<group>"; };
+		B5D1D5CD119F6269008FD96F /* ProgressOrangeEndCap2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressOrangeEndCap2.png; sourceTree = "<group>"; };
 		B5D3FAB8105E531D0060B838 /* JourneyTagLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JourneyTagLogo.png; sourceTree = "<group>"; };
 		B5D54B6E104BC2E5003EDF58 /* LogUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogUtil.h; sourceTree = "<group>"; };
 		B5D54B6F104BC2E5003EDF58 /* LogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogUtil.m; sourceTree = "<group>"; };
@@ -1072,16 +1068,14 @@
 		B5D1D49F119E8A6A008FD96F /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				B5D1D5CC119F6269008FD96F /* ProgressGreenEndCap2.png */,
+				B5D1D5CD119F6269008FD96F /* ProgressOrangeEndCap2.png */,
 				B5D1D4F6119E924D008FD96F /* SampleImage.png */,
 				B5D1D4A2119E8A7A008FD96F /* CalloutBackground.png */,
 				B5D1D4A3119E8A7A008FD96F /* ExpandButton.png */,
 				B5D1D4A4119E8A7A008FD96F /* MoreInfoButton.png */,
 				B5D1D4A5119E8A7A008FD96F /* PickupBackground.png */,
 				B5D1D4A6119E8A7A008FD96F /* PickupTagButton.png */,
-				B5D1D4A7119E8A7A008FD96F /* ProgressGreen.png */,
-				B5D1D4A8119E8A7A008FD96F /* ProgressGreenEndCap.png */,
-				B5D1D4A9119E8A7A008FD96F /* ProgressOrange.png */,
-				B5D1D4AA119E8A7A008FD96F /* ProgressOrangeEndCap.png */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -1224,14 +1218,12 @@
 				B5D1D4AD119E8A7A008FD96F /* MoreInfoButton.png in Resources */,
 				B5D1D4AE119E8A7A008FD96F /* PickupBackground.png in Resources */,
 				B5D1D4AF119E8A7A008FD96F /* PickupTagButton.png in Resources */,
-				B5D1D4B0119E8A7A008FD96F /* ProgressGreen.png in Resources */,
-				B5D1D4B1119E8A7A008FD96F /* ProgressGreenEndCap.png in Resources */,
-				B5D1D4B2119E8A7A008FD96F /* ProgressOrange.png in Resources */,
-				B5D1D4B3119E8A7A008FD96F /* ProgressOrangeEndCap.png in Resources */,
 				B5D1D4F4119E9118008FD96F /* PickupAnnotationView.xib in Resources */,
 				B5D1D4F7119E924D008FD96F /* SampleImage.png in Resources */,
 				B5D1D55A119EA673008FD96F /* PickupInfoView.xib in Resources */,
 				B5449D36119EC172009299AA /* DistanceMeterView.xib in Resources */,
+				B5D1D5CE119F6269008FD96F /* ProgressGreenEndCap2.png in Resources */,
+				B5D1D5CF119F6269008FD96F /* ProgressOrangeEndCap2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,7 +50,7 @@
     IBOutlet UIView *pickupInfoView;
     IBOutlet UILabel *distanceTraveledLabel;
     IBOutlet UILabel *destinationNameLabel;
-    IBOutlet UIView *distanceTraveledMeter;
+    IBOutlet UIView *distanceMeterContainer;
 #pragma mark -
 	
 #pragma mark DistanceMeterView
