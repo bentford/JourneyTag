@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>B5D1D99411A0CFE3008FD96F</string>
+						<string>B5D1D9BA11A0D3B9008FD96F</string>
 						<key>history</key>
 						<array>
 							<string>B5D1D786119FD528008FD96F</string>
@@ -360,7 +360,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {331, 1166}}</string>
+							<string>{{0, 0}, {331, 1167}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -372,14 +372,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {348, 1184}}</string>
+						<string>{{0, 0}, {348, 1185}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>331</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>-1 193 1401 1225 0 0 2560 1418 </string>
+						<string>-1 192 1503 1226 0 0 2560 1418 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -397,7 +397,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PickupViewController.m</string>
+								<string>TagMapLoader.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -405,11 +405,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PickupViewController.m</string>
+										<string>TagMapLoader.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5D1D99311A0CFE3008FD96F</string>
+										<string>B5D1D9B911A0D3B9008FD96F</string>
 										<key>history</key>
 										<array>
 											<string>B57542200FD4FBBD004762E6</string>
@@ -650,10 +650,10 @@
 											<string>B5D1D92311A0C48A008FD96F</string>
 											<string>B5D1D93611A0C719008FD96F</string>
 											<string>B5D1D93711A0C719008FD96F</string>
-											<string>B5D1D97B11A0CA80008FD96F</string>
-											<string>B5D1D97C11A0CA80008FD96F</string>
-											<string>B5D1D97D11A0CA80008FD96F</string>
-											<string>B5D1D97E11A0CA80008FD96F</string>
+											<string>B5D1D99711A0D10D008FD96F</string>
+											<string>B5D1D9AC11A0D271008FD96F</string>
+											<string>B5D1D9B711A0D3B9008FD96F</string>
+											<string>B5D1D9B811A0D3B9008FD96F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -665,14 +665,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1048, 1057}}</string>
+								<string>{{0, 0}, {1150, 1058}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-1 193 1401 1225 0 0 2560 1418 </string>
+								<string>-1 192 1503 1226 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>1057pt</string>
+							<string>1058pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -685,9 +685,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 1062}, {1048, 122}}</string>
+								<string>{{0, 1063}, {1150, 122}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-1 193 1401 1225 0 0 2560 1418 </string>
+								<string>-1 192 1503 1226 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -696,7 +696,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1048pt</string>
+					<string>1150pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -875,6 +875,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>B5D1D9BB11A0D3B9008FD96F</string>
 		<string>B5D1D8A111A0B330008FD96F</string>
 		<string>B5D1D5F8119F6F1E008FD96F</string>
 		<string>B5D1D5F9119F6F1E008FD96F</string>
@@ -886,7 +887,7 @@
 		<string>/Users/Ben/Devel/JourneyTag/JourneyTagClient/JourneyTag.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>-1 193 1401 1225 0 0 2560 1418 </string>
+	<string>-1 192 1503 1226 0 0 2560 1418 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

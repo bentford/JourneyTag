@@ -12,9 +12,9 @@
 @implementation JTAnnotation
 
 @synthesize coordinate=myCoordinate, title=myTitle, subTitle=mySubtitle,withinPickupRange=myWithinPickupRange,key=myKey, level=myLevel, type=myType, progressMeterText, distanceTraveled, totalDistance;
-@synthesize destinationCoordinate;
+@synthesize destinationCoordinate, destinationDirection;
 
-- (id)init:(NSString*)key coordinate:(CLLocationCoordinate2D)coordinate title:(NSString*)title subTitle:(NSString*)subTitle level:(int)level withinPickupRange:(BOOL)withinPickupRange progressMeterText:(NSString *)theProgressMeterText distanceTraveled:(CGFloat)theDistanceTraveled totalDistance:(CGFloat)theTotalDistance destinationCoordinate:(CLLocationCoordinate2D)theDestinationCoordinate
+- (id)init:(NSString*)key coordinate:(CLLocationCoordinate2D)coordinate title:(NSString*)title subTitle:(NSString*)subTitle level:(int)level withinPickupRange:(BOOL)withinPickupRange progressMeterText:(NSString *)theProgressMeterText distanceTraveled:(CGFloat)theDistanceTraveled totalDistance:(CGFloat)theTotalDistance destinationCoordinate:(CLLocationCoordinate2D)theDestinationCoordinate destinationDirection:(NSString *)theDestinationDirection
 {
     if( self = [super init] )
     {
@@ -29,6 +29,7 @@
         distanceTraveled = theDistanceTraveled;
         totalDistance = theTotalDistance;
         destinationCoordinate = theDestinationCoordinate;
+        destinationDirection = theDestinationDirection;
     }
     return self;
 }
@@ -50,6 +51,8 @@
 
         CLLocationCoordinate2D defaultCoordinate = {0.0, 0.0};
         destinationCoordinate = defaultCoordinate;
+        
+        destinationDirection = @"";
     }
     return self;
 }

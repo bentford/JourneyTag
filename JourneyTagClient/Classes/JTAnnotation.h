@@ -31,6 +31,7 @@ typedef NSUInteger JTAnnotationType;
     CGFloat distanceTraveled;
     CGFloat totalDistance;
     CLLocationCoordinate2D destinationCoordinate;
+    NSString *destinationDirection;
 }
 @property (nonatomic,readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic) JTAnnotationType type;
@@ -43,8 +44,9 @@ typedef NSUInteger JTAnnotationType;
 @property (readonly) CGFloat distanceTraveled;
 @property (readonly) CGFloat totalDistance;
 @property (readonly) CLLocationCoordinate2D destinationCoordinate;
+@property (readonly) NSString *destinationDirection;
 
-- (id)init:(NSString*)key coordinate:(CLLocationCoordinate2D)coordinate title:(NSString*)title subTitle:(NSString*)subTitle level:(int)level withinPickupRange:(BOOL)withinPickupRange progressMeterText:(NSString *)theProgressMeterText distanceTraveled:(CGFloat)theDistanceTraveled totalDistance:(CGFloat)theTotalDistance destinationCoordinate:(CLLocationCoordinate2D)theDestinationCoordinate;
+- (id)init:(NSString*)key coordinate:(CLLocationCoordinate2D)coordinate title:(NSString*)title subTitle:(NSString*)subTitle level:(int)level withinPickupRange:(BOOL)withinPickupRange progressMeterText:(NSString *)theProgressMeterText distanceTraveled:(CGFloat)theDistanceTraveled totalDistance:(CGFloat)theTotalDistance destinationCoordinate:(CLLocationCoordinate2D)theDestinationCoordinate destinationDirection:(NSString *)theDestinationDirection;
 - (id)init:(NSString*)key coordinate:(CLLocationCoordinate2D)coordinate title:(NSString*)title subTitle:(NSString*)subTitle;
 
 - (void)buttonClick:(id)sender;

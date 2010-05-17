@@ -106,8 +106,8 @@
         destination.latitude = [[[tag objectForKey:@"destinationCoordinate"] objectForKey:@"lat"] floatValue]; 
         destination.longitude = [[[tag objectForKey:@"destinationCoordinate"] objectForKey:@"lon"] floatValue]; 
         
-        //NSString *subtitle = [tag objectForKey:@"account_username"];
-        NSString *subtitle = [DistanceTextUtil createDistanceTextFromCurrentLocation:coordinate destinationCoordinate:destination];
+        NSString *subtitle = [NSString stringWithFormat:@"by: %@", [tag objectForKey:@"account_username"]];
+        NSString *destinationDirection = [DistanceTextUtil createDistanceTextFromCurrentLocation:coordinate destinationCoordinate:destination];
         
         NSString *withinPickupRangeString = [tag objectForKey:@"withinPickupRange"];
         BOOL withinPickupRange = [withinPickupRangeString compare:@"True"] == NSOrderedSame;
@@ -123,7 +123,7 @@
         
 
         
-        JTAnnotation *marker = [[JTAnnotation alloc] init:tagKey coordinate:coordinate title:[tag objectForKey:@"name"] subTitle:subtitle level:[[tag objectForKey:@"level"] intValue] withinPickupRange:withinPickupRange progressMeterText:progressMeterText distanceTraveled:distanceTraveled totalDistance:totalDistance destinationCoordinate:destination];
+        JTAnnotation *marker = [[JTAnnotation alloc] init:tagKey coordinate:coordinate title:[tag objectForKey:@"name"] subTitle:subtitle level:[[tag objectForKey:@"level"] intValue] withinPickupRange:withinPickupRange progressMeterText:progressMeterText distanceTraveled:distanceTraveled totalDistance:totalDistance destinationCoordinate:destination destinationDirection:destinationDirection];
         
         [mapView addAnnotation:marker];
         [marker release];
