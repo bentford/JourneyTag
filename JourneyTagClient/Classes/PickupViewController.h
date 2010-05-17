@@ -52,6 +52,7 @@
     NSMutableDictionary *annotationViews;
     
     MKReverseGeocoder *geocoder;
+    NSTimer *geocodeTimeout;
     
 #pragma mark PickupInfoView
     IBOutlet UIView *pickupInfoView;
@@ -108,4 +109,6 @@
 - (IBAction)pickupTagAction:(id)sender;
 - (IBAction)moreInfoAction:(id)sender;
 #pragma mark -
+
+- (void)geocodeTimedOut:(NSTimer *)timer;
 @end

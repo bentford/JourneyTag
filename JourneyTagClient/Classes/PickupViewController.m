@@ -23,6 +23,8 @@
 @interface PickupViewController()
 @property (nonatomic, retain) NSString *selectedTagKey;
 @property (nonatomic, retain) MKReverseGeocoder *geocoder;
+@property (nonatomic, retain) NSTimer *geocodeTimeout;
+@property (nonatomic, retain) NSMutableDictionary *annotationViews;
 @end
 
 @interface PickupViewController(PrivateMethods)
@@ -44,10 +46,11 @@
 @end
 
 @implementation PickupViewController
-@synthesize myMapView, selectedTagKey, geocoder;
+@synthesize myMapView, selectedTagKey, geocoder, geocodeTimeout, annotationViews;
 
 #define kTextViewTag 5
 #define MOVE_ANIMATION_DURATION_SECONDS 0.5
+#define kGeoCodeTimeout 5
 
 - (void)awakeFromNib
 {
@@ -424,7 +427,14 @@
 - (void) didLoadTags:(NSDictionary*)dict
 {
     NSArray *tags = [dict objectForKey:@"tags"];
-    BOOL containsReachableTags = [TagMapLoader loadTags:myMapView tags:tags]; 
+
+	// unobserve and clear tracked annotations views
+	for( JTAnnotation *annotation in self.annotationViews ) {
+		[annotation removeObserver:self forKeyPath:@"selected"];
+	}
+	self.annotationViews = [[NSMutableDictionary alloc] initWithCapacity:0];
+    
+	BOOL containsReachableTags = [TagMapLoader loadTags:myMapView tags:tags]; 
     
     self.navigationItem.leftBarButtonItem = [ActivityButtonUtil createRefreshButton:self action:@selector(loadTagsForCurrentLocation:)];
 
@@ -622,12 +632,24 @@
 
 #pragma mark MKReverseGeocoderDelegate
 - (void)reverseGeocoder:(MKReverseGeocoder *)geocoder didFindPlacemark:(MKPlacemark *)placemark {
+    [self.geocodeTimeout invalidate];
+    
     destinationNameLabel.text = [PlaceMarkFormatter standardFormat:placemark];
+    destinationNameLabel.font = [UIFont systemFontOfSize:12];
 }
 
 - (void)reverseGeocoder:(MKReverseGeocoder *)geocoder didFailWithError:(NSError *)error {
-    destinationNameLabel.text = [error localizedFailureReason];
+    [self.geocodeTimeout invalidate];
+    
+    destinationNameLabel.text = [NSString stringWithFormat:@"Error: %@", [error localizedFailureReason]];
+    destinationNameLabel.font = [UIFont boldSystemFontOfSize:12];
 }
+
+- (void)geocodeTimedOut:(NSTimer *)timer {
+    destinationNameLabel.text = @"Geocode Server Overloaded";
+    destinationNameLabel.font = [UIFont boldSystemFontOfSize:12];
+}
+
 #pragma mark -
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -721,6 +743,10 @@
     self.geocoder = [[[MKReverseGeocoder alloc] initWithCoordinate:annotation.destinationCoordinate] autorelease];
     self.geocoder.delegate = self;
     [self.geocoder start];
+    
+    destinationNameLabel.text = @"Loading...";
+    [self.geocodeTimeout invalidate];
+    self.geocodeTimeout = [NSTimer scheduledTimerWithTimeInterval:kGeoCodeTimeout target:self selector:@selector(geocodeTimedOut:) userInfo:nil repeats:NO];
 }
 
 - (void)hidePickupInfoView {

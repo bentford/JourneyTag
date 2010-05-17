@@ -68,10 +68,6 @@
 						<int key="IBUIContentMode">1</int>
 						<int key="IBUITag">100</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">SampleImage.png</string>
-						</object>
 					</object>
 					<object class="IBUILabel" id="403163021">
 						<reference key="NSNextResponder" ref="191373211"/>
