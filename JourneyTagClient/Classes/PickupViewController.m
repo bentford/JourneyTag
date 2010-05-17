@@ -626,7 +626,7 @@
 }
 
 - (void)reverseGeocoder:(MKReverseGeocoder *)geocoder didFailWithError:(NSError *)error {
-    
+    destinationNameLabel.text = [error localizedFailureReason];
 }
 #pragma mark -
 
@@ -713,7 +713,8 @@
 	[self.view addSubview:pickupInfoView];
     
     // adding the pickupview above navigation controller
-    pickupInfoView.center = CGPointMake(pickupInfoView.center.x, pickupInfoView.center.y+20);
+    pickupInfoView.frame = CGRectMake(0, 0+20, pickupInfoView.frame.size.width, pickupInfoView.frame.size.height);
+    
     UIWindow *window = [[UIApplication sharedApplication].windows objectAtIndex:0];
     [window addSubview:pickupInfoView];
     
