@@ -26,6 +26,10 @@ typedef NSUInteger JTAnnotationType;
 
     int myLevel;
     BOOL myWithinPickupRange;
+    
+    NSString *progressMeterText;
+    CGFloat distanceTraveled;
+    CGFloat totalDistance;
 }
 @property (nonatomic,readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic) JTAnnotationType type;
@@ -34,8 +38,14 @@ typedef NSUInteger JTAnnotationType;
 @property (readonly) BOOL withinPickupRange;
 @property (readonly) NSString *key;
 @property (readonly) int level;
+@property (readonly) NSString *progressMeterText;
+@property (readonly) CGFloat distanceTraveled;
+@property (readonly) CGFloat totalDistance;
 
-- (id)init:(NSString*)key coordinate:(CLLocationCoordinate2D)coordinate title:(NSString*)title subTitle:(NSString*)subTitle level:(int)level withinPickupRange:(BOOL)withinPickupRange;
+- (id)init:(NSString*)key coordinate:(CLLocationCoordinate2D)coordinate title:(NSString*)title subTitle:(NSString*)subTitle level:(int)level withinPickupRange:(BOOL)withinPickupRange progressMeterText:(NSString *)theProgressMeterText distanceTraveled:(CGFloat)theDistanceTraveled totalDistance:(CGFloat)theTotalDistance;
+
+// TODO add this default constructor for depots
+//- (id)init:(NSString*)key coordinate:(CLLocationCoordinate2D)coordinate title:(NSString*)title subTitle:(NSString*)subTitle level:(int)level withinPickupRange:(BOOL)withinPickupRange;
 - (void)buttonClick:(id)sender;
 
 - (NSString*)title;

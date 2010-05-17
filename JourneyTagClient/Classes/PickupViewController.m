@@ -31,7 +31,7 @@
 
 - (void)showCustomTagCalloutView:(id<MKAnnotation>)annotation;
 - (void)hideCustomTagCallout;
-- (void)showPickupInfoView;
+- (void)showPickupInfoView:(JTAnnotation *)annotation;
 - (void)hidePickupInfoView;
 - (void)didLoadCalloutImageData:(NSData *)data;
 - (void)didFail:(ASIHTTPRequest *)request;
@@ -362,6 +362,7 @@
                        options:NSKeyValueObservingOptionNew
                        context:@"PIN_ANNOTATION_SELECTED"];
         
+        // keep track of view so we can remove the observer later on
         [annotationViews setObject:pin forKey:tag.key];
         return pin;
     }
@@ -660,12 +661,12 @@
     
     [self.view addSubview:customTagCallout];
     
-    [self showPickupInfoView];
-    
     [calloutActivity startAnimating];
     
     // this contains the tagKey, which can be used to get the image
     JTAnnotation *tagAnnotation = (JTAnnotation *)annotation;
+    
+    [self showPickupInfoView:tagAnnotation];
     
     // need this for picking up tag
     self.selectedTagKey = tagAnnotation.key;
@@ -684,13 +685,19 @@
     self.selectedTagKey = nil;
 }
 
-- (void)showPickupInfoView {
+- (void)showPickupInfoView:(JTAnnotation *)annotation {
     [[NSBundle mainBundle] loadNibNamed:@"PickupInfoView" owner:self options:nil];
     
 	[[NSBundle mainBundle] loadNibNamed:@"DistanceMeterView" owner:self options:nil];
 	distanceMeterView.frame = CGRectMake(0, 0, distanceMeterContainer.frame.size.width, distanceMeterContainer.frame.size.height);
 	[distanceMeterContainer addSubview:distanceMeterView];
-	
+	distanceTraveledLabel.text = annotation.progressMeterText;
+    
+    NSLog(@"distanceTraveled: %f, totalDistance: %f, meter container width: %f", annotation.distanceTraveled, annotation.totalDistance, distanceMeterContainer.frame.size.width);
+    CGFloat width = (annotation.distanceTraveled/annotation.totalDistance) * distanceMeterContainer.frame.size.width;
+    CGFloat adjustedWidth = fmax(width,25); //don't go smaller than endcap
+    NSLog(@"width: %f, adjusted to width: %f", width, adjustedWidth);
+    progressGreen.frame = CGRectMake(progressGreen.frame.origin.x, progressGreen.frame.origin.y, adjustedWidth, progressGreen.frame.size.height);
 	[self.view addSubview:pickupInfoView];
     
     pickupInfoView.center = CGPointMake(pickupInfoView.center.x, pickupInfoView.center.y+20);

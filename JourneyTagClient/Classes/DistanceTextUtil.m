@@ -27,4 +27,10 @@
     [distanceText autorelease];
     return distanceText;
 }
+
++ (NSString *)createProgressMeterTextFrom:(CGFloat)distanceTraveled currentCoordinate:(CLLocationCoordinate2D)current destinationCoordinate:(CLLocationCoordinate2D)destination {
+ 
+    CGFloat distanceRemaining = [GreatCircleDistance distance:current second:destination];
+    return [NSString stringWithFormat:@"%1.2f of %1.2f miles", distanceTraveled, distanceTraveled + distanceRemaining];
+}
 @end

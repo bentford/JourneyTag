@@ -11,9 +11,9 @@
 
 @implementation JTAnnotation
 
-@synthesize coordinate=myCoordinate, title=myTitle, subTitle=mySubtitle,withinPickupRange=myWithinPickupRange,key=myKey, level=myLevel, type=myType;
+@synthesize coordinate=myCoordinate, title=myTitle, subTitle=mySubtitle,withinPickupRange=myWithinPickupRange,key=myKey, level=myLevel, type=myType, progressMeterText, distanceTraveled, totalDistance;
 
-- (id) init:(NSString*)key coordinate:(CLLocationCoordinate2D)coordinate title:(NSString*)title subTitle:(NSString*)subTitle level:(int)level withinPickupRange:(BOOL)withinPickupRange
+- (id)init:(NSString*)key coordinate:(CLLocationCoordinate2D)coordinate title:(NSString*)title subTitle:(NSString*)subTitle level:(int)level withinPickupRange:(BOOL)withinPickupRange progressMeterText:(NSString *)theProgressMeterText distanceTraveled:(CGFloat)theDistanceTraveled totalDistance:(CGFloat)theTotalDistance
 {
     if( self = [super init] )
     {
@@ -24,6 +24,9 @@
         myType = JTAnnotationTypeTag;
         myLevel = level;
         myWithinPickupRange = withinPickupRange;
+        progressMeterText = [theProgressMeterText retain];
+        distanceTraveled = theDistanceTraveled;
+        totalDistance = theTotalDistance;
     }
     return self;
 }
@@ -60,6 +63,8 @@
     [myKey release];
     [myTitle release];
     [mySubtitle release];
+    [progressMeterText release];
+    
     [super dealloc];
 }
 @end

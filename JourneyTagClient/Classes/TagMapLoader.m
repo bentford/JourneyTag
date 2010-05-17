@@ -23,7 +23,7 @@
     
     NSString *depotName = [[NSString alloc] initWithFormat:@"Depot #%@",[depot objectForKey:@"number"]];
     
-    JTAnnotation *marker = [[JTAnnotation alloc] init:[depot objectForKey:@"key"] coordinate:newCoordinate title:depotName subTitle:nil level:0 withinPickupRange:NO];
+    JTAnnotation *marker = [[JTAnnotation alloc] init:[depot objectForKey:@"key"] coordinate:newCoordinate title:depotName subTitle:nil level:0 withinPickupRange:NO progressMeterText:[NSString string] distanceTraveled:0 totalDistance:0];
     marker.type = JTAnnotationTypeDepot;
     [depotName release];
     
@@ -84,7 +84,7 @@
     newCoordinate.latitude = lat;
     newCoordinate.longitude = lon;
     
-    JTAnnotation *marker = [[JTAnnotation alloc] init:nil coordinate:newCoordinate title:@"test" subTitle:@"test again" level:0 withinPickupRange:NO];
+    JTAnnotation *marker = [[JTAnnotation alloc] init:nil coordinate:newCoordinate title:@"test" subTitle:@"test again" level:0 withinPickupRange:NO progressMeterText:[NSString string] distanceTraveled:0 totalDistance:0];
     
     [mapView addAnnotation:marker];
     [marker release];
@@ -115,7 +115,15 @@
         if( !containsReachableTags && withinPickupRange )
             containsReachableTags = YES;
         
-        JTAnnotation *marker = [[JTAnnotation alloc] init:tagKey coordinate:coordinate title:[tag objectForKey:@"name"] subTitle:subtitle level:[[tag objectForKey:@"level"] intValue] withinPickupRange:withinPickupRange];
+        CGFloat distanceTraveled = [[tag objectForKey:@"distanceTraveled"] floatValue];
+        CGFloat distanceRemaining = [GreatCircleDistance distance:coordinate second:destination];
+        CGFloat totalDistance = distanceTraveled + distanceRemaining;
+        
+        NSString *progressMeterText = [NSString stringWithFormat:@"%1.2f of %1.2f miles", distanceTraveled, totalDistance];
+        
+
+        
+        JTAnnotation *marker = [[JTAnnotation alloc] init:tagKey coordinate:coordinate title:[tag objectForKey:@"name"] subTitle:subtitle level:[[tag objectForKey:@"level"] intValue] withinPickupRange:withinPickupRange progressMeterText:progressMeterText distanceTraveled:distanceTraveled totalDistance:totalDistance];
         
         [mapView addAnnotation:marker];
         [marker release];
