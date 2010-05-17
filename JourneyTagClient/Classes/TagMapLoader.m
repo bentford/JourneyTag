@@ -23,7 +23,7 @@
     
     NSString *depotName = [[NSString alloc] initWithFormat:@"Depot #%@",[depot objectForKey:@"number"]];
     
-    JTAnnotation *marker = [[JTAnnotation alloc] init:[depot objectForKey:@"key"] coordinate:newCoordinate title:depotName subTitle:nil level:0 withinPickupRange:NO progressMeterText:[NSString string] distanceTraveled:0 totalDistance:0];
+    JTAnnotation *marker = [[JTAnnotation alloc] init:[depot objectForKey:@"key"] coordinate:newCoordinate title:depotName subTitle:nil];
     marker.type = JTAnnotationTypeDepot;
     [depotName release];
     
@@ -84,7 +84,7 @@
     newCoordinate.latitude = lat;
     newCoordinate.longitude = lon;
     
-    JTAnnotation *marker = [[JTAnnotation alloc] init:nil coordinate:newCoordinate title:@"test" subTitle:@"test again" level:0 withinPickupRange:NO progressMeterText:[NSString string] distanceTraveled:0 totalDistance:0];
+    JTAnnotation *marker = [[JTAnnotation alloc] init:nil coordinate:newCoordinate title:@"test" subTitle:@"test again"];
     
     [mapView addAnnotation:marker];
     [marker release];
@@ -123,7 +123,7 @@
         
 
         
-        JTAnnotation *marker = [[JTAnnotation alloc] init:tagKey coordinate:coordinate title:[tag objectForKey:@"name"] subTitle:subtitle level:[[tag objectForKey:@"level"] intValue] withinPickupRange:withinPickupRange progressMeterText:progressMeterText distanceTraveled:distanceTraveled totalDistance:totalDistance];
+        JTAnnotation *marker = [[JTAnnotation alloc] init:tagKey coordinate:coordinate title:[tag objectForKey:@"name"] subTitle:subtitle level:[[tag objectForKey:@"level"] intValue] withinPickupRange:withinPickupRange progressMeterText:progressMeterText distanceTraveled:distanceTraveled totalDistance:totalDistance destinationCoordinate:destination];
         
         [mapView addAnnotation:marker];
         [marker release];

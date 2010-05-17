@@ -18,9 +18,11 @@
 #import "PickupTagDetailsTableViewController.h"
 #import "AppSettings.h"
 #import "JTServiceURLs.h"
+#import "PlaceMarkFormatter.h"
 
 @interface PickupViewController()
 @property (nonatomic, retain) NSString *selectedTagKey;
+@property (nonatomic, retain) MKReverseGeocoder *geocoder;
 @end
 
 @interface PickupViewController(PrivateMethods)
@@ -42,7 +44,7 @@
 @end
 
 @implementation PickupViewController
-@synthesize myMapView, selectedTagKey;
+@synthesize myMapView, selectedTagKey, geocoder;
 
 #define kTextViewTag 5
 #define MOVE_ANIMATION_DURATION_SECONDS 0.5
@@ -618,6 +620,16 @@
 }
 #pragma mark -
 
+#pragma mark MKReverseGeocoderDelegate
+- (void)reverseGeocoder:(MKReverseGeocoder *)geocoder didFindPlacemark:(MKPlacemark *)placemark {
+    destinationNameLabel.text = [PlaceMarkFormatter standardFormat:placemark];
+}
+
+- (void)reverseGeocoder:(MKReverseGeocoder *)geocoder didFailWithError:(NSError *)error {
+    
+}
+#pragma mark -
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     if( touch.view == customTagCallout )
@@ -693,16 +705,21 @@
 	[distanceMeterContainer addSubview:distanceMeterView];
 	distanceTraveledLabel.text = annotation.progressMeterText;
     
-    NSLog(@"distanceTraveled: %f, totalDistance: %f, meter container width: %f", annotation.distanceTraveled, annotation.totalDistance, distanceMeterContainer.frame.size.width);
+    // TODO: abstract this into a view
     CGFloat width = (annotation.distanceTraveled/annotation.totalDistance) * distanceMeterContainer.frame.size.width;
     CGFloat adjustedWidth = fmax(width,25); //don't go smaller than endcap
-    NSLog(@"width: %f, adjusted to width: %f", width, adjustedWidth);
+
     progressGreen.frame = CGRectMake(progressGreen.frame.origin.x, progressGreen.frame.origin.y, adjustedWidth, progressGreen.frame.size.height);
 	[self.view addSubview:pickupInfoView];
     
+    // adding the pickupview above navigation controller
     pickupInfoView.center = CGPointMake(pickupInfoView.center.x, pickupInfoView.center.y+20);
     UIWindow *window = [[UIApplication sharedApplication].windows objectAtIndex:0];
     [window addSubview:pickupInfoView];
+    
+    self.geocoder = [[[MKReverseGeocoder alloc] initWithCoordinate:annotation.destinationCoordinate] autorelease];
+    self.geocoder.delegate = self;
+    [self.geocoder start];
 }
 
 - (void)hidePickupInfoView {

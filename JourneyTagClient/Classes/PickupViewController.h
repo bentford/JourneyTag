@@ -17,7 +17,7 @@
 #import "MapTouchLayer.h"
 
 @interface PickupViewController : UIViewController 
-<CLLocationManagerDelegate, MKMapViewDelegate, UIActionSheetDelegate>
+<CLLocationManagerDelegate, MKMapViewDelegate, UIActionSheetDelegate, MKReverseGeocoderDelegate>
 {
    MKMapView *myMapView;
 
@@ -50,6 +50,8 @@
     NSString *selectedTagKey;
     // tracks annotationViews so I can remove observers when deleting annotations from map
     NSMutableDictionary *annotationViews;
+    
+    MKReverseGeocoder *geocoder;
     
 #pragma mark PickupInfoView
     IBOutlet UIView *pickupInfoView;
