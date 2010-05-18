@@ -33,4 +33,16 @@
     CGFloat distanceRemaining = [GreatCircleDistance distance:current second:destination];
     return [NSString stringWithFormat:@"%1.2f of %1.2f miles", distanceTraveled, distanceTraveled + distanceRemaining];
 }
+
++ (NSString *)describeRegion:(MKCoordinateRegion)region {
+    
+    CLLocationCoordinate2D latitudeSpanHalf = {region.center.latitude + region.span.latitudeDelta, region.center.longitude};
+    CLLocationCoordinate2D longitudeSpanHalf = {region.center.latitude, region.center.longitude + region.span.longitudeDelta};
+    
+    CGFloat latitudeDistance = [GreatCircleDistance distance:region.center second:latitudeSpanHalf];
+    CGFloat longtitudeDistance = [GreatCircleDistance distance:region.center second:longitudeSpanHalf];
+    
+    return [NSString stringWithFormat:@"region to center on, center: %1.2f, %1.2f, span: %1.2f, %1.2f", 
+            region.center.latitude, region.center.longitude, latitudeDistance * 2, longtitudeDistance * 2];
+}
 @end

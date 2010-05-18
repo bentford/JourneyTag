@@ -19,6 +19,7 @@
 #import "AppSettings.h"
 #import "JTServiceURLs.h"
 #import "PlaceMarkFormatter.h"
+#import "DistanceTextUtil.h"
 
 @interface PickupViewController()
 @property (nonatomic, retain) NSString *selectedTagKey;
@@ -28,11 +29,7 @@
 @end
 
 @interface PickupViewController(PrivateMethods)
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context;
-
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
 - (void)showCustomTagCalloutView:(id<MKAnnotation>)annotation;
 - (void)hideCustomTagCallout;
 - (void)showPickupInfoView:(JTAnnotation *)annotation;
@@ -43,6 +40,7 @@
 - (void)pickupTag;
 - (void)checkForFailedTagPickup:(NSDictionary *)dict;
 - (JTAnnotation *)getJTAnnotationWithTagKey:(NSString *)tagKey;
+- (void)moveTagDown:(id<MKAnnotation>)annotation;
 @end
 
 @implementation PickupViewController
@@ -642,8 +640,9 @@
 - (void)reverseGeocoder:(MKReverseGeocoder *)geocoder didFailWithError:(NSError *)error {
     [self.geocodeTimeout invalidate];
     
-    destinationNameLabel.text = [NSString stringWithFormat:@"Error: %@", [error localizedFailureReason]];
+    destinationNameLabel.text = [NSString stringWithFormat:@"Geocode Server Overloaded"];
     destinationNameLabel.font = [UIFont boldSystemFontOfSize:12];
+    NSLog(@"geocode error: %@", [error localizedDescription]);
 }
 
 - (void)geocodeTimedOut:(NSTimer *)timer {
@@ -686,13 +685,32 @@
 	}
 }
 
+- (void)moveTagDown:(id<MKAnnotation>)annotation {
+    // goal is to center on a point 100px above the tag
+    // calculate latitudes per pixel
+    CGFloat latitudesPerPixel = myMapView.region.span.latitudeDelta / myMapView.frame.size.height;
+    NSLog(@"latitudes per pixel: %f", latitudesPerPixel);
+    
+    // calculate target latitude, 100px above the tag
+    CGFloat targetLatitude = annotation.coordinate.latitude + (latitudesPerPixel * 100);
+    
+    // calculate target longitude, offset from current center
+    CGFloat targetLongitude = 0;
+    if( annotation.coordinate.longitude > myMapView.centerCoordinate.longitude )
+        targetLongitude = annotation.coordinate.longitude - (annotation.coordinate.longitude - myMapView.centerCoordinate.longitude);
+    else 
+        targetLongitude = annotation.coordinate.longitude + (myMapView.centerCoordinate.longitude - annotation.coordinate.longitude);
+    
+    //create target coordinate 
+    CLLocationCoordinate2D targetCoordinate = {targetLatitude, targetLongitude}; 
+    
+    //center map on this point
+    [myMapView setCenterCoordinate:targetCoordinate animated:YES];    
+}
+
 - (void)showCustomTagCalloutView:(id<MKAnnotation>)annotation {
     
-    // TODO: center tag in view
-    //CGRect rectToCenterOn = CGRectMake(0, 0, 320, 100);
-    //MKCoordinateRegion regionToCenterOn = [myMapView convertRect:rectToCenterOn toRegionFromView:self.view];
-    //regionToCenterOn = [myMapView regionThatFits:regionToCenterOn];
-    //[myMapView setRegion:regionToCenterOn animated:YES];
+    [self moveTagDown:annotation];
     
     [[NSBundle mainBundle] loadNibNamed:@"TagCalloutView" owner:self options:nil];
 

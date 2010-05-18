@@ -15,4 +15,5 @@
 }
 + (NSString*)createDistanceTextFromCurrentLocation:(CLLocationCoordinate2D)current destinationCoordinate:(CLLocationCoordinate2D)destination;
 + (NSString *)createProgressMeterTextFrom:(CGFloat)distanceTraveled currentCoordinate:(CLLocationCoordinate2D)current destinationCoordinate:(CLLocationCoordinate2D)destination;
++ (NSString *)describeRegion:(MKCoordinateRegion)region;
 @end
