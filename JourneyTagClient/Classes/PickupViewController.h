@@ -54,6 +54,8 @@
     MKReverseGeocoder *geocoder;
     NSTimer *geocodeTimeout;
     
+    BOOL shouldAnimateCallout;
+    
 #pragma mark PickupInfoView
     IBOutlet UIView *pickupInfoView;
     IBOutlet UILabel *distanceTraveledLabel;

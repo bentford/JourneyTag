@@ -658,7 +658,7 @@
     
     destinationNameLabel.text = [NSString stringWithFormat:@"Geocode Server Overloaded"];
     destinationNameLabel.font = [UIFont boldSystemFontOfSize:12];
-    NSLog(@"geocode error: %@", [error localizedDescription]);
+    //NSLog(@"geocode error: %@", [error localizedDescription]);
 }
 
 - (void)geocodeTimedOut:(NSTimer *)timer {
@@ -694,9 +694,12 @@
     
     if([action isEqualToString:@"PIN_ANNOTATION_SELECTED"]){
 		BOOL annotationAppeared = [[change valueForKey:@"new"] boolValue];
-		if (annotationAppeared)
+		if (annotationAppeared) {
+            shouldAnimateCallout = (self.selectedTagKey == nil);
+            NSLog(@"showing callout, should animate: %d", shouldAnimateCallout);
 			[self showCustomTagCalloutView:pin.annotation];
-		else 
+        } else 
+            NSLog(@"hiding callout, should animate: %d", shouldAnimateCallout);
 			[self hideCustomTagCallout];
 	}
 }
@@ -705,7 +708,6 @@
     // goal is to center on a point 100px above the tag
     // calculate latitudes per pixel
     CGFloat latitudesPerPixel = myMapView.region.span.latitudeDelta / myMapView.frame.size.height;
-    NSLog(@"latitudes per pixel: %f", latitudesPerPixel);
     
     // calculate target latitude, 100px above the tag
     CGFloat targetLatitude = annotation.coordinate.latitude + (latitudesPerPixel * 100);
@@ -742,20 +744,21 @@
     calloutDestinationDirection.text = tagAnnotation.subtitle;
     [calloutActivity startAnimating];
     
-    customTagCallout.transform = CGAffineTransformMakeScale(0.1, 0.1);
-    [self.view addSubview:customTagCallout];
-    
-    [UIView beginAnimations:@"expand_callout" context:tagAnnotation];
-    [UIView setAnimationDuration:0.2];
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDidStopSelector:@selector(customTagCalloutAnimationFinished:finished:context:)];
-    
-    customTagCallout.transform = CGAffineTransformMakeScale(1, 1);
-    
-    [UIView commitAnimations];
-    
-
-    
+    if( shouldAnimateCallout ) {
+        customTagCallout.transform = CGAffineTransformMakeScale(0.1, 0.1);
+        [self.view addSubview:customTagCallout];
+        
+        [UIView beginAnimations:@"expand_callout" context:tagAnnotation];
+        [UIView setAnimationDuration:0.2];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationDidStopSelector:@selector(customTagCalloutAnimationFinished:finished:context:)];
+        
+        customTagCallout.transform = CGAffineTransformMakeScale(1, 1);
+        
+        [UIView commitAnimations];
+    } else {
+        [self customTagCalloutAnimationFinished:nil finished:nil context:tagAnnotation];
+    }
 }
 
 - (void)customTagCalloutAnimationFinished:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
@@ -772,17 +775,20 @@
 
 - (void)hideCustomTagCallout {
     
-    [UIView beginAnimations:@"hide_callout_and_pickup_info" context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDidStopSelector:@selector(finishedHidingCallout:finished:context:)];
-    
-    pickupInfoView.transform = CGAffineTransformMakeTranslation(0, pickupInfoView.frame.size.height * -1);
-    customTagCallout.transform = CGAffineTransformMakeScale(0.1, 0.1);
-    
-    [UIView commitAnimations];
-    
-
+    // WARNING: opposite for the hide animation
+    if( shouldAnimateCallout == NO ) {
+        [UIView beginAnimations:@"hide_callout_and_pickup_info" context:nil];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationDidStopSelector:@selector(finishedHidingCallout:finished:context:)];
+        
+        pickupInfoView.transform = CGAffineTransformMakeTranslation(0, pickupInfoView.frame.size.height * -1);
+        customTagCallout.transform = CGAffineTransformMakeScale(0.1, 0.1);
+        
+        [UIView commitAnimations];
+    } else {
+        [self finishedHidingCallout:nil finished:nil context:nil];
+    }
 }
 
 - (void)finishedHidingCallout:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
@@ -817,13 +823,15 @@
     UIWindow *window = [[UIApplication sharedApplication].windows objectAtIndex:0];
     [window addSubview:pickupInfoView];
     
-    pickupInfoView.transform = CGAffineTransformMakeTranslation(0, pickupInfoView.frame.size.height * -1);
-    [UIView beginAnimations:@"show_pickup_info" context:annotation];
-    [UIView setAnimationDuration:0.5];
+    if( shouldAnimateCallout ) {
+        pickupInfoView.transform = CGAffineTransformMakeTranslation(0, pickupInfoView.frame.size.height * -1);
+        [UIView beginAnimations:@"show_pickup_info" context:annotation];
+        [UIView setAnimationDuration:0.5];
 
-    pickupInfoView.transform = CGAffineTransformMakeTranslation(0, 0);
-    
-    [UIView commitAnimations];
+        pickupInfoView.transform = CGAffineTransformMakeTranslation(0, 0);
+        
+        [UIView commitAnimations];
+    }
     
     self.geocoder = [[[MKReverseGeocoder alloc] initWithCoordinate:annotation.destinationCoordinate] autorelease];
     self.geocoder.delegate = self;
