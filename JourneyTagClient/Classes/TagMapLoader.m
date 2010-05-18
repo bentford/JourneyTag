@@ -31,7 +31,11 @@
     [marker release];
 }
 
-+ (void)removeAllJTAnnotationsFromMap:(MKMapView*) mapView forType:(JTAnnotationType)type {    
++ (void)removeAllJTAnnotationsFromMap:(MKMapView*) mapView forType:(JTAnnotationType)type {
+    [TagMapLoader removeAllJTAnnotationsFromMap:mapView forType:type];
+}
+
++ (void)removeAllJTAnnotationsFromMap:(MKMapView*) mapView forType:(JTAnnotationType)type excludeTagKey:(NSString *)excludeTagKey {    
     
     NSMutableArray *removeList = [[NSMutableArray alloc] initWithCapacity:0];
     
@@ -40,7 +44,7 @@
         if( [ob isKindOfClass:[JTAnnotation class]] )
         {
             JTAnnotation *annotation = (JTAnnotation*)ob;
-            if( annotation.type == type )
+            if( annotation.type == type && [annotation.key isEqualToString:excludeTagKey] == NO )
             {
                 [removeList addObject:annotation];
             }
@@ -90,13 +94,22 @@
     [marker release];
 }
 
-+ (BOOL) loadTags:(MKMapView*)mapView tags:(NSArray*)tags
++ (BOOL)loadTags:(MKMapView*)mapView tags:(NSArray*)tags
+{
+    return [TagMapLoader loadTags:mapView tags:tags excludeSelectedTagKey:nil];
+}
+
++ (BOOL) loadTags:(MKMapView*)mapView tags:(NSArray*)tags excludeSelectedTagKey:(NSString *)excludeTagKey
 {
     BOOL containsReachableTags = NO;
-    [TagMapLoader removeAllJTAnnotationsFromMap:mapView forType:JTAnnotationTypeTag];
+    [TagMapLoader removeAllJTAnnotationsFromMap:mapView forType:JTAnnotationTypeTag excludeTagKey:excludeTagKey];
     for( NSDictionary *tag in tags)
     {
         NSString *tagKey = [tag objectForKey:@"key"];
+        
+        // skip excluded tags
+        if( [excludeTagKey isEqualToString:tagKey] )
+            continue;
         
         CLLocationCoordinate2D coordinate;
         coordinate.latitude = [[[tag objectForKey:@"currentCoordinate"] objectForKey:@"lat"] floatValue];
@@ -121,7 +134,7 @@
         
         NSString *progressMeterText = [NSString stringWithFormat:@"%1.2f of %1.2f miles", distanceTraveled, totalDistance];
         
-
+        
         
         JTAnnotation *marker = [[JTAnnotation alloc] init:tagKey coordinate:coordinate title:[tag objectForKey:@"name"] subTitle:subtitle level:[[tag objectForKey:@"level"] intValue] withinPickupRange:withinPickupRange progressMeterText:progressMeterText distanceTraveled:distanceTraveled totalDistance:totalDistance destinationCoordinate:destination destinationDirection:destinationDirection];
         

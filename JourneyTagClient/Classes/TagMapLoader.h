@@ -15,10 +15,15 @@
 }
 
 + (void) loadDepot:(MKMapView*) mapView dictionary:(NSDictionary*)depot;
+
 + (void) removeAllJTAnnotationsFromMap:(MKMapView*) mapView forType:(JTAnnotationType)type;
++ (void)removeAllJTAnnotationsFromMap:(MKMapView*) mapView forType:(JTAnnotationType)type excludeTagKey:(NSString *)excludeTagKey;
+
 + (void)removeJTAnnotationFromMap:(MKMapView *)mapView forTagKey:(NSString *)tagKey;
 
 + (void) loadTag:(MKMapView*)mapView lat:(double)lat lon:(double)lon;
+
 + (BOOL) loadTags:(MKMapView*)mapView tags:(NSArray*)tags;
++ (BOOL) loadTags:(MKMapView*)mapView tags:(NSArray*)tags excludeSelectedTagKey:(NSString *)excludeTagKey;
 
 @end

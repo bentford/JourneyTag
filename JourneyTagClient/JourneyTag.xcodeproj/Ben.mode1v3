@@ -283,13 +283,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>8</integer>
-									<integer>4</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-								</array>
-								<array>
 									<integer>14</integer>
 									<integer>4</integer>
 									<integer>2</integer>
@@ -297,36 +290,8 @@
 									<integer>0</integer>
 								</array>
 								<array>
-									<integer>20</integer>
-									<integer>4</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-								</array>
-								<array>
-									<integer>31</integer>
-									<integer>29</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-								</array>
-								<array>
 									<integer>35</integer>
 									<integer>29</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-								</array>
-								<array>
-									<integer>64</integer>
-									<integer>58</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-								</array>
-								<array>
-									<integer>98</integer>
-									<integer>66</integer>
 									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -382,7 +347,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5D1DAB611A27839008FD96F</string>
+										<string>B5D1DAE011A28370008FD96F</string>
 										<key>history</key>
 										<array>
 											<string>B57542200FD4FBBD004762E6</string>
@@ -616,17 +581,17 @@
 											<string>B5D1D77E119FD528008FD96F</string>
 											<string>B5D1D77F119FD528008FD96F</string>
 											<string>B5D1D7AF119FD9AF008FD96F</string>
-											<string>B5D1D85311A0A8D6008FD96F</string>
 											<string>B5D1D8BD11A0B764008FD96F</string>
 											<string>B5D1D93611A0C719008FD96F</string>
 											<string>B5D1D9AC11A0D271008FD96F</string>
-											<string>B5D1D9CE11A11A7E008FD96F</string>
 											<string>B5D1D9E611A1327F008FD96F</string>
 											<string>B5D1DA4311A21FF0008FD96F</string>
 											<string>B5D1DA4411A21FF0008FD96F</string>
 											<string>B5D1DA6111A23F2B008FD96F</string>
 											<string>B5D1DA7611A24503008FD96F</string>
-											<string>B5D1DA9211A27385008FD96F</string>
+											<string>B5D1DADD11A28370008FD96F</string>
+											<string>B5D1DADE11A28370008FD96F</string>
+											<string>B5D1DADF11A28370008FD96F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -895,6 +860,8 @@
 							<string>206pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

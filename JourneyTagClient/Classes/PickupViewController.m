@@ -428,12 +428,20 @@
 
 	// unobserve and clear tracked annotations views
 	for( NSString *key in [self.annotationViews allKeys] ) {
+        
+        // skip selected tag
+        if( [key isEqualToString:self.selectedTagKey] )
+            continue;
+        
+        // clear observer
         JTAnnotation *annotation = [self.annotationViews objectForKey:key];
 		[annotation removeObserver:self forKeyPath:@"selected"];
+        
+        // stop tracking 
+        [self.annotationViews removeObjectForKey:key];
 	}
-	self.annotationViews = [[NSMutableDictionary alloc] initWithCapacity:0];
     
-	BOOL containsReachableTags = [TagMapLoader loadTags:myMapView tags:tags]; 
+	BOOL containsReachableTags = [TagMapLoader loadTags:myMapView tags:tags excludeSelectedTagKey:self.selectedTagKey];
     
     self.navigationItem.leftBarButtonItem = [ActivityButtonUtil createRefreshButton:self action:@selector(loadTagsForCurrentLocation:)];
 
