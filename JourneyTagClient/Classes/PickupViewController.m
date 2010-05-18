@@ -30,17 +30,24 @@
 
 @interface PickupViewController(PrivateMethods)
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
+
 - (void)showCustomTagCalloutView:(id<MKAnnotation>)annotation;
 - (void)finishShowingCustomTagCalloutView:(NSTimer *)timer;
+- (void)customTagCalloutAnimationFinished:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context;
+
 - (void)hideCustomTagCallout;
+- (void)finishedHidingCallout:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context;
+
 - (void)showPickupInfoView:(JTAnnotation *)annotation;
-- (void)hidePickupInfoView;
+
 - (void)didLoadCalloutImageData:(NSData *)data;
 - (void)didFail:(ASIHTTPRequest *)request;
-- (CGRect)getCalloutFrameForAnnotationView:(id<MKAnnotation>)annotation;
+
+- (CGRect)getCalloutFrameForAnnotation:(id<MKAnnotation>)annotation;
 - (void)pickupTag;
 - (void)checkForFailedTagPickup:(NSDictionary *)dict;
 - (JTAnnotation *)getJTAnnotationWithTagKey:(NSString *)tagKey;
+
 - (void)moveTagDown:(id<MKAnnotation>)annotation;
 @end
 
@@ -390,7 +397,7 @@
         customTagCallout.hidden = NO;
 
         id<MKAnnotation> annotation = [[myMapView selectedAnnotations] objectAtIndex:0];
-        customTagCallout.frame = [self getCalloutFrameForAnnotationView:annotation];
+        customTagCallout.frame = [self getCalloutFrameForAnnotation:annotation];
     }
     
 }
@@ -720,7 +727,7 @@
 - (void)showCustomTagCalloutView:(id<MKAnnotation>)annotation {
     
     [self moveTagDown:annotation];
-    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(finishShowingCustomTagCalloutView:) userInfo:annotation repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(finishShowingCustomTagCalloutView:) userInfo:annotation repeats:NO];
     
 }
 
@@ -730,13 +737,30 @@
     
     [[NSBundle mainBundle] loadNibNamed:@"TagCalloutView" owner:self options:nil];
     
-    customTagCallout.frame = [self getCalloutFrameForAnnotationView:tagAnnotation];
+    customTagCallout.frame = [self getCalloutFrameForAnnotation:tagAnnotation];
     calloutTitle.text = tagAnnotation.title;
     calloutDestinationDirection.text = tagAnnotation.subtitle;
+    [calloutActivity startAnimating];
     
+    customTagCallout.transform = CGAffineTransformMakeScale(0.1, 0.1);
     [self.view addSubview:customTagCallout];
     
-    [calloutActivity startAnimating];
+    [UIView beginAnimations:@"expand_callout" context:tagAnnotation];
+    [UIView setAnimationDuration:0.2];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(customTagCalloutAnimationFinished:finished:context:)];
+    
+    customTagCallout.transform = CGAffineTransformMakeScale(1, 1);
+    
+    [UIView commitAnimations];
+    
+
+    
+}
+
+- (void)customTagCalloutAnimationFinished:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
+
+    JTAnnotation *tagAnnotation = (JTAnnotation *)context;
     
     [self showPickupInfoView:tagAnnotation];
     
@@ -747,11 +771,26 @@
 }
 
 - (void)hideCustomTagCallout {
+    
+    [UIView beginAnimations:@"hide_callout_and_pickup_info" context:nil];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(finishedHidingCallout:finished:context:)];
+    
+    pickupInfoView.transform = CGAffineTransformMakeTranslation(0, pickupInfoView.frame.size.height * -1);
+    customTagCallout.transform = CGAffineTransformMakeScale(0.1, 0.1);
+    
+    [UIView commitAnimations];
+    
+
+}
+
+- (void)finishedHidingCallout:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
     [customTagCallout removeFromSuperview]; //not retained so it dies
     customTagCallout = nil;
     
     [pickupInfoView removeFromSuperview];
-    pickupInfoView = nil;
+    pickupInfoView = nil;   
     
     // clear tag selection
     self.selectedTagKey = nil;
@@ -778,6 +817,14 @@
     UIWindow *window = [[UIApplication sharedApplication].windows objectAtIndex:0];
     [window addSubview:pickupInfoView];
     
+    pickupInfoView.transform = CGAffineTransformMakeTranslation(0, pickupInfoView.frame.size.height * -1);
+    [UIView beginAnimations:@"show_pickup_info" context:annotation];
+    [UIView setAnimationDuration:0.5];
+
+    pickupInfoView.transform = CGAffineTransformMakeTranslation(0, 0);
+    
+    [UIView commitAnimations];
+    
     self.geocoder = [[[MKReverseGeocoder alloc] initWithCoordinate:annotation.destinationCoordinate] autorelease];
     self.geocoder.delegate = self;
     [self.geocoder start];
@@ -785,10 +832,6 @@
     destinationNameLabel.text = @"Loading...";
     [self.geocodeTimeout invalidate];
     self.geocodeTimeout = [NSTimer scheduledTimerWithTimeInterval:kGeoCodeTimeout target:self selector:@selector(geocodeTimedOut:) userInfo:nil repeats:NO];
-}
-
-- (void)hidePickupInfoView {
-    [pickupInfoView release];
 }
 
 - (void)didLoadCalloutImageData:(NSData *)data {
@@ -803,7 +846,7 @@
 }
 
 
-- (CGRect)getCalloutFrameForAnnotationView:(id<MKAnnotation>)annotation {
+- (CGRect)getCalloutFrameForAnnotation:(id<MKAnnotation>)annotation {
 
     CGPoint pinLocation = [myMapView convertCoordinate:annotation.coordinate toPointToView:self.view];
     return CGRectMake(round(pinLocation.x) - 50, 

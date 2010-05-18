@@ -347,7 +347,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B5D1DAF911A28B54008FD96F</string>
+										<string>B5D1DB2B11A291B1008FD96F</string>
 										<key>history</key>
 										<array>
 											<string>B57542200FD4FBBD004762E6</string>
@@ -584,14 +584,14 @@
 											<string>B5D1D8BD11A0B764008FD96F</string>
 											<string>B5D1D93611A0C719008FD96F</string>
 											<string>B5D1D9AC11A0D271008FD96F</string>
-											<string>B5D1D9E611A1327F008FD96F</string>
 											<string>B5D1DA4311A21FF0008FD96F</string>
 											<string>B5D1DA4411A21FF0008FD96F</string>
 											<string>B5D1DA6111A23F2B008FD96F</string>
 											<string>B5D1DA7611A24503008FD96F</string>
 											<string>B5D1DADD11A28370008FD96F</string>
 											<string>B5D1DADE11A28370008FD96F</string>
-											<string>B5D1DADF11A28370008FD96F</string>
+											<string>B5D1DB2011A290C9008FD96F</string>
+											<string>B5D1DB2111A290C9008FD96F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -813,6 +813,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>B5D1DB2C11A291B1008FD96F</string>
+		<string>B57B079B0FEDFA8100D718B3</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>B5D1DA2811A20B7C008FD96F</string>
 		<string>B5D1DA2911A20B7C008FD96F</string>
@@ -1688,9 +1690,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1268, 839}}</string>
+								<string>{{0, 0}, {762, 293}}</string>
 								<key>RubberWindowFrame</key>
-								<string>77 490 1268 880 0 0 2560 1418 </string>
+								<string>77 1036 762 334 0 0 2560 1418 </string>
 								<key>XCRefactoringSplitViewLowerHeight</key>
 								<real>375</real>
 								<key>XCRefactoringSplitViewTotalHeight</key>
@@ -1699,11 +1701,11 @@
 							<key>Module</key>
 							<string>XCRefactoringModule</string>
 							<key>Proportion</key>
-							<string>839pt</string>
+							<string>293pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>839pt</string>
+					<string>293pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -1717,11 +1719,11 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>B57B079B0FEDFA8100D718B3</string>
-				<string>B5D1D5F7119F6F1E008FD96F</string>
+				<string>B5D1DB0711A28DDF008FD96F</string>
 				<string>B57B079A0FEDFA8100D718B3</string>
 			</array>
 			<key>WindowString</key>
-			<string>77 490 1268 880 0 0 2560 1418 </string>
+			<string>77 1036 762 334 0 0 2560 1418 </string>
 			<key>WindowToolGUID</key>
 			<string>B57B079B0FEDFA8100D718B3</string>
 			<key>WindowToolIsVisible</key>
