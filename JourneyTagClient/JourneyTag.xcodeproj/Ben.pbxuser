@@ -24,7 +24,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = B5753FE40FD4EE0D004762E6 /* JourneyTag */;
-		activeSDKPreference = iphonesimulator3.1.2;
+		activeSDKPreference = iphoneos3.1.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* JourneyTag */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* JourneyTag */,
@@ -158,8 +158,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 295885676;
-			PBXWorkspaceStateSaveDate = 295885676;
+			PBXPerProjectTemplateStateSaveDate = 295917198;
+			PBXWorkspaceStateSaveDate = 295917198;
 		};
 		perUserProjectItems = {
 			B506706E0FEEE76D002C843B = B506706E0FEEE76D002C843B /* PBXTextBookmark */;
@@ -800,6 +800,8 @@
 			B5D1DBA811A2C13C008FD96F = B5D1DBA811A2C13C008FD96F /* PBXTextBookmark */;
 			B5D1DBA911A2C13C008FD96F = B5D1DBA911A2C13C008FD96F /* PBXTextBookmark */;
 			B5D1DBAA11A2C13C008FD96F = B5D1DBAA11A2C13C008FD96F /* PBXTextBookmark */;
+			B5D1DBD311A36007008FD96F /* PBXTextBookmark */ = B5D1DBD311A36007008FD96F /* PBXTextBookmark */;
+			B5D1DBD411A36007008FD96F /* PBXTextBookmark */ = B5D1DBD411A36007008FD96F /* PBXTextBookmark */;
 			B5D3FAC1105E5A3A0060B838 = B5D3FAC1105E5A3A0060B838 /* PBXBookmark */;
 			B5D3FAC2105E5A3A0060B838 = B5D3FAC2105E5A3A0060B838 /* PBXBookmark */;
 			B5D3FAC3105E5A3A0060B838 = B5D3FAC3105E5A3A0060B838 /* PBXBookmark */;
@@ -1878,7 +1880,7 @@
 		ignoreCount = 0;
 		lineNumber = 39;
 		location = JourneyTag;
-		modificationTime = 295878508.267884;
+		modificationTime = 295917225.395129;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -2048,7 +2050,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -2497,9 +2499,9 @@
 	};
 	B57541870FD4F0D3004762E6 /* PickupViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1416, 17699}}";
-			sepNavSelRange = "{29884, 0}";
-			sepNavVisRange = "{28507, 2070}";
+			sepNavIntBoundsRect = "{{0, 0}, {1668, 18039}}";
+			sepNavSelRange = "{23772, 0}";
+			sepNavVisRange = "{22222, 1980}";
 			sepNavWindowFrame = "{{558, 263}, {1039, 942}}";
 		};
 	};
@@ -2743,7 +2745,7 @@
 		ignoreCount = 0;
 		lineNumber = 107;
 		location = JourneyTag;
-		modificationTime = 295878508.267402;
+		modificationTime = 295917225.321563;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -2888,9 +2890,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 262;
-		modificationTime = 295878701.833783;
+		modificationTime = 295917224.510758;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	B57ABB87104292BC001731E8 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -3037,9 +3039,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 80;
-		modificationTime = 295878701.833832;
+		modificationTime = 295917224.510887;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	B57C66EE105CF1E800116B81 /* ActivityTableViewController.m:286 */ = {
 		isa = PBXFileBreakpoint;
@@ -3054,9 +3056,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 286;
-		modificationTime = 295878701.8338701;
+		modificationTime = 295917224.510901;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	B57C66F2105CF22700116B81 /* ActivityTableViewController.m:178 */ = {
 		isa = PBXFileBreakpoint;
@@ -3071,9 +3073,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 178;
-		modificationTime = 295878701.8338161;
+		modificationTime = 295917224.510913;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	B57C66FE105CF29300116B81 /* ActivityTableViewController.m:115 */ = {
 		isa = PBXFileBreakpoint;
@@ -3088,9 +3090,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 115;
-		modificationTime = 295878701.833854;
+		modificationTime = 295917224.51092;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	B57C6723105CFE7B00116B81 /* ActivityViewController.h */ = {
 		uiCtxt = {
@@ -4002,7 +4004,7 @@
 		ignoreCount = 0;
 		lineNumber = 580;
 		location = JourneyTag;
-		modificationTime = 295878508.2679731;
+		modificationTime = 295917225.422862;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -4020,7 +4022,7 @@
 		ignoreCount = 0;
 		lineNumber = 177;
 		location = JourneyTag;
-		modificationTime = 295878508.268018;
+		modificationTime = 295917225.466702;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -8687,11 +8689,11 @@
 		delayBeforeContinue = 0;
 		fileReference = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		functionName = "-hideCustomTagCallout";
-		hitCount = 5;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 791;
 		location = JourneyTag;
-		modificationTime = 295878687.842537;
+		modificationTime = 295917225.512307;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -8725,11 +8727,11 @@
 		delayBeforeContinue = 0;
 		fileReference = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		functionName = "-observeValueForKeyPath:ofObject:change:context:";
-		hitCount = 3;
+		hitCount = 1;
 		ignoreCount = 0;
 		lineNumber = 702;
 		location = JourneyTag;
-		modificationTime = 295878656.181005;
+		modificationTime = 295918003.162116;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -8743,11 +8745,11 @@
 		delayBeforeContinue = 0;
 		fileReference = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
 		functionName = "-observeValueForKeyPath:ofObject:change:context:";
-		hitCount = 5;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 705;
 		location = JourneyTag;
-		modificationTime = 295878678.441094;
+		modificationTime = 295917225.681049;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -8775,7 +8777,7 @@
 		ignoreCount = 0;
 		lineNumber = 751;
 		location = JourneyTag;
-		modificationTime = 295878677.564616;
+		modificationTime = 295917225.71536;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -8808,6 +8810,23 @@
 		rType = 0;
 		vrLen = 2070;
 		vrLoc = 28507;
+	};
+	B5D1DBD311A36007008FD96F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
+		rLen = 0;
+		rLoc = 701;
+		rType = 1;
+	};
+	B5D1DBD411A36007008FD96F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B57541870FD4F0D3004762E6 /* PickupViewController.m */;
+		name = "PickupViewController.m: 717";
+		rLen = 0;
+		rLoc = 23772;
+		rType = 0;
+		vrLen = 1980;
+		vrLoc = 22222;
 	};
 	B5D3FAC1105E5A3A0060B838 /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -9003,7 +9022,7 @@
 		ignoreCount = 0;
 		lineNumber = 67;
 		location = JourneyTag;
-		modificationTime = 295878508.267364;
+		modificationTime = 295917225.247836;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
