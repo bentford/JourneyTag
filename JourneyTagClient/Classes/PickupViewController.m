@@ -31,6 +31,7 @@
 @interface PickupViewController(PrivateMethods)
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
 - (void)showCustomTagCalloutView:(id<MKAnnotation>)annotation;
+- (void)finishShowingCustomTagCalloutView:(NSTimer *)timer;
 - (void)hideCustomTagCallout;
 - (void)showPickupInfoView:(JTAnnotation *)annotation;
 - (void)hidePickupInfoView;
@@ -719,26 +720,30 @@
 - (void)showCustomTagCalloutView:(id<MKAnnotation>)annotation {
     
     [self moveTagDown:annotation];
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(finishShowingCustomTagCalloutView:) userInfo:annotation repeats:NO];
+    
+}
+
+- (void)finishShowingCustomTagCalloutView:(NSTimer *)timer {
+    
+    JTAnnotation *tagAnnotation = (JTAnnotation *)timer.userInfo;
     
     [[NSBundle mainBundle] loadNibNamed:@"TagCalloutView" owner:self options:nil];
-
-    customTagCallout.frame = [self getCalloutFrameForAnnotationView:annotation];
-    calloutTitle.text = annotation.title;
-    calloutDestinationDirection.text = annotation.subtitle;
+    
+    customTagCallout.frame = [self getCalloutFrameForAnnotationView:tagAnnotation];
+    calloutTitle.text = tagAnnotation.title;
+    calloutDestinationDirection.text = tagAnnotation.subtitle;
     
     [self.view addSubview:customTagCallout];
     
     [calloutActivity startAnimating];
-    
-    // this contains the tagKey, which can be used to get the image
-    JTAnnotation *tagAnnotation = (JTAnnotation *)annotation;
     
     [self showPickupInfoView:tagAnnotation];
     
     // need this for picking up tag
     self.selectedTagKey = tagAnnotation.key;
     
-    [photoService getImageDataWithTagKey:tagAnnotation.key delegate:self didFinish:@selector(didLoadCalloutImageData:) didFail:@selector(didFail:)];
+    [photoService getImageDataWithTagKey:tagAnnotation.key delegate:self didFinish:@selector(didLoadCalloutImageData:) didFail:@selector(didFail:)];   
 }
 
 - (void)hideCustomTagCallout {
