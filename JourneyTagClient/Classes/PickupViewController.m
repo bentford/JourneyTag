@@ -49,6 +49,7 @@
 - (JTAnnotation *)getJTAnnotationWithTagKey:(NSString *)tagKey;
 
 - (void)moveTagDown:(id<MKAnnotation>)annotation;
+- (void)retryCallout:(NSTimer *)timer;
 @end
 
 @implementation PickupViewController
@@ -72,6 +73,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(markWasTouched:) name:@"MarkWasTouched" object:nil];
     
     annotationViews = [[NSMutableDictionary alloc] initWithCapacity:0];
+    isRunningHideAnimation = NO;
 }
 
 #pragma mark  init
@@ -696,10 +698,10 @@
 		BOOL annotationAppeared = [[change valueForKey:@"new"] boolValue];
 		if (annotationAppeared) {
             shouldAnimateCallout = (self.selectedTagKey == nil);
-            NSLog(@"showing callout, should animate: %d", shouldAnimateCallout);
+            NSLog(@"showing callout");
 			[self showCustomTagCalloutView:pin.annotation];
         } else 
-            NSLog(@"hiding callout, should animate: %d", shouldAnimateCallout);
+            NSLog(@"hiding callout");
 			[self hideCustomTagCallout];
 	}
 }
@@ -726,8 +728,19 @@
     [myMapView setCenterCoordinate:targetCoordinate animated:YES];    
 }
 
+- (void)retryCallout:(NSTimer *)timer {
+    id<MKAnnotation> annotation = (id<MKAnnotation>)timer.userInfo;
+    [self showCustomTagCalloutView:annotation];
+}
+
 - (void)showCustomTagCalloutView:(id<MKAnnotation>)annotation {
     
+    if( isRunningHideAnimation) {
+        [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(retryCallout:) userInfo:annotation repeats:NO];
+        return;
+     }
+    
+    isRunningShowAnimation = YES;
     [self moveTagDown:annotation];
     [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(finishShowingCustomTagCalloutView:) userInfo:annotation repeats:NO];
     
@@ -744,7 +757,7 @@
     calloutDestinationDirection.text = tagAnnotation.subtitle;
     [calloutActivity startAnimating];
     
-    if( shouldAnimateCallout ) {
+    //if( shouldAnimateCallout ) {
         customTagCallout.transform = CGAffineTransformMakeScale(0.1, 0.1);
         [self.view addSubview:customTagCallout];
         
@@ -756,9 +769,9 @@
         customTagCallout.transform = CGAffineTransformMakeScale(1, 1);
         
         [UIView commitAnimations];
-    } else {
-        [self customTagCalloutAnimationFinished:nil finished:nil context:tagAnnotation];
-    }
+    //} else {
+        //[self customTagCalloutAnimationFinished:nil finished:nil context:tagAnnotation];
+    //}
 }
 
 - (void)customTagCalloutAnimationFinished:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
@@ -775,20 +788,17 @@
 
 - (void)hideCustomTagCallout {
     
-    // WARNING: opposite for the hide animation
-    if( shouldAnimateCallout == NO ) {
-        [UIView beginAnimations:@"hide_callout_and_pickup_info" context:nil];
-        [UIView setAnimationDuration:0.5];
-        [UIView setAnimationDelegate:self];
-        [UIView setAnimationDidStopSelector:@selector(finishedHidingCallout:finished:context:)];
-        
-        pickupInfoView.transform = CGAffineTransformMakeTranslation(0, pickupInfoView.frame.size.height * -1);
-        customTagCallout.transform = CGAffineTransformMakeScale(0.1, 0.1);
-        
-        [UIView commitAnimations];
-    } else {
-        [self finishedHidingCallout:nil finished:nil context:nil];
-    }
+    isRunningHideAnimation = YES;
+    NSLog(@"hiding now");
+    [UIView beginAnimations:@"hide_callout_and_pickup_info" context:nil];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(finishedHidingCallout:finished:context:)];
+    
+    pickupInfoView.transform = CGAffineTransformMakeTranslation(0, pickupInfoView.frame.size.height * -1);
+    customTagCallout.transform = CGAffineTransformMakeScale(0.1, 0.1);
+    
+    [UIView commitAnimations];
 }
 
 - (void)finishedHidingCallout:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
@@ -800,6 +810,8 @@
     
     // clear tag selection
     self.selectedTagKey = nil;
+    
+    isRunningHideAnimation = NO;
 }
 
 - (void)showPickupInfoView:(JTAnnotation *)annotation {
@@ -823,15 +835,16 @@
     UIWindow *window = [[UIApplication sharedApplication].windows objectAtIndex:0];
     [window addSubview:pickupInfoView];
     
-    if( shouldAnimateCallout ) {
+    //if( shouldAnimateCallout ) {
         pickupInfoView.transform = CGAffineTransformMakeTranslation(0, pickupInfoView.frame.size.height * -1);
         [UIView beginAnimations:@"show_pickup_info" context:annotation];
         [UIView setAnimationDuration:0.5];
-
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(didFinishShowing:::)];
         pickupInfoView.transform = CGAffineTransformMakeTranslation(0, 0);
         
         [UIView commitAnimations];
-    }
+    //}
     
     self.geocoder = [[[MKReverseGeocoder alloc] initWithCoordinate:annotation.destinationCoordinate] autorelease];
     self.geocoder.delegate = self;
@@ -840,6 +853,10 @@
     destinationNameLabel.text = @"Loading...";
     [self.geocodeTimeout invalidate];
     self.geocodeTimeout = [NSTimer scheduledTimerWithTimeInterval:kGeoCodeTimeout target:self selector:@selector(geocodeTimedOut:) userInfo:nil repeats:NO];
+}
+
+- (void)didFinishShowing:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
+    isRunningShowAnimation = NO;
 }
 
 - (void)didLoadCalloutImageData:(NSData *)data {

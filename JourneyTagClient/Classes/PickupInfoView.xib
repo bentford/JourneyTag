@@ -120,6 +120,7 @@
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIText">Progress:</string>
 						<object class="NSFont" key="IBUIFont" id="1038962332">
@@ -147,6 +148,7 @@
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIText">400 of 1648 miles</string>
 						<object class="NSFont" key="IBUIFont" id="26035871">
@@ -168,6 +170,7 @@
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIText">Destination:</string>
 						<reference key="IBUIFont" ref="1038962332"/>
@@ -185,6 +188,7 @@
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIText">Des Moines, Idaho, USA</string>
 						<reference key="IBUIFont" ref="26035871"/>
@@ -401,10 +405,7 @@ b250YWluZXIiIHZpZXcuA</bytes>
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
 									<string key="NSColorName">textColor</string>
-									<object class="NSColor" key="NSColor">
-										<int key="NSColorSpace">3</int>
-										<bytes key="NSWhite">MAA</bytes>
-									</object>
+									<reference key="NSColor" ref="545444480"/>
 								</object>
 								<object class="NSFont" id="26">
 									<string key="NSName">LucidaGrande</string>
@@ -475,6 +476,11 @@ b250YWluZXIiIHZpZXcuA</bytes>
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>calloutActivity</string>
+							<string>calloutDestinationDirection</string>
+							<string>calloutImage</string>
+							<string>calloutTitle</string>
+							<string>customTagCallout</string>
 							<string>destinationNameLabel</string>
 							<string>distanceMeterContainer</string>
 							<string>distanceMeterView</string>
@@ -486,6 +492,11 @@ b250YWluZXIiIHZpZXcuA</bytes>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIActivityIndicatorView</string>
+							<string>UILabel</string>
+							<string>UIImageView</string>
+							<string>UILabel</string>
+							<string>UIView</string>
 							<string>UILabel</string>
 							<string>UIView</string>
 							<string>UIView</string>
@@ -643,6 +654,14 @@ b250YWluZXIiIHZpZXcuA</bytes>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="377425995">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">UIKit.framework/Headers/UIResponder.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">UIActivityIndicatorView</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">UIKit.framework/Headers/UIActivityIndicatorView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

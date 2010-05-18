@@ -56,6 +56,9 @@
     
     BOOL shouldAnimateCallout;
     
+    BOOL isRunningHideAnimation;
+    BOOL isRunningShowAnimation;
+    
 #pragma mark PickupInfoView
     IBOutlet UIView *pickupInfoView;
     IBOutlet UILabel *distanceTraveledLabel;
