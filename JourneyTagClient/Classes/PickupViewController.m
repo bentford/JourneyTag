@@ -429,7 +429,8 @@
     NSArray *tags = [dict objectForKey:@"tags"];
 
 	// unobserve and clear tracked annotations views
-	for( JTAnnotation *annotation in self.annotationViews ) {
+	for( NSString *key in [self.annotationViews allKeys] ) {
+        JTAnnotation *annotation = [self.annotationViews objectForKey:key];
 		[annotation removeObserver:self forKeyPath:@"selected"];
 	}
 	self.annotationViews = [[NSMutableDictionary alloc] initWithCapacity:0];
