@@ -687,6 +687,12 @@
 
 - (void)showCustomTagCalloutView:(id<MKAnnotation>)annotation {
     
+    // TODO: center tag in view
+    //CGRect rectToCenterOn = CGRectMake(0, 0, 320, 100);
+    //MKCoordinateRegion regionToCenterOn = [myMapView convertRect:rectToCenterOn toRegionFromView:self.view];
+    //regionToCenterOn = [myMapView regionThatFits:regionToCenterOn];
+    //[myMapView setRegion:regionToCenterOn animated:YES];
+    
     [[NSBundle mainBundle] loadNibNamed:@"TagCalloutView" owner:self options:nil];
 
     customTagCallout.frame = [self getCalloutFrameForAnnotationView:annotation];
