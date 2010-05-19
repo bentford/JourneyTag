@@ -658,7 +658,7 @@
 - (void) takePicture {
     
     if( !currentLocation ) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"GPS accuracy is not at least 100 yards.  Try again in a minute or two." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"GPS is still warming up.  I need feedback on this if it happens too often." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         [alertView release];
         return;

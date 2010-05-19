@@ -158,8 +158,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 295917198;
-			PBXWorkspaceStateSaveDate = 295917198;
+			PBXPerProjectTemplateStateSaveDate = 295919775;
+			PBXWorkspaceStateSaveDate = 295919775;
 		};
 		perUserProjectItems = {
 			B506706E0FEEE76D002C843B = B506706E0FEEE76D002C843B /* PBXTextBookmark */;
@@ -800,8 +800,14 @@
 			B5D1DBA811A2C13C008FD96F = B5D1DBA811A2C13C008FD96F /* PBXTextBookmark */;
 			B5D1DBA911A2C13C008FD96F = B5D1DBA911A2C13C008FD96F /* PBXTextBookmark */;
 			B5D1DBAA11A2C13C008FD96F = B5D1DBAA11A2C13C008FD96F /* PBXTextBookmark */;
-			B5D1DBD311A36007008FD96F /* PBXTextBookmark */ = B5D1DBD311A36007008FD96F /* PBXTextBookmark */;
-			B5D1DBD411A36007008FD96F /* PBXTextBookmark */ = B5D1DBD411A36007008FD96F /* PBXTextBookmark */;
+			B5D1DBD311A36007008FD96F = B5D1DBD311A36007008FD96F /* PBXTextBookmark */;
+			B5D1DBD411A36007008FD96F = B5D1DBD411A36007008FD96F /* PBXTextBookmark */;
+			B5D1DBED11A36231008FD96F /* PBXTextBookmark */ = B5D1DBED11A36231008FD96F /* PBXTextBookmark */;
+			B5D1DBEE11A36231008FD96F /* PBXTextBookmark */ = B5D1DBEE11A36231008FD96F /* PBXTextBookmark */;
+			B5D1DBF311A36242008FD96F /* PBXTextBookmark */ = B5D1DBF311A36242008FD96F /* PBXTextBookmark */;
+			B5D1DBF411A36242008FD96F /* PBXTextBookmark */ = B5D1DBF411A36242008FD96F /* PBXTextBookmark */;
+			B5D1DBF511A36242008FD96F /* PBXTextBookmark */ = B5D1DBF511A36242008FD96F /* PBXTextBookmark */;
+			B5D1DBF611A36242008FD96F /* PBXTextBookmark */ = B5D1DBF611A36242008FD96F /* PBXTextBookmark */;
 			B5D3FAC1105E5A3A0060B838 = B5D3FAC1105E5A3A0060B838 /* PBXBookmark */;
 			B5D3FAC2105E5A3A0060B838 = B5D3FAC2105E5A3A0060B838 /* PBXBookmark */;
 			B5D3FAC3105E5A3A0060B838 = B5D3FAC3105E5A3A0060B838 /* PBXBookmark */;
@@ -1642,7 +1648,7 @@
 		fRef = B575415E0FD4F0D3004762E6 /* DropTableViewController.m */;
 		name = "DropTableViewController.m: 675";
 		rLen = 26;
-		rLoc = 23564;
+		rLoc = 23568;
 		rType = 0;
 		vrLen = 1269;
 		vrLoc = 22573;
@@ -1652,7 +1658,7 @@
 		fRef = B575415E0FD4F0D3004762E6 /* DropTableViewController.m */;
 		name = "DropTableViewController.m: 683";
 		rLen = 0;
-		rLoc = 24119;
+		rLoc = 24123;
 		rType = 0;
 		vrLen = 1220;
 		vrLoc = 23450;
@@ -1662,7 +1668,7 @@
 		fRef = B575415E0FD4F0D3004762E6 /* DropTableViewController.m */;
 		name = "DropTableViewController.m: 683";
 		rLen = 0;
-		rLoc = 24119;
+		rLoc = 24123;
 		rType = 0;
 		vrLen = 1176;
 		vrLoc = 23495;
@@ -2282,9 +2288,9 @@
 	};
 	B575415E0FD4F0D3004762E6 /* DropTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2436, 16606}}";
-			sepNavSelRange = "{24119, 0}";
-			sepNavVisRange = "{23495, 1176}";
+			sepNavIntBoundsRect = "{{0, 0}, {2739, 17159}}";
+			sepNavSelRange = "{23568, 26}";
+			sepNavVisRange = "{22475, 2436}";
 			sepNavWindowFrame = "{{15, 83}, {1039, 945}}";
 		};
 	};
@@ -4045,9 +4051,9 @@
 	};
 	B5A922CC10449B0800744C64 /* AppSettings.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1028, 1413}}";
-			sepNavSelRange = "{512, 0}";
-			sepNavVisRange = "{194, 663}";
+			sepNavIntBoundsRect = "{{0, 0}, {1089, 1433}}";
+			sepNavSelRange = "{513, 0}";
+			sepNavVisRange = "{134, 762}";
 		};
 	};
 	B5A923D41044BDA600744C64 /* PBXTextBookmark */ = {
@@ -4270,7 +4276,7 @@
 		fRef = B575415E0FD4F0D3004762E6 /* DropTableViewController.m */;
 		name = "DropTableViewController.m: 675";
 		rLen = 26;
-		rLoc = 23564;
+		rLoc = 23568;
 		rType = 0;
 		vrLen = 2041;
 		vrLoc = 22573;
@@ -4280,7 +4286,7 @@
 		fRef = B5A922CC10449B0800744C64 /* AppSettings.m */;
 		name = "AppSettings.m: 30";
 		rLen = 0;
-		rLoc = 512;
+		rLoc = 513;
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 194;
@@ -4535,9 +4541,9 @@
 	};
 	B5BED7C61195702200989F02 /* GameViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1461, 1493}}";
-			sepNavSelRange = "{694, 0}";
-			sepNavVisRange = "{28, 1882}";
+			sepNavIntBoundsRect = "{{0, 0}, {1461, 1373}}";
+			sepNavSelRange = "{632, 0}";
+			sepNavVisRange = "{43, 1760}";
 			sepNavWindowFrame = "{{38, 157}, {1354, 1235}}";
 		};
 	};
@@ -4738,7 +4744,7 @@
 		fRef = B575415E0FD4F0D3004762E6 /* DropTableViewController.m */;
 		name = "DropTableViewController.m: 675";
 		rLen = 26;
-		rLoc = 23564;
+		rLoc = 23568;
 		rType = 0;
 		vrLen = 1716;
 		vrLoc = 1644;
@@ -8828,6 +8834,63 @@
 		vrLen = 1980;
 		vrLoc = 22222;
 	};
+	B5D1DBED11A36231008FD96F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B575415E0FD4F0D3004762E6 /* DropTableViewController.m */;
+		rLen = 26;
+		rLoc = 23568;
+		rType = 0;
+	};
+	B5D1DBEE11A36231008FD96F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B575415E0FD4F0D3004762E6 /* DropTableViewController.m */;
+		name = "DropTableViewController.m: 661";
+		rLen = 0;
+		rLoc = 22845;
+		rType = 0;
+		vrLen = 1149;
+		vrLoc = 23428;
+	};
+	B5D1DBF311A36242008FD96F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5BED7C61195702200989F02 /* GameViewController.m */;
+		name = "GameViewController.m: 23";
+		rLen = 0;
+		rLoc = 632;
+		rType = 0;
+		vrLen = 1760;
+		vrLoc = 43;
+	};
+	B5D1DBF411A36242008FD96F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B575415E0FD4F0D3004762E6 /* DropTableViewController.m */;
+		name = "DropTableViewController.m: 675";
+		rLen = 26;
+		rLoc = 23568;
+		rType = 0;
+		vrLen = 2436;
+		vrLoc = 22475;
+	};
+	B5D1DBF511A36242008FD96F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5A922CC10449B0800744C64 /* AppSettings.m */;
+		name = "AppSettings.m: 28";
+		rLen = 26;
+		rLoc = 471;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 134;
+	};
+	B5D1DBF611A36242008FD96F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B5A922CC10449B0800744C64 /* AppSettings.m */;
+		name = "AppSettings.m: 30";
+		rLen = 0;
+		rLoc = 513;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 134;
+	};
 	B5D3FAC1105E5A3A0060B838 /* PBXBookmark */ = {
 		isa = PBXBookmark;
 		fRef = B595EA6F1020FE24004A8055 /* MapTagIconRed4.png */;
@@ -9022,7 +9085,7 @@
 		ignoreCount = 0;
 		lineNumber = 67;
 		location = JourneyTag;
-		modificationTime = 295917225.247836;
+		modificationTime = 295917225.2478361;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
