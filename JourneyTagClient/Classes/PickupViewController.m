@@ -829,6 +829,13 @@
     progressGreen.frame = CGRectMake(progressGreen.frame.origin.x, progressGreen.frame.origin.y, adjustedWidth, progressGreen.frame.size.height);
 	[self.view addSubview:pickupInfoView];
     
+	pickupButton.enabled = annotation.withinPickupRange;
+	if( annotation.withinPickupRange ) {
+		[pickupButton setTitle:@"Pickup Tag" forState:UIControlStateNormal];
+	} else {
+		[pickupButton setTitle:@"" forState:UIControlStateNormal];
+	}
+	
     // adding the pickupview above navigation controller
     pickupInfoView.frame = CGRectMake(0, 0+20, pickupInfoView.frame.size.width, pickupInfoView.frame.size.height);
     
