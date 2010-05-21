@@ -16,6 +16,8 @@ import jt.service.carryscoreindex
 import logging
 import time
 
+from google.appengine.api import quota
+
 class DeleteTag(webapp.RequestHandler):
   def post(self):
       if not jt.auth.auth(self):
@@ -187,21 +189,27 @@ class GetForCoordinate(webapp.RequestHandler):
         physicalLat = float(self.request.get('physicalLat'))
         physicalLon = float(self.request.get('physicalLon'))
         
-
+        start = quota.get_request_cpu_usage()
         viewBox = jtLocation.getRangeBoxFromCoordinate(viewLat, viewLon, jt.gamesettings.tagViewRadius)
         pickupBox = jtLocation.getRangeBoxFromCoordinate(physicalLat, physicalLon, jt.gamesettings.tagPickupRadius)
-        
+        end = quota.get_request_cpu_usage()
+        logging.info('rangebox cost: %d MegaCycles' % (end-start))
+
+        start = quota.get_request_cpu_usage()
         viewQuery = db.GqlQuery("SELECT * FROM Tag WHERE currentCoordinate >= :1 AND currentCoordinate <= :2 AND deleted = False AND pickedUp = False AND hasReachedDestination = False",db.GeoPt(lat=viewBox.minLat, lon=viewBox.minLon), db.GeoPt(lat=viewBox.maxLat, lon=viewBox.maxLon) )
+        end = quota.get_request_cpu_usage()
+        logging.info('query cost: %d MegaCycles' % (end-start))
         
         tagList = [] #only because I don't know if I can modify viewQuery in place
-
+        start = quota.get_request_cpu_usage()
         #filter for ability to pickup
         for tag in viewQuery:
             if pickupBox.containsCoordinate( tag.currentCoordinate.lat, tag.currentCoordinate.lon):    
                 tag.withinPickupRange = True
 
             tagList.append(tag)
-        
+        end = quota.get_request_cpu_usage()
+        logging.info('filter cost: %d MegaCycles' % (end-start))
         result = jt.modelhelper.JsonQueryUtil.toArray('tags',tagList)
         self.response.out.write(result)
                            
