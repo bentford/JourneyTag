@@ -32,7 +32,7 @@
 }
 
 + (void)removeAllJTAnnotationsFromMap:(MKMapView*) mapView forType:(JTAnnotationType)type {
-    [TagMapLoader removeAllJTAnnotationsFromMap:mapView forType:type];
+    [TagMapLoader removeAllJTAnnotationsFromMap:mapView forType:type excludeTagKey:nil];
 }
 
 + (void)removeAllJTAnnotationsFromMap:(MKMapView*) mapView forType:(JTAnnotationType)type excludeTagKey:(NSString *)excludeTagKey {    
