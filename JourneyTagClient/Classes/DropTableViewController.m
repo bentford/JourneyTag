@@ -24,14 +24,19 @@
 #define kTagView 0
 #define kDepotView 1
 
-#define kMaxAgeInSeconds 30
+#define kMaxAgeInSeconds 1400000
 
 @interface DropTableViewController()
 @property (nonatomic,retain) UITableView *tableView;
+@property (nonatomic, retain) CLLocation *currentLocation;
+@property (nonatomic, retain) CLLocationManager *locManager;
 @end
 
 @implementation DropTableViewController
 @synthesize tableView=theTableView;
+@synthesize currentLocation;
+@synthesize locManager;
+
 - (void)awakeFromNib {
    
     self.title = @"Drop";
@@ -78,8 +83,6 @@
     self.navigationItem.leftBarButtonItem = [ActivityButtonUtil createRefreshButton:self action:@selector(refreshData:)];
     self.navigationItem.rightBarButtonItem = [self makeToggleButton];
     
-    [self startLocationManager];
-    
     subtitleMode = [[dropSettings objectForKey:[LogUtil logKeyForString:@"detailMode"]] intValue];
     
     destinationImage =  [[UIImage imageNamed:@"CircleCheckered.png"] retain];
@@ -96,8 +99,7 @@
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = nil;
     [locManager stopUpdatingLocation];
-    [locManager release];
-    locManager = nil;
+    self.locManager = nil;
     
     [destinationImage release];
     destinationImage = nil;
@@ -341,10 +343,11 @@
 {
     if( !locManager ) 
     {
-        locManager = [[CLLocationManager alloc] init];
+        self.locManager = [[[CLLocationManager alloc] init] autorelease];
         locManager.desiredAccuracy = [AppSettings desiredAccuracy];
         locManager.distanceFilter = [AppSettings distanceFilter];
         locManager.delegate = self;
+		locManager.purpose = @"Dropping a tag uses your current location to position the tag on the map.";
     }
     [locManager startUpdatingLocation];    
 }
@@ -657,7 +660,7 @@
 #pragma mark imagePickerController
 - (void) takePicture {
     
-    if( !currentLocation ) {
+    if( currentLocation == nil ) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"GPS is still warming up.  I need feedback on this if it happens too often." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         [alertView release];
@@ -826,16 +829,16 @@
 
 #pragma mark CLLocationManagerDelegate
 - (void) locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation {
-
     [gpsInfoView updateAccuracy:newLocation.horizontalAccuracy];
     
     //ignore location updates older than kMaxAge
     NSTimeInterval ageInSeconds = [newLocation.timestamp timeIntervalSinceNow];
+	NSLog(@"didUpdateToLocation: %@ with age: %1.2f", newLocation, fabs(ageInSeconds));
     if( fabs(ageInSeconds) > kMaxAgeInSeconds ) 
         return;
         
-    [currentLocation release];
-    currentLocation = [newLocation retain];
+    self.currentLocation = newLocation;
+	NSLog(@"coordinate: %1.2f,%1.2f", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
     hasLocation = YES;
     if( viewMode == kTagView )
         [self updateSubtitleMode];
@@ -843,6 +846,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
+	self.currentLocation = nil;
     hasLocation = NO;
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Uh Oh" message:@"Could not get current location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
@@ -861,8 +865,8 @@
     
     [selectedKey release];
     
-    [locManager release];
-    [currentLocation release];
+    self.locManager = nil;
+    self.currentLocation = nil;
     
     [inventoryService cancelReadRequests];
     [inventoryService release];

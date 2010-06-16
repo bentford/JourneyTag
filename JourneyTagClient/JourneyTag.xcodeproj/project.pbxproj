@@ -1389,7 +1389,7 @@
 				PRODUCT_NAME = JourneyTag;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -1501,7 +1501,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "71BE2C81-7744-48F3-927C-5602321A15F1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "71BE2C81-7744-48F3-927C-5602321A15F1";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Beta;
 		};
@@ -1541,7 +1541,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "71BE2C81-7744-48F3-927C-5602321A15F1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "71BE2C81-7744-48F3-927C-5602321A15F1";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = AppStore;
 		};
@@ -1607,7 +1607,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "71BE2C81-7744-48F3-927C-5602321A15F1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "71BE2C81-7744-48F3-927C-5602321A15F1";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -1624,7 +1624,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "71BE2C81-7744-48F3-927C-5602321A15F1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "71BE2C81-7744-48F3-927C-5602321A15F1";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};
