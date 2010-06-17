@@ -365,9 +365,8 @@
     } else {
         TagAnnotationView *pin = [[[TagAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"] autorelease];
         
-        pin.canShowCallout = YES;
-        // deprecated
-        //pin.rightCalloutAccessoryView = button; 
+		// this hides the callout so I can show my own
+        pin.canShowCallout = NO;
 
         // used to override built in callout
         [pin addObserver:self
@@ -690,18 +689,19 @@
 
 @implementation PickupViewController(PrivateMethods)
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    
     NSString *action = (NSString*)context;
 	MKAnnotationView *pin = (MKAnnotationView *)object;    
-    
+    //pin.hidden = YES;
+	//pin.alpha = 0.0;
+	
     if([action isEqualToString:@"PIN_ANNOTATION_SELECTED"]){
-		BOOL annotationAppeared = [[change valueForKey:@"new"] boolValue];
+		BOOL annotationAppeared = [[change valueForKey:NSKeyValueChangeNewKey] boolValue];
 		if (annotationAppeared) {
             shouldAnimateCallout = (self.selectedTagKey == nil);
-            NSLog(@"showing callout");
+            NSLog(@"showing callout for: %@", [pin.annotation title]);
 			[self showCustomTagCalloutView:pin.annotation];
         } else 
-            NSLog(@"hiding callout");
+            NSLog(@"hiding callout for: %@", [pin.annotation title]);
 			[self hideCustomTagCallout];
 	}
 }
@@ -789,7 +789,6 @@
 - (void)hideCustomTagCallout {
     
     isRunningHideAnimation = YES;
-    NSLog(@"hiding now");
     [UIView beginAnimations:@"hide_callout_and_pickup_info" context:nil];
     [UIView setAnimationDuration:0.5];
     [UIView setAnimationDelegate:self];
