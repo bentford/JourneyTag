@@ -16,12 +16,20 @@
 #import "DateTimeUtil.h"
 #import "LogUtil.h"
 #import "ProblemCodeUtil.h"
+#import <iAd/iAd.h>
+
+@interface TagsViewController()
+@property (nonatomic,retain) UITableView *tableView;
+@end
 
 @implementation TagsViewController
 @synthesize list;
+@synthesize tableView=myTableView;
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
+    
+    [super awakeFromNib];
+    
     self.title = @"Your Tags";
     locationManager = [[CLLocationManager alloc] init];
     locationManager.distanceFilter = [AppSettings distanceFilter];
@@ -31,8 +39,6 @@
     tagService = [[JTTagService alloc] init];
        
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveTagViewLog:) name:UIApplicationWillTerminateNotification object:[UIApplication sharedApplication]];
-
-    [super awakeFromNib];
 }
 
 - (void) saveTagViewLog:(id)sender
@@ -40,9 +46,25 @@
     [tagViewLog writeToFile:[AppFiles pathForTagViewLog] atomically:YES];
 }
 
+- (void)loadView {
+    [super loadView];
+    
+    ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, 318, 320, 50)];
+    adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+    [self.view addSubview:adView];
+    
+    self.tableView = [[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 318) style:UITableViewStylePlain] autorelease];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+    
+}
+
 #pragma mark init
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+        
     UIBarButtonItem *newButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newTag)];
     self.navigationItem.rightBarButtonItem = newButton;
     [newButton release];
@@ -54,8 +76,6 @@
     tagViewLog = [[NSMutableDictionary alloc] initWithContentsOfFile:[AppFiles pathForTagViewLog]];
     if( !tagViewLog )
         tagViewLog = [[NSMutableDictionary alloc] initWithCapacity:0];
-
-    [super viewDidLoad];
 }
 
 - (void)viewDidUnload
@@ -348,6 +368,8 @@
     
     [tagService cancelReadRequests];
     [tagService release];
+    
+    self.tableView = nil;
     
     [super dealloc];
 }

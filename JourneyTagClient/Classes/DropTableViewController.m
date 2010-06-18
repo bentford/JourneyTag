@@ -20,6 +20,7 @@
 #import "ImageResize.h"
 #import "LogUtil.h"
 #import "GpsInfoView.h"
+#import <iAd/iAd.h>
 
 #define kTagView 0
 #define kDepotView 1
@@ -71,13 +72,21 @@
     [super awakeFromNib];
 }
 
-- (void)viewDidLoad  {
+- (void)loadView  {
+    [super loadView];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 328) style:UITableViewStylePlain];
+    ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, 318, 320, 50)];
+    adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+    [self.view addSubview:adView];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 274) style:UITableViewStylePlain];
     [self.tableView release];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
+    
+    gpsInfoView = [[GpsInfoView alloc] initWithFrame:CGRectMake(0, 273, 320, 44)];
+    [self.view addSubview:gpsInfoView];
     
     self.navigationItem.titleView = [self createSegment];
     self.navigationItem.leftBarButtonItem = [ActivityButtonUtil createRefreshButton:self action:@selector(refreshData:)];
@@ -87,10 +96,7 @@
     
     destinationImage =  [[UIImage imageNamed:@"CircleCheckered.png"] retain];
     
-    gpsInfoView = [[GpsInfoView alloc] initWithFrame:CGRectMake(0, 328, 320, 44)];
-    [self.view addSubview:gpsInfoView];
-    
-    [super viewDidLoad];
+
 }
 
 - (void)viewDidUnload

@@ -17,6 +17,7 @@
 #import "JTGlobal.h"
 #import "NetworkUtil.h"
 #import "AppSettings.h"
+#import <iAd/iAd.h>
 
 #define kTableViewTag 5
 @implementation ActivityViewController
@@ -27,13 +28,14 @@
     accountService = [[JTAccountService alloc] init];
 }
 
-- (void)loadView
-{
-    UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-    self.view = view;
-    [view release];
-                    
-    myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 367) style:UITableViewStyleGrouped];
+- (void)loadView {
+    [super loadView];
+    
+    ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, 318, 320, 50)];
+    adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+    [self.view addSubview:adView];
+    
+    myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 318) style:UITableViewStyleGrouped];
     myTableView.tag = kTableViewTag;
     myTableView.delegate = self;
     myTableView.dataSource = self;

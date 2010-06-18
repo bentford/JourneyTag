@@ -9,13 +9,34 @@
 #import "GameViewController.h"
 #import "HighScoreViewController.h"
 #import "LatestPhotoViewController.h"
+#import <iAd/iAd.h>
+
+@interface GameViewController()
+@property (nonatomic, retain) UITableView *tableView;
+@end
 
 @implementation GameViewController
+@synthesize tableView=myTableView;
 
 - (void)awakeFromNib {
-	self = [super initWithStyle:UITableViewStyleGrouped];
-	self.navigationItem.title = @"Game Info";
+    self.navigationItem.title = @"Game Info";
     titles = [[NSArray alloc] initWithObjects:@"High Scores", @"Latest Photos", nil];
+}
+
+- (void)loadView {
+    [super loadView];
+	
+    
+    
+    ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, 318, 320, 50)];
+    adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+    [self.view addSubview:adView];
+    
+    self.tableView = [[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 318) style:UITableViewStyleGrouped] autorelease];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+    
 }
 
 - (void)viewDidLoad {
@@ -23,6 +44,7 @@
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain  target:nil action:nil] autorelease];
 }
 
+#pragma mark UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return [titles count];
 }
@@ -45,7 +67,9 @@
     
     return cell;
 }
+#pragma mark -
 
+#pragma mark UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	
@@ -65,7 +89,7 @@
 	[self.navigationController pushViewController:childController animated:YES];
 	[childController release];
 }
-
+#pragma mark -
 - (void)dealloc {
     [super dealloc];
 }

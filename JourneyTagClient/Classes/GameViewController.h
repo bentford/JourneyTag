@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface GameViewController : UITableViewController {
+@interface GameViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSArray *titles;
+    
+    UITableView *myTableView;
 }
 
 @end

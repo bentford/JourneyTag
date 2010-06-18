@@ -37,6 +37,7 @@
 		B536A6111047BAA60050266E /* AppFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = B536A6101047BAA60050266E /* AppFiles.m */; };
 		B53717F3104E7D9B00BF38AD /* YourTagDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53717F2104E7D9B00BF38AD /* YourTagDetailsTableViewController.m */; };
 		B537198D104FBD0900BF38AD /* DropTagDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B537198C104FBD0900BF38AD /* DropTagDetailsTableViewController.m */; };
+		B53D9ED411CB20AA00A59113 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53D9ED311CB20AA00A59113 /* iAd.framework */; };
 		B542D36E1053931000B88A8E /* ExamplePhotoHorizontal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B542D36D1053931000B88A8E /* ExamplePhotoHorizontal.jpg */; };
 		B5449D36119EC172009299AA /* DistanceMeterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5449D35119EC172009299AA /* DistanceMeterView.xib */; };
 		B547135C104A453F0025059A /* ImageResize.m in Sources */ = {isa = PBXBuildFile; fileRef = B547135B104A453F0025059A /* ImageResize.m */; };
@@ -249,6 +250,7 @@
 		B53717F2104E7D9B00BF38AD /* YourTagDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourTagDetailsTableViewController.m; sourceTree = "<group>"; };
 		B537198B104FBD0900BF38AD /* DropTagDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropTagDetailsTableViewController.h; sourceTree = "<group>"; };
 		B537198C104FBD0900BF38AD /* DropTagDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropTagDetailsTableViewController.m; sourceTree = "<group>"; };
+		B53D9ED311CB20AA00A59113 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		B542D36D1053931000B88A8E /* ExamplePhotoHorizontal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ExamplePhotoHorizontal.jpg; sourceTree = "<group>"; };
 		B5449D35119EC172009299AA /* DistanceMeterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistanceMeterView.xib; sourceTree = "<group>"; };
 		B547135A104A453F0025059A /* ImageResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResize.h; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 				B57C66A3105C587E00116B81 /* AddressBook.framework in Frameworks */,
 				B55AA395105F95F400ED84AE /* libsqlite3.dylib in Frameworks */,
 				B55AA3A2105F969B00ED84AE /* libxml2.dylib in Frameworks */,
+				B53D9ED411CB20AA00A59113 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,7 +576,6 @@
 			children = (
 				B5D1D49F119E8A6A008FD96F /* Graphics */,
 				B5AA9EAE102ABBE30015A22C /* Html */,
-				B57541240FD4F00D004762E6 /* Activity */,
 				B57541170FD4F00D004762E6 /* Icons */,
 				B57541110FD4F00D004762E6 /* Tags */,
 				B57541400FD4F04E004762E6 /* MainWindow.xib */,
@@ -599,6 +601,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
+				B53D9ED311CB20AA00A59113 /* iAd.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -720,13 +723,6 @@
 				B575411B0FD4F00D004762E6 /* ActivityBackground.png */,
 			);
 			name = Icons;
-			sourceTree = SOURCE_ROOT;
-		};
-		B57541240FD4F00D004762E6 /* Activity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Activity;
 			sourceTree = SOURCE_ROOT;
 		};
 		B57541C70FD4F11B004762E6 /* Library */ = {
@@ -1369,8 +1365,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ben Ford (39PAC2A863)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ben Ford (39PAC2A863)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1383,8 +1379,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = JourneyTag;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "F323F81C-AF5C-4F5E-B829-A8EDA810B584";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F323F81C-AF5C-4F5E-B829-A8EDA810B584";
 				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;

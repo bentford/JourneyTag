@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "JTTagService.h"
 
-@interface TagsViewController : UITableViewController 
+@interface TagsViewController : UIViewController 
 <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>{
     NSMutableArray *list;
     NSMutableArray *keyList;
@@ -37,6 +37,8 @@
     NSMutableArray *notDroppedStatusList;
     
     NSMutableArray *finishedTagActivityList;
+    
+    UITableView *myTableView;
 }
 @property (nonatomic,retain) NSMutableArray *list;
 
