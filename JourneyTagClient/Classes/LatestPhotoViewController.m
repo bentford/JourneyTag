@@ -37,7 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Lastest Photos";
+    self.title = @"Latest Photos";
     
     [gameService getLastTenPhotosWithDelegate:self didFinish:@selector(didGetPhotos:) didFail:@selector(didFail:)];
 }
