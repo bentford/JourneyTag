@@ -56,7 +56,6 @@
 		B57541280FD4F00D004762E6 /* DepotImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57541100FD4F00D004762E6 /* DepotImageView.xib */; };
 		B575412A0FD4F00D004762E6 /* TagImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57541130FD4F00D004762E6 /* TagImageView.xib */; };
 		B575412B0FD4F00D004762E6 /* TagHistoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57541140FD4F00D004762E6 /* TagHistoryView.xib */; };
-		B575412C0FD4F00D004762E6 /* EditTagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57541150FD4F00D004762E6 /* EditTagView.xib */; };
 		B57541310FD4F00D004762E6 /* ActivityBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B575411B0FD4F00D004762E6 /* ActivityBackground.png */; };
 		B575413A0FD4F00D004762E6 /* NewAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57541250FD4F00D004762E6 /* NewAccountView.xib */; };
 		B575413B0FD4F00D004762E6 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57541260FD4F00D004762E6 /* SignInView.xib */; };
@@ -273,7 +272,6 @@
 		B57541100FD4F00D004762E6 /* DepotImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepotImageView.xib; sourceTree = SOURCE_ROOT; };
 		B57541130FD4F00D004762E6 /* TagImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagImageView.xib; sourceTree = SOURCE_ROOT; };
 		B57541140FD4F00D004762E6 /* TagHistoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagHistoryView.xib; sourceTree = SOURCE_ROOT; };
-		B57541150FD4F00D004762E6 /* EditTagView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTagView.xib; sourceTree = SOURCE_ROOT; };
 		B575411B0FD4F00D004762E6 /* ActivityBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ActivityBackground.png; sourceTree = SOURCE_ROOT; };
 		B57541250FD4F00D004762E6 /* NewAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAccountView.xib; sourceTree = SOURCE_ROOT; };
 		B57541260FD4F00D004762E6 /* SignInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = SOURCE_ROOT; };
@@ -675,7 +673,6 @@
 				B50674B00FF0D887002C843B /* ChooseDestinationViewController.xib */,
 				B57541130FD4F00D004762E6 /* TagImageView.xib */,
 				B57541140FD4F00D004762E6 /* TagHistoryView.xib */,
-				B57541150FD4F00D004762E6 /* EditTagView.xib */,
 				B50677CF0FF2D341002C843B /* NewTagDetailView.xib */,
 				B57ABAE81042650E001731E8 /* AlternateView.xib */,
 				B5DA9DB7105786B6000AB50F /* DeleteTagViewController.xib */,
@@ -1147,7 +1144,6 @@
 				B57541280FD4F00D004762E6 /* DepotImageView.xib in Resources */,
 				B575412A0FD4F00D004762E6 /* TagImageView.xib in Resources */,
 				B575412B0FD4F00D004762E6 /* TagHistoryView.xib in Resources */,
-				B575412C0FD4F00D004762E6 /* EditTagView.xib in Resources */,
 				B57541310FD4F00D004762E6 /* ActivityBackground.png in Resources */,
 				B575413A0FD4F00D004762E6 /* NewAccountView.xib in Resources */,
 				B575413B0FD4F00D004762E6 /* SignInView.xib in Resources */,
@@ -1564,7 +1560,7 @@
 				PRODUCT_NAME = JourneyTag;
 				PROVISIONING_PROFILE = "B42A03E6-E0C3-49F5-A1BA-7CCD8130F8B5";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B42A03E6-E0C3-49F5-A1BA-7CCD8130F8B5";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = AppStore;
 		};
