@@ -20,7 +20,6 @@
 #import "ImageResize.h"
 #import "LogUtil.h"
 #import "GpsInfoView.h"
-#import <iAd/iAd.h>
 
 #define kTagView 0
 #define kDepotView 1
@@ -69,14 +68,19 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveDropSettings:) name:UIApplicationWillTerminateNotification object:[UIApplication sharedApplication]];
 
+    hideAdHelper = [[HideAdHelper alloc] init];
+    hideAdHelper.delegate = self;
+    
     [super awakeFromNib];
 }
 
 - (void)loadView  {
     [super loadView];
     
-    ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, 318, 320, 50)];
+    adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, 318, 320, 50)];
     adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+    adView.delegate = self;
+    
     [self.view addSubview:adView];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 274) style:UITableViewStylePlain];
@@ -113,11 +117,30 @@
     [super viewDidUnload];
 }
 
-
 - (void)saveDropSettings:(id)sender
 {
     [dropSettings writeToFile:[AppFiles pathForDropSettings] atomically:YES];
 }
+
+#pragma mark HideAdHelperDelegate
+- (UIView *)mainView {
+    return theTableView;
+}
+
+- (UIView *)bannerView {
+    return adView;
+}
+
+- (UIView *)slideDownView {
+    return gpsInfoView;
+}
+#pragma mark -
+
+#pragma mark ADBannerViewDelegate
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    [hideAdHelper hideBannerView];
+}
+#pragma mark -
 
 #pragma mark Toggle Detail Mode
 - (void)toggleSubtitleText:(id)sender
@@ -369,6 +392,11 @@
         return;
     }
     [self refreshData:nil]; 
+    
+    if( kTestAdLoadFailureAnimation == YES )
+        [NSTimer scheduledTimerWithTimeInterval:3.0 target:hideAdHelper selector:@selector(hideBannerView) userInfo:nil repeats:NO];
+    
+    
 
 }
 
@@ -900,6 +928,11 @@
     
     [gpsInfoView release];
     self.tableView = nil;
+
+    [hideAdHelper release];
+    
+    adView.delegate = nil;
+    [adView release];
     
     [super dealloc];
 }

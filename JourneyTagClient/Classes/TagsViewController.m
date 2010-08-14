@@ -37,7 +37,9 @@
     locationManager.delegate = self;
     
     tagService = [[JTTagService alloc] init];
-       
+    hideAdHelper = [[HideAdHelper alloc] init];
+    hideAdHelper.delegate = self;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveTagViewLog:) name:UIApplicationWillTerminateNotification object:[UIApplication sharedApplication]];
 }
 
@@ -49,8 +51,10 @@
 - (void)loadView {
     [super loadView];
     
-    ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, 318, 320, 50)];
+    adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, 318, 320, 50)];
     adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+    adView.delegate = self;
+    
     [self.view addSubview:adView];
     
     self.tableView = [[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 318) style:UITableViewStylePlain] autorelease];
@@ -95,6 +99,9 @@
 {
     [locationManager startUpdatingLocation];
     [self refreshTags:nil];
+    
+    if( kTestAdLoadFailureAnimation == YES )
+        [NSTimer scheduledTimerWithTimeInterval:3.0 target:hideAdHelper selector:@selector(hideBannerView) userInfo:nil repeats:NO];
 }
 
 - (void) viewDidDisappear:(BOOL)animated
@@ -108,6 +115,22 @@
     [button autorelease];
     return button;
 }
+
+#pragma mark HideAdHelperDelegate
+- (UIView *)mainView {
+    return myTableView;
+}
+
+- (UIView *)bannerView {
+    return adView;
+}
+#pragma mark -
+
+#pragma mark ADBannerViewDelegate
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    [hideAdHelper hideBannerView];
+}
+#pragma mark -
 
 #pragma mark UITableViewDelegate
 - (NSInteger) numberOfSectionsInTableView:(UITableView*)tableView
@@ -370,6 +393,11 @@
     [tagService release];
     
     self.tableView = nil;
+    
+    adView.delegate = nil;
+    [adView release];
+    
+    [hideAdHelper release];
     
     [super dealloc];
 }

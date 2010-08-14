@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
+#define kTestAdLoadFailureAnimation YES
+
 @interface AppSettings : NSObject {
 
 }

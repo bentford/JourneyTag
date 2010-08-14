@@ -10,9 +10,12 @@
 
 #import <UIKit/UIKit.h>
 #import "JTAccountService.h"
+#import <iAd/iAd.h>
+#import "HideAdHelper.h"
 
+@class HideAdHelper;
 @interface ActivityViewController : UIViewController
-<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
+<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, ADBannerViewDelegate, HideAdHelperDelegate>
 {
     UITableView *myTableView;
     JTAccountService *accountService;
@@ -24,6 +27,9 @@
     NSInteger carryScore;
     NSInteger photoScore;
     NSInteger arrivalScore;
+    
+    ADBannerView *adView;
+    HideAdHelper *hideAdHelper;
 }
 - (void)setupDefaultTableData;
 - (void) signIn:(id)sender;

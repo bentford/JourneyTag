@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "TagHistoryViewController.h"
 #import "JTService.h"
+#import "HideAdHelper.h"
+#import <iAd/iAd.h>
 
 typedef enum {
     DropSubtitleModeMovedDistance,
@@ -18,7 +20,7 @@ typedef enum {
 
 @class GpsInfoView;
 @interface DropTableViewController : UIViewController 
-<UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, CLLocationManagerDelegate>{
+<UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, CLLocationManagerDelegate, HideAdHelperDelegate, ADBannerViewDelegate>{
     NSMutableArray *list;
     NSMutableArray *keyList;
     NSMutableArray *depotList;
@@ -63,6 +65,9 @@ typedef enum {
     GpsInfoView *gpsInfoView;
     
     UITableView *theTableView;
+    ADBannerView *adView;
+    
+    HideAdHelper *hideAdHelper;
 }
 - (void) takePicture;
 

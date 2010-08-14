@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HideAdHelper.h"
+#import <iAd/iAd.h>
 
-
-@interface GameViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface GameViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, HideAdHelperDelegate, ADBannerViewDelegate> {
     NSArray *titles;
     
     UITableView *myTableView;
+    ADBannerView *adView;
+    HideAdHelper *hideAdHelper;
 }
 
 @end

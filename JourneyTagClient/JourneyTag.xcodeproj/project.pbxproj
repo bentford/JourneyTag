@@ -197,6 +197,7 @@
 		B5DA9FA0105884F8000AB50F /* DistanceTextUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DA9F9F105884F8000AB50F /* DistanceTextUtil.m */; };
 		B5DCA7C91067CFE300EEFEC0 /* AnimatedBarOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = B5DCA7C81067CFE300EEFEC0 /* AnimatedBarOrange.png */; };
 		B5DCA83F1067F21500EEFEC0 /* JourneyTagIcon8.png in Resources */ = {isa = PBXBuildFile; fileRef = B5DCA83E1067F21500EEFEC0 /* JourneyTagIcon8.png */; };
+		B5E2279F1217330400AA1B82 /* HideAdHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E2279E1217330400AA1B82 /* HideAdHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -496,6 +497,8 @@
 		B5DA9F9F105884F8000AB50F /* DistanceTextUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceTextUtil.m; sourceTree = "<group>"; };
 		B5DCA7C81067CFE300EEFEC0 /* AnimatedBarOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimatedBarOrange.png; sourceTree = "<group>"; };
 		B5DCA83E1067F21500EEFEC0 /* JourneyTagIcon8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JourneyTagIcon8.png; sourceTree = "<group>"; };
+		B5E2279D1217330400AA1B82 /* HideAdHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HideAdHelper.h; sourceTree = "<group>"; };
+		B5E2279E1217330400AA1B82 /* HideAdHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HideAdHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -616,6 +619,8 @@
 				B536A1CE1044CD0A0050266E /* FakeImagePickerViewController.h */,
 				B536A1CF1044CD0A0050266E /* FakeImagePickerViewController.m */,
 				B536A1D01044CD0A0050266E /* FakeImagePickerView.xib */,
+				B5E2279D1217330400AA1B82 /* HideAdHelper.h */,
+				B5E2279E1217330400AA1B82 /* HideAdHelper.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -1344,6 +1349,7 @@
 				B5BED8101195799E00989F02 /* JTGameService.m in Sources */,
 				B5BED81D11957B7700989F02 /* HighScoreViewController.m in Sources */,
 				B51E8DBE119610300040FD28 /* LatestPhotoViewController.m in Sources */,
+				B5E2279F1217330400AA1B82 /* HideAdHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1458,46 +1464,24 @@
 			};
 			name = Release;
 		};
-		B5776DC1105B01D300DA87A3 /* Beta */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				INFOPLIST_FILE = "LogicTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					SenTestingKit,
-					"-framework",
-					UIKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = LogicTests;
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Beta;
-		};
-		B57ABBC610434420001731E8 /* Beta */ = {
+		B5A5792C1207B0DB008E6266 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ben Ford (39PAC2A863)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ben Ford (39PAC2A863)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ben Ford";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ben Ford";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "71BE2C81-7744-48F3-927C-5602321A15F1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "71BE2C81-7744-48F3-927C-5602321A15F1";
-				SDKROOT = iphoneos4.0;
+				PROVISIONING_PROFILE = "0211169F-D5CB-4614-A7A6-2685F5AFE815";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0211169F-D5CB-4614-A7A6-2685F5AFE815";
+				SDKROOT = iphonesimulator4.0;
 			};
-			name = Beta;
+			name = AdHoc;
 		};
-		B57ABBC710434420001731E8 /* Beta */ = {
+		B5A5792D1207B0DB008E6266 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1514,25 +1498,50 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = JourneyTag;
-				PROVISIONING_PROFILE = "2E28DE8C-662F-4C55-9472-B9616A7D778A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2E28DE8C-662F-4C55-9472-B9616A7D778A";
-				SDKROOT = iphoneos3.0;
+				PROVISIONING_PROFILE = "B42A03E6-E0C3-49F5-A1BA-7CCD8130F8B5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B42A03E6-E0C3-49F5-A1BA-7CCD8130F8B5";
+				SDKROOT = iphoneos4.0;
 			};
-			name = Beta;
+			name = AdHoc;
+		};
+		B5A5792E1207B0DB008E6266 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				INFOPLIST_FILE = "LogicTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = LogicTests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = AdHoc;
 		};
 		B5DCA80F1067DEA300EEFEC0 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ben Ford (39PAC2A863)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ben Ford (39PAC2A863)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ben Ford";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ben Ford";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "71BE2C81-7744-48F3-927C-5602321A15F1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "71BE2C81-7744-48F3-927C-5602321A15F1";
+				PROVISIONING_PROFILE = "0211169F-D5CB-4614-A7A6-2685F5AFE815";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0211169F-D5CB-4614-A7A6-2685F5AFE815";
 				SDKROOT = iphoneos4.0;
 			};
 			name = AppStore;
@@ -1607,15 +1616,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ben Ford (39PAC2A863)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ben Ford (39PAC2A863)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "71BE2C81-7744-48F3-927C-5602321A15F1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "71BE2C81-7744-48F3-927C-5602321A15F1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
@@ -1627,8 +1637,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
-				B57ABBC710434420001731E8 /* Beta */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				B5A5792D1207B0DB008E6266 /* AdHoc */,
 				B5DCA8101067DEA300EEFEC0 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1638,8 +1648,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5776DBF105B01D300DA87A3 /* Debug */,
-				B5776DC1105B01D300DA87A3 /* Beta */,
 				B5776DC0105B01D300DA87A3 /* Release */,
+				B5A5792E1207B0DB008E6266 /* AdHoc */,
 				B5DCA8111067DEA300EEFEC0 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1649,8 +1659,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
-				B57ABBC610434420001731E8 /* Beta */,
 				C01FCF5008A954540054247B /* Release */,
+				B5A5792C1207B0DB008E6266 /* AdHoc */,
 				B5DCA80F1067DEA300EEFEC0 /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;

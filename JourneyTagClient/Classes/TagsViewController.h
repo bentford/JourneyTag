@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "JTTagService.h"
+#import <iAd/iAd.h>
+#import "HideAdHelper.h"
 
 @interface TagsViewController : UIViewController 
-<UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>{
+<UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, ADBannerViewDelegate, HideAdHelperDelegate> {
     NSMutableArray *list;
     NSMutableArray *keyList;
     
@@ -39,6 +41,9 @@
     NSMutableArray *finishedTagActivityList;
     
     UITableView *myTableView;
+    
+    ADBannerView *adView;
+    HideAdHelper *hideAdHelper;
 }
 @property (nonatomic,retain) NSMutableArray *list;
 

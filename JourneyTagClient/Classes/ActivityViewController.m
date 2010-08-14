@@ -17,7 +17,6 @@
 #import "JTGlobal.h"
 #import "NetworkUtil.h"
 #import "AppSettings.h"
-#import <iAd/iAd.h>
 
 #define kTableViewTag 5
 @implementation ActivityViewController
@@ -26,13 +25,17 @@
 {
     self.title = @"Refreshing";
     accountService = [[JTAccountService alloc] init];
+    hideAdHelper = [[HideAdHelper alloc] init];
+    hideAdHelper.delegate = self;
 }
 
 - (void)loadView {
     [super loadView];
     
-    ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, 318, 320, 50)];
+    adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, 318, 320, 50)];
     adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+    adView.delegate = self;
+    
     [self.view addSubview:adView];
     
     myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 318) style:UITableViewStyleGrouped];
@@ -88,6 +91,10 @@
     [myTableView reloadData];    
     
     [super viewDidAppear:animated];
+    
+    if( kTestAdLoadFailureAnimation == YES )
+        [NSTimer scheduledTimerWithTimeInterval:3.0 target:hideAdHelper selector:@selector(hideBannerView) userInfo:nil repeats:NO];
+
 }
 
 - (void)setupDefaultTableData
@@ -247,6 +254,22 @@
     [myTableView reloadData];
 }
 
+#pragma mark HideAdHelperDelegate
+- (UIView *)mainView {
+    return myTableView;
+}
+
+- (UIView *)bannerView {
+    return adView;
+}
+#pragma mark -
+
+#pragma mark ADBannerViewDelegate
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    [hideAdHelper hideBannerView];
+}
+#pragma mark -
+
 #pragma mark Sign In
 -(void) signIn:(id)sender
 {
@@ -384,12 +407,6 @@
     return [sectionTitles objectAtIndex:section];
 }
 
-#pragma mark ARRollerDelegate
-- (NSString *)adWhirlApplicationKey
-{
-    return [AppSettings adWhirlApplicationKey];
-}
-
 - (void)dealloc {
     [accountService cancelReadRequests];    
     [accountService release];
@@ -397,6 +414,11 @@
     [labels release];
     [sectionTitles release];
     [myTableView release];
+    
+    adView.delegate = nil;
+    [adView release];
+    
+    [hideAdHelper release];
     
     [super dealloc];
 }
