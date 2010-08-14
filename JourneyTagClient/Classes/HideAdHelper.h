@@ -19,6 +19,8 @@
 
 @interface HideAdHelper : NSObject {
     NSObject<HideAdHelperDelegate> *delegate;
+    
+    BOOL isVisible;
 }
 
 @property (nonatomic, assign) NSObject<HideAdHelperDelegate> *delegate;

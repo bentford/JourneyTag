@@ -12,7 +12,19 @@
 @implementation HideAdHelper
 @synthesize delegate;
 
+- (id)init {
+    if( self = [super init] ) {
+        isVisible = YES;
+    }
+    return self;
+}
+
 - (void)hideBannerView {
+    
+    if( isVisible == NO )
+        return;
+    
+    isVisible = NO;
     
     [UIView animateWithDuration:kHideAdDuration animations:^{
         CGRect frame = [delegate bannerView].frame;
