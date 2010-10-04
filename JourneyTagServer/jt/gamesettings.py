@@ -1,5 +1,5 @@
 startingDepotCount = 1
-maxDepotCount = 10
+maxDepotCount = 100
 
 levelSeed = 500
 payoutMultiplier = 0.15
@@ -7,7 +7,7 @@ startLevel = 1
 startScore = 0
 
 tagViewRadius = 250
-tagPickupRadius = 5
+tagPickupRadius = 20
 
 photoVoteAward = 100
 
