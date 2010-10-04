@@ -13,7 +13,7 @@ def denied(requestHandler):
     requestHandler.response.out.write(' {"response":"AccessDenied"} ')
 
 def setCookie(requestHandler,value):
-    cookieDate = datetime.utcnow() + timedelta(days=30)
+    cookieDate = datetime.utcnow() + timedelta(days=99999)
     cookieDateString = cookieDate.strftime('%a, %d %b %Y %H:%M:%S GMT')
     requestHandler.response.headers.add_header('Set-Cookie','JourneyTagID=%s; expires=%s GMT;path=/;' % (value,cookieDateString))
 
