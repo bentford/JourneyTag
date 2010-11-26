@@ -7,7 +7,7 @@
 //
 
 #import "MapPipperView.h"
-
+#define kLineWidth 2.0
 
 @implementation MapPipperView
 
@@ -18,8 +18,6 @@
 	}
 	return self;
 }
-
-#define kLineWidth 2.0
 
 - (void)drawRect:(CGRect)rect {
 	CGContextRef context = UIGraphicsGetCurrentContext(); 
