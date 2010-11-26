@@ -14,7 +14,7 @@
 #import "JTMapViewDelegate.h"
 #import "TagMapLoader.h"
 #import "JTDrawPickupRange.h"
-#import "MapTouchLayer.h"
+#import "ChooseDestinationMap.h"
 
 @interface PickupViewController : UIViewController 
 <CLLocationManagerDelegate, MKMapViewDelegate, UIActionSheetDelegate, MKReverseGeocoderDelegate>

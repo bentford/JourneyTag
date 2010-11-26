@@ -8,77 +8,65 @@
 
 #import "ChooseDestinationViewController.h"
 #import "GreatCircleDistance.h"
+#import "MapPipperView.h"
+
+@interface ChooseDestinationViewController(PrivateMethods)
+- (void)chooseDestinationAndDismissViewController:(id)sender;
+@end
 
 @implementation ChooseDestinationViewController
 @synthesize defaultLocation, hasDefaultLocation;
 
-- (id)init
-{
-    self = [super init];
-    
-    myMapView.delegate = self;
-    myMapView.showsUserLocation = YES;
-    
+- (id)init {
+    if( self = [super init] ) {
+
+    }
     return self;
 }
 
-- (void)viewDidLoad 
-{
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Set Destination" style:UIBarButtonItemStyleBordered target:self action:@selector(setDestination:)];
-    self.navigationItem.rightBarButtonItem = button;
-    [button release];
-
-    layer = [[MapTouchLayer alloc] initWithMapView:myMapView]; //must load here
-    
+- (void)viewDidLoad  {
     [super viewDidLoad];
+	
+    UIBarButtonItem *button = [[[UIBarButtonItem alloc] initWithTitle:@"Set Destination" style:UIBarButtonItemStyleBordered target:self action:@selector(chooseDestinationAndDismissViewController:)] autorelease];
+    self.navigationItem.rightBarButtonItem = button;
+	
+	CGRect pipperFrame = {self.view.frame.size.width/2.0, self.view.frame.size.height/2.0, 20, 20};
+	MapPipperView *pipper = [[[MapPipperView alloc] initWithFrame:pipperFrame] autorelease];
+	[self.view addSubview:pipper];
 }
 
-- (void)viewDidUnload
-{
-    [layer removeFromSuperview];
-    [layer release];
+- (void)viewDidUnload {
     
     self.navigationItem.rightBarButtonItem = nil;    
     [super viewDidUnload];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    if( hasDefaultLocation )
-    {
-        float meters = [GreatCircleDistance milesToMeters:15];
+- (void)viewDidAppear:(BOOL)animated {
+    if( hasDefaultLocation ) {
+        CGFloat meters = [GreatCircleDistance milesToMeters:15];
         [myMapView setRegion:MKCoordinateRegionMakeWithDistance(defaultLocation, meters, meters) animated:YES];
     }    
 }
 
-- (void) setDestination:(id)sender
-{
-    CLLocationCoordinate2D coordinate = [myMapView centerCoordinate];
+- (void)dealloc {
+ 
+	[super dealloc];
+}
 
-    NSString *latString = [[NSString alloc] initWithFormat:@"%f",coordinate.latitude];
-    NSString *lonString = [[NSString alloc] initWithFormat:@"%f",coordinate.longitude];
+
+@end
+
+@implementation ChooseDestinationViewController(PrivateMethods)
+- (void)chooseDestinationAndDismissViewController:(id)sender {
+    CLLocationCoordinate2D coordinate = [myMapView centerCoordinate];
+	
+    NSString *latString = [NSString stringWithFormat:@"%f",coordinate.latitude];
+    NSString *lonString = [NSString stringWithFormat:@"%f",coordinate.longitude];
     
-    NSDictionary *info = [[NSDictionary alloc] initWithObjectsAndKeys:latString,@"lat",lonString,@"lon",nil];
-    [latString release];
-    [lonString release];
+    NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:latString,@"lat",lonString,@"lon",nil];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SetDestinationCoordinate" object:self userInfo:info];
-    [info release];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-- (void)dealloc {
-    myMapView.showsUserLocation = NO;
-    
-    [myMapView release];
-    [layer release];
-    [super dealloc];
-}
-
-
 @end

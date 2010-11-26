@@ -15,13 +15,13 @@
 		B50671FD0FF01B6E002C843B /* GreatCircleDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = B50671FC0FF01B6E002C843B /* GreatCircleDistance.m */; };
 		B506732D0FF095C9002C843B /* JTRouteLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B506732C0FF095C9002C843B /* JTRouteLayerView.m */; };
 		B50674B10FF0D887002C843B /* ChooseDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50674AF0FF0D887002C843B /* ChooseDestinationViewController.m */; };
-		B50674B20FF0D887002C843B /* ChooseDestinationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50674B00FF0D887002C843B /* ChooseDestinationViewController.xib */; };
-		B50674DD0FF15A4F002C843B /* MapTouchLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B50674DC0FF15A4F002C843B /* MapTouchLayer.m */; };
 		B50677CD0FF2D324002C843B /* NewTagDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50677CC0FF2D324002C843B /* NewTagDetailViewController.m */; };
 		B50677D00FF2D341002C843B /* NewTagDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50677CF0FF2D341002C843B /* NewTagDetailView.xib */; };
 		B5067AC40FF439D6002C843B /* Clock.png in Resources */ = {isa = PBXBuildFile; fileRef = B5067AC20FF439D6002C843B /* Clock.png */; };
 		B50A51821027A8EB002310CE /* JTDrawPickupRange.m in Sources */ = {isa = PBXBuildFile; fileRef = B50A51811027A8EB002310CE /* JTDrawPickupRange.m */; };
 		B50A54DD1028345B002310CE /* AppCheckOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B50A54DC1028345B002310CE /* AppCheckOperation.m */; };
+		B5127E6712A039400046899E /* ChooseDestinationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5127E6612A039400046899E /* ChooseDestinationViewController.xib */; };
+		B5127E9712A03B470046899E /* MapPipperView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5127E9612A03B470046899E /* MapPipperView.m */; };
 		B5130B1B103BEDA300E73D32 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5130B19103BEDA300E73D32 /* HelpViewController.m */; };
 		B5130B1C103BEDA300E73D32 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5130B1A103BEDA300E73D32 /* HelpViewController.xib */; };
 		B517BBAC10413C080014E6D9 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = B517BBAB10413C080014E6D9 /* about.html */; };
@@ -216,18 +216,18 @@
 		B506732C0FF095C9002C843B /* JTRouteLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTRouteLayerView.m; sourceTree = "<group>"; };
 		B50674AE0FF0D887002C843B /* ChooseDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseDestinationViewController.h; sourceTree = "<group>"; };
 		B50674AF0FF0D887002C843B /* ChooseDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseDestinationViewController.m; sourceTree = "<group>"; };
-		B50674B00FF0D887002C843B /* ChooseDestinationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ChooseDestinationViewController.xib; path = Classes/ChooseDestinationViewController.xib; sourceTree = "<group>"; };
-		B50674DB0FF15A4F002C843B /* MapTouchLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTouchLayer.h; sourceTree = "<group>"; };
-		B50674DC0FF15A4F002C843B /* MapTouchLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTouchLayer.m; sourceTree = "<group>"; };
 		B50677C80FF2D2A6002C843B /* NewTagViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTagViewController2.h; sourceTree = "<group>"; };
 		B50677CB0FF2D324002C843B /* NewTagDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTagDetailViewController.h; sourceTree = "<group>"; };
 		B50677CC0FF2D324002C843B /* NewTagDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTagDetailViewController.m; sourceTree = "<group>"; };
-		B50677CF0FF2D341002C843B /* NewTagDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTagDetailView.xib; sourceTree = "<group>"; };
+		B50677CF0FF2D341002C843B /* NewTagDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewTagDetailView.xib; path = ../NewTagDetailView.xib; sourceTree = "<group>"; };
 		B5067AC20FF439D6002C843B /* Clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clock.png; sourceTree = "<group>"; };
 		B50A51801027A8EB002310CE /* JTDrawPickupRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTDrawPickupRange.h; sourceTree = "<group>"; };
 		B50A51811027A8EB002310CE /* JTDrawPickupRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDrawPickupRange.m; sourceTree = "<group>"; };
 		B50A54DB1028345B002310CE /* AppCheckOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCheckOperation.h; sourceTree = "<group>"; };
 		B50A54DC1028345B002310CE /* AppCheckOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCheckOperation.m; sourceTree = "<group>"; };
+		B5127E6612A039400046899E /* ChooseDestinationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseDestinationViewController.xib; sourceTree = "<group>"; };
+		B5127E9512A03B470046899E /* MapPipperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPipperView.h; sourceTree = "<group>"; };
+		B5127E9612A03B470046899E /* MapPipperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPipperView.m; sourceTree = "<group>"; };
 		B5130B18103BEDA300E73D32 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		B5130B19103BEDA300E73D32 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		B5130B1A103BEDA300E73D32 /* HelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
@@ -356,7 +356,7 @@
 		B5776DE9105B2BA400DA87A3 /* GreatCircleTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreatCircleTests.h; sourceTree = "<group>"; };
 		B5776DEA105B2BA400DA87A3 /* GreatCircleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreatCircleTests.m; sourceTree = "<group>"; };
 		B57ABADE1042641B001731E8 /* PickupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PickupView.xib; path = ../PickupView.xib; sourceTree = "<group>"; };
-		B57ABAE81042650E001731E8 /* AlternateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlternateView.xib; sourceTree = "<group>"; };
+		B57ABAE81042650E001731E8 /* AlternateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AlternateView.xib; path = ../AlternateView.xib; sourceTree = "<group>"; };
 		B57ABBC4104342F4001731E8 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		B57B00090FE9AD7F00D718B3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B57B004D0FE9B40C00D718B3 /* DepotAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepotAnnotationView.h; sourceTree = "<group>"; };
@@ -488,7 +488,7 @@
 		B5D54C66104BD902003EDF58 /* CircleCheckered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CircleCheckered.png; sourceTree = "<group>"; };
 		B5DA9DB5105786B6000AB50F /* DeleteTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteTagViewController.h; sourceTree = "<group>"; };
 		B5DA9DB6105786B6000AB50F /* DeleteTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteTagViewController.m; sourceTree = "<group>"; };
-		B5DA9DB7105786B6000AB50F /* DeleteTagViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DeleteTagViewController.xib; path = Classes/DeleteTagViewController.xib; sourceTree = "<group>"; };
+		B5DA9DB7105786B6000AB50F /* DeleteTagViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteTagViewController.xib; sourceTree = "<group>"; };
 		B5DA9DC710578B03000AB50F /* TrashCan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TrashCan.png; sourceTree = "<group>"; };
 		B5DA9F701057DF45000AB50F /* ProblemCodeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemCodeUtil.h; sourceTree = "<group>"; };
 		B5DA9F711057DF45000AB50F /* ProblemCodeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemCodeUtil.m; sourceTree = "<group>"; };
@@ -580,7 +580,6 @@
 				B5D1D49F119E8A6A008FD96F /* Graphics */,
 				B5AA9EAE102ABBE30015A22C /* Html */,
 				B57541170FD4F00D004762E6 /* Icons */,
-				B57541110FD4F00D004762E6 /* Tags */,
 				B57541400FD4F04E004762E6 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				B57ABBC4104342F4001731E8 /* Entitlements.plist */,
@@ -673,19 +672,6 @@
 			);
 			name = Source;
 			path = Classes;
-			sourceTree = SOURCE_ROOT;
-		};
-		B57541110FD4F00D004762E6 /* Tags */ = {
-			isa = PBXGroup;
-			children = (
-				B50674B00FF0D887002C843B /* ChooseDestinationViewController.xib */,
-				B57541130FD4F00D004762E6 /* TagImageView.xib */,
-				B57541140FD4F00D004762E6 /* TagHistoryView.xib */,
-				B50677CF0FF2D341002C843B /* NewTagDetailView.xib */,
-				B57ABAE81042650E001731E8 /* AlternateView.xib */,
-				B5DA9DB7105786B6000AB50F /* DeleteTagViewController.xib */,
-			);
-			name = Tags;
 			sourceTree = SOURCE_ROOT;
 		};
 		B57541170FD4F00D004762E6 /* Icons */ = {
@@ -840,24 +826,30 @@
 			children = (
 				B575418A0FD4F0D3004762E6 /* TagHistoryViewController.h */,
 				B575418B0FD4F0D3004762E6 /* TagHistoryViewController.m */,
+				B57541140FD4F00D004762E6 /* TagHistoryView.xib */,
 				B575418C0FD4F0D3004762E6 /* TagImageViewController.h */,
 				B575418D0FD4F0D3004762E6 /* TagImageViewController.m */,
+				B57541130FD4F00D004762E6 /* TagImageView.xib */,
 				B57541900FD4F0D3004762E6 /* TagsViewController.h */,
 				B57541910FD4F0D3004762E6 /* TagsViewController.m */,
 				B575414B0FD4F0D3004762E6 /* AlternateViewController.h */,
 				B575414C0FD4F0D3004762E6 /* AlternateViewController.m */,
+				B57ABAE81042650E001731E8 /* AlternateView.xib */,
 				B50677C80FF2D2A6002C843B /* NewTagViewController2.h */,
 				B5AA9F88102AD9B50015A22C /* NewTagViewController2.m */,
 				B50677CB0FF2D324002C843B /* NewTagDetailViewController.h */,
 				B50677CC0FF2D324002C843B /* NewTagDetailViewController.m */,
+				B50677CF0FF2D341002C843B /* NewTagDetailView.xib */,
 				B50674AE0FF0D887002C843B /* ChooseDestinationViewController.h */,
 				B50674AF0FF0D887002C843B /* ChooseDestinationViewController.m */,
+				B5127E6612A039400046899E /* ChooseDestinationViewController.xib */,
 				B595ECC31022BAF7004A8055 /* PhotoInfoTableViewController.h */,
 				B595ECC41022BAF7004A8055 /* PhotoInfoTableViewController.m */,
 				B53717F1104E7D9B00BF38AD /* YourTagDetailsTableViewController.h */,
 				B53717F2104E7D9B00BF38AD /* YourTagDetailsTableViewController.m */,
 				B5DA9DB5105786B6000AB50F /* DeleteTagViewController.h */,
 				B5DA9DB6105786B6000AB50F /* DeleteTagViewController.m */,
+				B5DA9DB7105786B6000AB50F /* DeleteTagViewController.xib */,
 			);
 			name = Tag;
 			sourceTree = "<group>";
@@ -993,8 +985,8 @@
 				B50671FC0FF01B6E002C843B /* GreatCircleDistance.m */,
 				B506732B0FF095C9002C843B /* JTRouteLayerView.h */,
 				B506732C0FF095C9002C843B /* JTRouteLayerView.m */,
-				B50674DB0FF15A4F002C843B /* MapTouchLayer.h */,
-				B50674DC0FF15A4F002C843B /* MapTouchLayer.m */,
+				B5127E9512A03B470046899E /* MapPipperView.h */,
+				B5127E9612A03B470046899E /* MapPipperView.m */,
 				B50A51801027A8EB002310CE /* JTDrawPickupRange.h */,
 				B50A51811027A8EB002310CE /* JTDrawPickupRange.m */,
 			);
@@ -1161,7 +1153,6 @@
 				B57B050C0FED80BD00D718B3 /* TabHome.png in Resources */,
 				B57B050D0FED80BD00D718B3 /* TabPickup.png in Resources */,
 				B57B050E0FED80BD00D718B3 /* TabTags.png in Resources */,
-				B50674B20FF0D887002C843B /* ChooseDestinationViewController.xib in Resources */,
 				B50677D00FF2D341002C843B /* NewTagDetailView.xib in Resources */,
 				B5067AC40FF439D6002C843B /* Clock.png in Resources */,
 				B5675F1C0FFDB9C300713E84 /* ButtonIconFlag3.png in Resources */,
@@ -1228,6 +1219,7 @@
 				B5D1D5CE119F6269008FD96F /* ProgressGreenEndCap2.png in Resources */,
 				B5D1D5CF119F6269008FD96F /* ProgressOrangeEndCap2.png in Resources */,
 				B5D1D5E5119F6EF8008FD96F /* TagCalloutView.xib in Resources */,
+				B5127E6712A039400046899E /* ChooseDestinationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1302,7 +1294,6 @@
 				B50671FD0FF01B6E002C843B /* GreatCircleDistance.m in Sources */,
 				B506732D0FF095C9002C843B /* JTRouteLayerView.m in Sources */,
 				B50674B10FF0D887002C843B /* ChooseDestinationViewController.m in Sources */,
-				B50674DD0FF15A4F002C843B /* MapTouchLayer.m in Sources */,
 				B50677CD0FF2D324002C843B /* NewTagDetailViewController.m in Sources */,
 				B5731C5A0FF9D6B500C06F20 /* PickupTagDetailsTableViewController.m in Sources */,
 				B5302F970FFAB2B700621AF8 /* JTServiceBase.m in Sources */,
@@ -1357,6 +1348,7 @@
 				B5BED81D11957B7700989F02 /* HighScoreViewController.m in Sources */,
 				B51E8DBE119610300040FD28 /* LatestPhotoViewController.m in Sources */,
 				B5E2279F1217330400AA1B82 /* HideAdHelper.m in Sources */,
+				B5127E9712A03B470046899E /* MapPipperView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
