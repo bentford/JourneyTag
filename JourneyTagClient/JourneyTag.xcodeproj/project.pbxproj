@@ -1126,7 +1126,14 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "JourneyTag" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* JourneyTag */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1385,9 +1392,9 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = JourneyTag;
-				PROVISIONING_PROFILE = "F323F81C-AF5C-4F5E-B829-A8EDA810B584";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F323F81C-AF5C-4F5E-B829-A8EDA810B584";
-				SDKROOT = iphoneos4.0;
+				PROVISIONING_PROFILE = "99FFE751-4FF1-49D1-9B9C-84A020093C86";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "99FFE751-4FF1-49D1-9B9C-84A020093C86";
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};
@@ -1477,7 +1484,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "0211169F-D5CB-4614-A7A6-2685F5AFE815";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0211169F-D5CB-4614-A7A6-2685F5AFE815";
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = AdHoc;
 		};
@@ -1542,7 +1549,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "0211169F-D5CB-4614-A7A6-2685F5AFE815";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0211169F-D5CB-4614-A7A6-2685F5AFE815";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = AppStore;
 		};
@@ -1608,7 +1615,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "71BE2C81-7744-48F3-927C-5602321A15F1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "71BE2C81-7744-48F3-927C-5602321A15F1";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};
@@ -1626,7 +1633,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Release;
 		};
